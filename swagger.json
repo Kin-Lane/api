@@ -72,6 +72,13 @@
             "type": "string"
           },
           {
+            "name": "baseurl",
+            "in": "query",
+            "description": "baseurl for the api",
+            "required": true,
+            "type": "string"
+          },          
+          {
             "name": "tags",
             "in": "query",
             "description": "tags for the api",
@@ -161,6 +168,13 @@
             "type": "string"
           },
           {
+            "name": "baseurl",
+            "in": "query",
+            "description": "base url for the api",
+            "required": true,
+            "type": "string"
+          },          
+          {
             "name": "tags",
             "in": "query",
             "description": "tags for the api",
@@ -231,6 +245,10 @@
           "description": "url for the api",
           "type": "string"
         },
+        "baseurl": {
+          "description": "url for the api",
+          "type": "string"
+        },        
         "tags": {
           "description": "tags for the api",
           "type": "string"
