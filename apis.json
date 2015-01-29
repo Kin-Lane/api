@@ -1,7 +1,7 @@
 {
   "name": "Kin Lane - API",
   "description": "This is my default API API (inception man!), using it to manage APIs. It is a Stack Network API resource, with supporting docker container for the API.",
-  "image": "https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-icon.png",
+  "image": "https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-a.png",
   "tags": [
     "application programming interface",
     "API",
@@ -15,7 +15,7 @@
     {
       "name": "API",
       "description": "A API resource.",
-      "image": "https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-icon.png",
+      "image": "https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-a.png",
       "humanURL": "https://kin-lane.github.io/api/",
       "baseURL": "http://api.api.kinlane.com",
       "tags": [
