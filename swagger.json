@@ -719,7 +719,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/note"
+                "$ref": "#/definitions/screenshot"
               }
             }
           }
@@ -756,7 +756,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/note"
+                "$ref": "#/definitions/screenshot"
               }
             }
           }
@@ -787,7 +787,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/note"
+                "$ref": "#/definitions/buildingblock"
               }
             }
           }
@@ -882,7 +882,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/note"
+                "$ref": "#/definitions/buildingblock"
               }
             }
           }
@@ -964,7 +964,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/note"
+                "$ref": "#/definitions/log"
               }
             }
           }
@@ -1002,7 +1002,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/note"
+                "$ref": "#/definitions/log"
               }
             }
           }
