@@ -52,12 +52,9 @@ overview: true
         addApiKeyAuthorization();
       });
 
-      // if you have an apiKey you would like to pre-populate on the page for demonstration purposes...
-      /*
-        var apiKey = "myApiKeyXXXX123456789";
-        $('#input_apiKey').val(apiKey);
-        addApiKeyAuthorization();
-      */
+        var appid = "5ed48098";
+        $('#appid').val(appid);
+        addApiKeyAuthorization();     
 
       window.swaggerUi.load();
   });
