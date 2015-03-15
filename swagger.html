@@ -39,32 +39,8 @@ overview: true
         sorter : "alpha"
       });
 
-      function addApiKeyAuthorization() {
-        var key = $('#input_apiKey')[0].value;
-        log("key: " + key);
-        if(key && key.trim() != "") {
-            log("added key " + key);
-            window.authorizations.add("api_key", new ApiKeyAuthorization("api_key", key, "query"));
-        }
-      }
-
-      $('#input_apiKey').change(function() {
-        addApiKeyAuthorization();
-      });
-
-       // var appid = "5ed48098";
-        //$('#appid').val(appid);
-        //addApiKeyAuthorization();     
-
       window.swaggerUi.load();
-		      
-		var boxes = document.getElementsByTagName("INPUT");
-		console.log('doing123');
-		console.log(boxes);
-		$.each(boxes, function(box) {
-			 console.log('--');
-			 console.log(box);  
-     	});   
+		        
   });
   </script>  
 
