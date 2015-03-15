@@ -22,6 +22,20 @@
         "operationId": "getAPIs",
         "parameters": [
           {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          },                  
+          {
             "name": "query",
             "in": "query",
             "description": "a text query to search across APIs",
@@ -49,6 +63,20 @@
         "description": "add a new api",
         "operationId": "addAPI",
         "parameters": [
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          },        
           {
             "name": "name",
             "in": "query",
@@ -107,7 +135,21 @@
             "required": true,
             "type": "integer",
             "format": "id"
-          }
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          }          
         ],
         "responses": {
           "200": {
@@ -136,7 +178,21 @@
             "required": true,
             "type": "integer",
             "format": "id"
-          },          
+          },   
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          },                 
           {
             "name": "name",
             "in": "query",
@@ -192,7 +248,21 @@
             "description": "id for the API",
             "required": true,
             "type": "string"
-          }
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          }          
         ],
         "responses": {
           "200": {
@@ -223,7 +293,21 @@
             "required": true,
             "type": "integer",
             "format": "id"
-          }
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          }          
         ],
         "responses": {
           "200": {
@@ -252,7 +336,21 @@
             "required": true,
             "type": "integer",
             "format": "id"
-          },          
+          },   
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          },                 
           {
             "name": "tag",
             "in": "query",
@@ -291,6 +389,20 @@
             "type": "string"
           },
           {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          },          
+          {
             "name": "tag",
             "in": "path",
             "description": "tag to remove from API",
@@ -327,7 +439,21 @@
             "required": true,
             "type": "integer",
             "format": "id"
-          }
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          }          
         ],
         "responses": {
           "200": {
@@ -357,6 +483,20 @@
             "type": "integer",
             "format": "id"
           },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          },          
           {
             "name": "type",
             "in": "query",
@@ -402,6 +542,20 @@
             "type": "string"
           },
           {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          },          
+          {
             "name": "note_id",
             "in": "path",
             "description": "id for the note",
@@ -438,7 +592,21 @@
             "required": true,
             "type": "integer",
             "format": "id"
-          }
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          }          
         ],
         "responses": {
           "200": {
@@ -468,6 +636,20 @@
             "type": "integer",
             "format": "id"
           },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          },          
           {
             "name": "type",
             "in": "query",
@@ -520,6 +702,20 @@
             "type": "string"
           },
           {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          },          
+          {
             "name": "url_id",
             "in": "path",
             "description": "id for the url",
@@ -556,7 +752,21 @@
             "required": true,
             "type": "integer",
             "format": "id"
-          }
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          }          
         ],
         "responses": {
           "200": {
@@ -586,6 +796,20 @@
             "type": "integer",
             "format": "id"
           },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          },          
           {
             "name": "name",
             "in": "query",
@@ -638,6 +862,20 @@
             "type": "string"
           },
           {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          },          
+          {
             "name": "image_id",
             "in": "path",
             "description": "id for the image",
@@ -674,7 +912,21 @@
             "required": true,
             "type": "integer",
             "format": "id"
-          }
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          }          
         ],
         "responses": {
           "200": {
@@ -704,6 +956,20 @@
             "type": "integer",
             "format": "id"
           },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          },          
           {
             "name": "name",
             "in": "query",
@@ -756,6 +1022,20 @@
             "type": "string"
           },
           {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          },          
+          {
             "name": "screenshot_id",
             "in": "path",
             "description": "id for the screenshot",
@@ -792,7 +1072,21 @@
             "required": true,
             "type": "integer",
             "format": "id"
-          }
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          }          
         ],
         "responses": {
           "200": {
@@ -822,6 +1116,20 @@
             "type": "integer",
             "format": "id"
           },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          },          
           {
             "name": "building_block_api",
             "in": "query",
@@ -881,6 +1189,20 @@
             "type": "string"
           },
           {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          },          
+          {
             "name": "buildingblock_id",
             "in": "path",
             "description": "id for the building block",
@@ -917,7 +1239,21 @@
             "required": true,
             "type": "integer",
             "format": "id"
-          }
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          }          
         ],
         "responses": {
           "200": {
@@ -947,6 +1283,20 @@
             "type": "integer",
             "format": "id"
           },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          },          
           {
             "name": "type",
             "in": "query",
@@ -998,6 +1348,20 @@
             "required": true,
             "type": "string"
           },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          },          
           {
             "name": "log_id",
             "in": "path",
