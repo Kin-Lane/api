@@ -25,7 +25,7 @@
             "name": "query",
             "in": "query",
             "description": "a text query to search across APIs",
-            "required": true,
+            "required": "true",
             "type": "string"
           }
         ],
@@ -53,28 +53,28 @@
             "name": "name",
             "in": "query",
             "description": "name of the API",
-            "required": true,
+            "required": "true",
             "type": "string"
           },
           {
             "name": "about",
             "in": "query",
             "description": "details about the API",
-            "required": true,
+            "required": "true",
             "type": "string"
           },
           {
             "name": "rank",
             "in": "query",
             "description": "ranking of API",
-            "required": true,
+            "required": "true",
             "type": "string"
           },
           {
             "name": "organization_id",
             "in": "query",
             "description": "organization ID for the API",
-            "required": true,
+            "required": "true",
             "type": "string"
           }
         ],
@@ -134,28 +134,28 @@
             "name": "name",
             "in": "query",
             "description": "name of the API",
-            "required": true,
+            "required": "true",
             "type": "string"
           },
           {
             "name": "about",
             "in": "query",
             "description": "details about the API",
-            "required": true,
+            "required": "true",
             "type": "string"
           },
           {
             "name": "rank",
             "in": "query",
             "description": "ranking of API",
-            "required": true,
+            "required": "true",
             "type": "string"
           },
           {
             "name": "organization_id",
             "in": "query",
             "description": "organization ID for the API",
-            "required": true,
+            "required": "true",
             "type": "string"
           }
         ],
@@ -183,7 +183,7 @@
             "name": "api_id",
             "in": "path",
             "description": "id for the API",
-            "required": true,
+            "required": "true",
             "type": "string"
           }
         ],
@@ -242,7 +242,7 @@
             "name": "tag",
             "in": "query",
             "description": "tag name",
-            "required": true,
+            "required": "true",
             "type": "string"
           }
         ],
@@ -272,14 +272,14 @@
             "name": "api_id",
             "in": "path",
             "description": "id for the API",
-            "required": true,
+            "required": "true",
             "type": "string"
           },
           {
             "name": "tag",
             "in": "path",
             "description": "tag to remove from API",
-            "required": true,
+            "required": "true",
             "type": "string"
           }
         ],
@@ -347,14 +347,14 @@
             "name": "type",
             "in": "query",
             "description": "type of the note",
-            "required": true,
+            "required": "true",
             "type": "string"
           },
           {
             "name": "note",
             "in": "query",
             "description": "the full text of note",
-            "required": true,
+            "required": "true",
             "type": "string"
           }
         ],
@@ -385,14 +385,14 @@
             "name": "api_id",
             "in": "path",
             "description": "id for the API",
-            "required": true,
+            "required": "true",
             "type": "string"
           },
           {
             "name": "note_id",
             "in": "path",
             "description": "id for the note",
-            "required": true,
+            "required": "true",
             "type": "string"
           }
         ],
@@ -459,21 +459,21 @@
             "name": "type",
             "in": "query",
             "description": "type of url",
-            "required": true,
+            "required": "true",
             "type": "string"
           },
           {
             "name": "url",
             "in": "query",
             "description": "the url",
-            "required": true,
+            "required": "true",
             "type": "string"
           },
           {
             "name": "name",
             "in": "query",
             "description": "a name for the url",
-            "required": true,
+            "required": "true",
             "type": "string"
           }
         ],
@@ -503,14 +503,14 @@
             "name": "api_id",
             "in": "path",
             "description": "id for the api item",
-            "required": true,
+            "required": "true",
             "type": "string"
           },
           {
             "name": "url_ID",
             "in": "path",
             "description": "id for the url",
-            "required": true,
+            "required": "true",
             "type": "string"
           }
         ],
@@ -577,21 +577,21 @@
             "name": "name",
             "in": "query",
             "description": "name of the image",
-            "required": true,
+            "required": "true",
             "type": "string"
           },
           {
             "name": "path",
             "in": "query",
             "description": "path of the image",
-            "required": true,
+            "required": "true",
             "type": "string"
           },
           {
             "name": "type",
             "in": "query",
             "description": "type of image",
-            "required": true,
+            "required": "true",
             "type": "string"
           }
         ],
@@ -621,14 +621,14 @@
             "name": "api_id",
             "in": "path",
             "description": "id for the API",
-            "required": true,
+            "required": "true",
             "type": "string"
           },
           {
             "name": "image_id",
             "in": "path",
             "description": "id for the image",
-            "required": true,
+            "required": "true",
             "type": "string"
           }
         ],
@@ -695,21 +695,21 @@
             "name": "name",
             "in": "query",
             "description": "name of the screenshot",
-            "required": true,
+            "required": "true",
             "type": "string"
           },
           {
             "name": "path",
             "in": "query",
             "description": "path of the screenshot",
-            "required": true,
+            "required": "true",
             "type": "string"
           },
           {
             "name": "type",
             "in": "query",
             "description": "type of screenshot",
-            "required": true,
+            "required": "true",
             "type": "string"
           }
         ],
@@ -739,14 +739,14 @@
             "name": "api_id",
             "in": "path",
             "description": "id for the API",
-            "required": true,
+            "required": "true",
             "type": "string"
           },
           {
             "name": "screenshot_id",
             "in": "path",
             "description": "id for the screenshot",
-            "required": true,
+            "required": "true",
             "type": "string"
           }
         ],
@@ -865,14 +865,14 @@
             "name": "api_id",
             "in": "path",
             "description": "id for the API",
-            "required": true,
+            "required": "true",
             "type": "string"
           },
           {
             "name": "buildingblock_id",
             "in": "path",
             "description": "id for the building block",
-            "required": true,
+            "required": "true",
             "type": "string"
           }
         ],
@@ -985,14 +985,14 @@
             "name": "api_id",
             "in": "path",
             "description": "id for the api item",
-            "required": true,
+            "required": "true",
             "type": "string"
           },
           {
             "name": "log_id",
             "in": "path",
             "description": "id for the log",
-            "required": true,
+            "required": "true",
             "type": "string"
           }
         ],
