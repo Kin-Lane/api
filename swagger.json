@@ -41,7 +41,7 @@
           }
         },
         "tags": [
-          "api"
+          "API"
         ]
       },
       "post": {
@@ -90,8 +90,7 @@
           }
         },
         "tags": [
-          "api",
-          "links"
+          "API"
         ]
       }
     },
@@ -179,7 +178,7 @@
           }
         },
         "tags": [
-          "api"
+          "API"
         ]
       },
       "delete": {
@@ -207,7 +206,7 @@
           }
         },
         "tags": [
-          "api"
+          "API"
         ]
       }
     },
@@ -238,7 +237,7 @@
           }
         },
         "tags": [
-          "api"
+          "Tags"
         ]
       },
       "post": {
@@ -274,7 +273,7 @@
           }
         },
         "tags": [
-          "api"
+          "Tags"
         ]
       }
     },
@@ -311,8 +310,7 @@
           }
         },
         "tags": [
-          "api",
-          "tags"
+          "Tags"
         ]
       }
     },
@@ -343,7 +341,7 @@
           }
         },
         "tags": [
-          "api"
+          "Notes"
         ]
       },
       "post": {
@@ -386,8 +384,7 @@
           }
         },
         "tags": [
-          "api",
-          "notes"
+          "Notes"
         ]
       }
     },
@@ -424,7 +421,7 @@
           }
         },
         "tags": [
-          "api"
+          "Notes"
         ]
       }
     },
@@ -455,7 +452,7 @@
           }
         },
         "tags": [
-          "url"
+          "URLs"
         ]
       },
       "post": {
@@ -505,7 +502,7 @@
           }
         },
         "tags": [
-          "url"
+          "URLs"
         ]
       }
     },
@@ -542,7 +539,7 @@
           }
         },
         "tags": [
-          "url"
+          "URLs"
         ]
       }
     },
@@ -573,7 +570,7 @@
           }
         },
         "tags": [
-          "api"
+          "Images"
         ]
       },
       "post": {
@@ -623,7 +620,7 @@
           }
         },
         "tags": [
-          "image"
+          "Images"
         ]
       }
     },
@@ -660,7 +657,7 @@
           }
         },
         "tags": [
-          "api"
+          "Images"
         ]
       }
     },
@@ -691,7 +688,7 @@
           }
         },
         "tags": [
-          "api"
+          "Screenshots"
         ]
       },
       "post": {
@@ -741,7 +738,7 @@
           }
         },
         "tags": [
-          "screenshot"
+          "Screenshots"
         ]
       }
     },
@@ -778,7 +775,7 @@
           }
         },
         "tags": [
-          "api"
+          "Screenshots"
         ]
       }
     },
@@ -809,7 +806,7 @@
           }
         },
         "tags": [
-          "api"
+          "Building Blocks"
         ]
       },
       "post": {
@@ -866,8 +863,7 @@
           }
         },
         "tags": [
-          "api",
-          "building blocks"
+          "Building Blocks"
         ]
       }
     },
@@ -904,8 +900,7 @@
           }
         },
         "tags": [
-          "api",
-          "building blocks"
+          "Building Blocks"
         ]
       }
     },
@@ -936,7 +931,7 @@
           }
         },
         "tags": [
-          "api"
+          "Logs"
         ]
       },
       "post": {
@@ -986,8 +981,7 @@
           }
         },
         "tags": [
-          "api",
-          "notes"
+          "Logs"
         ]
       }
     },
@@ -1024,7 +1018,7 @@
           }
         },
         "tags": [
-          "api"
+          "Logs"
         ]
       }
     }
