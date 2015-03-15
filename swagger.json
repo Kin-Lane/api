@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "API",
-    "description": "This is my API for tracking on APIs.",
+    "description": "This is my API for tracking on APIs across the API space. I try to track on all details about the APIs I'm monitoring including their profile, Twitter, Github, blogs, etc.",
     "termsOfService": "http://kinlane.com/terms-of-service.html",
     "version": "v1"
   },
@@ -96,7 +96,7 @@
     },
     "/api/{api_id}": {
       "get": {
-        "summary": "Retrieve a API",
+        "summary": "retrieve an API",
         "description": "Returns an API using its ID",
         "operationId": "getAPI",
         "parameters": [
@@ -125,7 +125,7 @@
         ]
       },
       "put": {
-        "summary": "Updated API Item",
+        "summary": "update an API",
         "description": "Updated API Item",
         "operationId": "updateAPI",
         "parameters": [
@@ -182,7 +182,7 @@
         ]
       },
       "delete": {
-        "summary": "delete a API",
+        "summary": "delete an API",
         "description": "deletes an API",
         "operationId": "deleteAPI",
         "parameters": [
@@ -212,7 +212,7 @@
     },
     "/api/{api_id}/tags/": {
       "get": {
-        "summary": "API Tags",
+        "summary": "retrieve API tags",
         "description": "Returns the tags for an API",
         "operationId": "getAPITags",
         "parameters": [
@@ -241,7 +241,7 @@
         ]
       },
       "post": {
-        "summary": "add tag",
+        "summary": "add tag to API",
         "description": "add tag for API",
         "operationId": "addAPITag",
         "parameters": [
@@ -279,7 +279,7 @@
     },
     "/api/{api_id}/tags/{tag}": {
       "delete": {
-        "summary": "delete a api tag",
+        "summary": "delete an API tag",
         "description": "deletes a tag applied to API",
         "operationId": "deleteAPITag",
         "parameters": [
@@ -316,7 +316,7 @@
     },
     "/api/{api_id}/notes/": {
       "get": {
-        "summary": "Retrieve API notes",
+        "summary": "retrieve an APIs notes",
         "description": "Returns the notes for an API",
         "operationId": "getAPINotes",
         "parameters": [
@@ -345,7 +345,7 @@
         ]
       },
       "post": {
-        "summary": "Add API Note",
+        "summary": "add an API note",
         "description": "Add a note for the API",
         "operationId": "addAPINote",
         "parameters": [
@@ -390,7 +390,7 @@
     },
     "/api/{api_id}/notes/{note_id}": {
       "delete": {
-        "summary": "Delete API Note",
+        "summary": "delete an API note",
         "description": "Deletes a note for a API",
         "operationId": "deleteAPINote",
         "parameters": [
@@ -427,7 +427,7 @@
     },
     "/api/{api_id}/urls/": {
       "get": {
-        "summary": "Retrieve API URLs",
+        "summary": "retrieve an APIs URLs",
         "description": "Returns the URLs for an API",
         "operationId": "getAPIURLs",
         "parameters": [
@@ -456,7 +456,7 @@
         ]
       },
       "post": {
-        "summary": "Add API URL",
+        "summary": "add an API URL",
         "description": "Add a URL for the API",
         "operationId": "addAPIURL",
         "parameters": [
@@ -508,7 +508,7 @@
     },
     "/api/{api_id}/urls/{url_id}": {
       "delete": {
-        "summary": "Delete API URL",
+        "summary": "delete an API URL",
         "description": "Deletes a URL for an API",
         "operationId": "deleteAPIURL",
         "parameters": [
@@ -545,7 +545,7 @@
     },
     "/api/{api_id}/images/": {
       "get": {
-        "summary": "Retrieve API images",
+        "summary": "retrieve an APIs images",
         "description": "Returns the images for an API",
         "operationId": "getAPIImages",
         "parameters": [
@@ -574,7 +574,7 @@
         ]
       },
       "post": {
-        "summary": "Add API Image",
+        "summary": "add an API image",
         "description": "Add an image for the API",
         "operationId": "addAPIImage",
         "parameters": [
@@ -626,7 +626,7 @@
     },
     "/api/{api_id}/images/{image_id}": {
       "delete": {
-        "summary": "Delete API Image",
+        "summary": "delete an API image",
         "description": "Deletes an image for an API",
         "operationId": "deleteAPIImage",
         "parameters": [
@@ -663,7 +663,7 @@
     },
     "/api/{api_id}/screenshots/": {
       "get": {
-        "summary": "Retrieve API Screenshot",
+        "summary": "retrieve API screenshots",
         "description": "Returns the screenshots for an API",
         "operationId": "getAPIScreenshots",
         "parameters": [
@@ -692,7 +692,7 @@
         ]
       },
       "post": {
-        "summary": "Add API Screenshot",
+        "summary": "add an API screenshot",
         "description": "Add a screenshot for the API",
         "operationId": "addAPIScreenshot",
         "parameters": [
@@ -744,7 +744,7 @@
     },
     "/api/{api_id}/screenshots/{screenshot_id}": {
       "delete": {
-        "summary": "Delete API Screenshot",
+        "summary": "delete an API screenshot",
         "description": "Deletes a screenshot for an API",
         "operationId": "deleteAPIScreenshot",
         "parameters": [
@@ -781,7 +781,7 @@
     },
     "/api/{api_id}/buildingblocks/": {
       "get": {
-        "summary": "Retrieve API Building Blocks",
+        "summary": "retrieve an APIs building blocks",
         "description": "Returns the building blocks for an API",
         "operationId": "getAPINotes",
         "parameters": [
@@ -810,7 +810,7 @@
         ]
       },
       "post": {
-        "summary": "Add API Building Block",
+        "summary": "add an API building block",
         "description": "Add a building block for an API",
         "operationId": "addAPIBuildingBlock",
         "parameters": [
@@ -869,7 +869,7 @@
     },
     "/api/{api_id}/buildingblocks/{buildingblock_id}": {
       "delete": {
-        "summary": "Delete API Building Block",
+        "summary": "delete an API building block",
         "description": "Deletes a building block for an API",
         "operationId": "deleteAPINot",
         "parameters": [
@@ -906,7 +906,7 @@
     },
     "/api/{api_id}/logs/": {
       "get": {
-        "summary": "Retrieve API Logs",
+        "summary": "retrieve an APIs logs",
         "description": "Returns the logs for a API",
         "operationId": "getAPILogs",
         "parameters": [
@@ -935,7 +935,7 @@
         ]
       },
       "post": {
-        "summary": "Add API Log",
+        "summary": "add an API log",
         "description": "Add a note for the api item",
         "operationId": "addAPINote",
         "parameters": [
@@ -987,7 +987,7 @@
     },
     "/api/{api_id}/logs/{log_id}": {
       "delete": {
-        "summary": "Delete API Log",
+        "summary": "delete an API log",
         "description": "Deletes a log for an API",
         "operationId": "deleteAPINot",
         "parameters": [
