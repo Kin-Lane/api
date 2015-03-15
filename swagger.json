@@ -122,7 +122,7 @@
         ]
       }
     },
-    "/api/{api_id}": {
+    "/api/{api_id}/": {
       "get": {
         "summary": "retrieve an API",
         "description": "Returns an API using its ID",
