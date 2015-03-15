@@ -58,10 +58,11 @@ overview: true
 
       window.swaggerUi.load();
 		      
-		var boxes = document.getElementsByTagName("input");
+		var boxes = document.getElementsByTagName("INPUT");
 		
 		for(var i = 0; i < boxes.length; i++)
-			{		
+			{	
+			console.log('--');	
 			console.log(boxes[i].name);
 			};    
       
