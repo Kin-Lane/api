@@ -15,7 +15,7 @@
     "apilication/json"
   ],
   "paths": {
-    "api/": {
+    "/api/": {
       "get": {
         "summary": "retrieves all apis",
         "description": "pulls all apis w/ filter by keyword",
@@ -25,7 +25,7 @@
             "name": "query",
             "in": "query",
             "description": "a text query to search across APIs",
-            "required": "true",
+            "required": true,
             "type": "string"
           }
         ],
@@ -53,28 +53,28 @@
             "name": "name",
             "in": "query",
             "description": "name of the API",
-            "required": "true",
+            "required": true,
             "type": "string"
           },
           {
             "name": "about",
             "in": "query",
             "description": "details about the API",
-            "required": "true",
+            "required": true,
             "type": "string"
           },
           {
             "name": "rank",
             "in": "query",
             "description": "ranking of API",
-            "required": "true",
+            "required": true,
             "type": "string"
           },
           {
             "name": "organization_id",
             "in": "query",
             "description": "organization ID for the API",
-            "required": "true",
+            "required": true,
             "type": "string"
           }
         ],
@@ -95,7 +95,7 @@
         ]
       }
     },
-    "api/{api_id}": {
+    "/api/{api_id}": {
       "get": {
         "summary": "Retrieve a API",
         "description": "Returns an API using its ID",
@@ -105,7 +105,7 @@
             "name": "api_id",
             "in": "path",
             "description": "id for the API",
-            "required": "true",
+            "required": true,
             "type": "integer",
             "format": "id"
           }
@@ -122,7 +122,7 @@
           }
         },
         "tags": [
-          "api"
+          "API"
         ]
       },
       "put": {
@@ -131,31 +131,39 @@
         "operationId": "updateAPI",
         "parameters": [
           {
+            "name": "api_id",
+            "in": "path",
+            "description": "id for the API",
+            "required": true,
+            "type": "integer",
+            "format": "id"
+          },          
+          {
             "name": "name",
             "in": "query",
             "description": "name of the API",
-            "required": "true",
+            "required": true,
             "type": "string"
           },
           {
             "name": "about",
             "in": "query",
             "description": "details about the API",
-            "required": "true",
+            "required": true,
             "type": "string"
           },
           {
             "name": "rank",
             "in": "query",
             "description": "ranking of API",
-            "required": "true",
+            "required": true,
             "type": "string"
           },
           {
             "name": "organization_id",
             "in": "query",
             "description": "organization ID for the API",
-            "required": "true",
+            "required": true,
             "type": "string"
           }
         ],
@@ -183,7 +191,7 @@
             "name": "api_id",
             "in": "path",
             "description": "id for the API",
-            "required": "true",
+            "required": true,
             "type": "string"
           }
         ],
@@ -203,7 +211,7 @@
         ]
       }
     },
-    "api/{api_id}/tags/": {
+    "/api/{api_id}/tags/": {
       "get": {
         "summary": "API Tags",
         "description": "Returns the tags for an API",
@@ -213,7 +221,7 @@
             "name": "api_id",
             "in": "path",
             "description": "id for API",
-            "required": "true",
+            "required": true,
             "type": "integer",
             "format": "id"
           }
@@ -239,10 +247,18 @@
         "operationId": "addAPITag",
         "parameters": [
           {
+            "name": "api_id",
+            "in": "path",
+            "description": "id for the API",
+            "required": true,
+            "type": "integer",
+            "format": "id"
+          },          
+          {
             "name": "tag",
             "in": "query",
             "description": "tag name",
-            "required": "true",
+            "required": true,
             "type": "string"
           }
         ],
@@ -262,7 +278,7 @@
         ]
       }
     },
-    "api/{api_id}/tags/{tag}": {
+    "/api/{api_id}/tags/{tag}": {
       "delete": {
         "summary": "delete a api tag",
         "description": "deletes a tag applied to API",
@@ -272,14 +288,14 @@
             "name": "api_id",
             "in": "path",
             "description": "id for the API",
-            "required": "true",
+            "required": true,
             "type": "string"
           },
           {
             "name": "tag",
             "in": "path",
             "description": "tag to remove from API",
-            "required": "true",
+            "required": true,
             "type": "string"
           }
         ],
@@ -300,7 +316,7 @@
         ]
       }
     },
-    "api/{api_id}/notes/": {
+    "/api/{api_id}/notes/": {
       "get": {
         "summary": "Retrieve API notes",
         "description": "Returns the notes for an API",
@@ -310,7 +326,7 @@
             "name": "api_id",
             "in": "path",
             "description": "id for the API",
-            "required": "true",
+            "required": true,
             "type": "integer",
             "format": "id"
           }
@@ -339,7 +355,7 @@
             "name": "api_id",
             "in": "path",
             "description": "id for the api item",
-            "required": "true",
+            "required": true,
             "type": "integer",
             "format": "id"
           },
@@ -347,14 +363,14 @@
             "name": "type",
             "in": "query",
             "description": "type of the note",
-            "required": "true",
+            "required": true,
             "type": "string"
           },
           {
             "name": "note",
             "in": "query",
             "description": "the full text of note",
-            "required": "true",
+            "required": true,
             "type": "string"
           }
         ],
@@ -375,7 +391,7 @@
         ]
       }
     },
-    "api/{api_id}/notes/{note_id}": {
+    "/api/{api_id}/notes/{note_id}": {
       "delete": {
         "summary": "Delete API Note",
         "description": "Deletes a note for a API",
@@ -385,14 +401,14 @@
             "name": "api_id",
             "in": "path",
             "description": "id for the API",
-            "required": "true",
+            "required": true,
             "type": "string"
           },
           {
             "name": "note_id",
             "in": "path",
             "description": "id for the note",
-            "required": "true",
+            "required": true,
             "type": "string"
           }
         ],
@@ -412,7 +428,7 @@
         ]
       }
     },
-    "api/{api_id}/urls/": {
+    "/api/{api_id}/urls/": {
       "get": {
         "summary": "Retrieve API URLs",
         "description": "Returns the URLs for an API",
@@ -422,7 +438,7 @@
             "name": "api_id",
             "in": "path",
             "description": "id for the API",
-            "required": "true",
+            "required": true,
             "type": "integer",
             "format": "id"
           }
@@ -451,7 +467,7 @@
             "name": "api_id",
             "in": "path",
             "description": "id for the API",
-            "required": "true",
+            "required": true,
             "type": "integer",
             "format": "id"
           },
@@ -459,21 +475,21 @@
             "name": "type",
             "in": "query",
             "description": "type of url",
-            "required": "true",
+            "required": true,
             "type": "string"
           },
           {
             "name": "url",
             "in": "query",
             "description": "the url",
-            "required": "true",
+            "required": true,
             "type": "string"
           },
           {
             "name": "name",
             "in": "query",
             "description": "a name for the url",
-            "required": "true",
+            "required": true,
             "type": "string"
           }
         ],
@@ -493,7 +509,7 @@
         ]
       }
     },
-    "api/{api_id}/urls/{url_id}": {
+    "/api/{api_id}/urls/{url_id}": {
       "delete": {
         "summary": "Delete API URL",
         "description": "Deletes a URL for an API",
@@ -503,14 +519,14 @@
             "name": "api_id",
             "in": "path",
             "description": "id for the api item",
-            "required": "true",
+            "required": true,
             "type": "string"
           },
           {
-            "name": "url_ID",
+            "name": "url_id",
             "in": "path",
             "description": "id for the url",
-            "required": "true",
+            "required": true,
             "type": "string"
           }
         ],
@@ -530,7 +546,7 @@
         ]
       }
     },
-    "api/{api_id}/images/": {
+    "/api/{api_id}/images/": {
       "get": {
         "summary": "Retrieve API images",
         "description": "Returns the images for an API",
@@ -540,7 +556,7 @@
             "name": "api_id",
             "in": "path",
             "description": "id for the API",
-            "required": "true",
+            "required": true,
             "type": "integer",
             "format": "id"
           }
@@ -569,7 +585,7 @@
             "name": "api_id",
             "in": "path",
             "description": "id for the API",
-            "required": "true",
+            "required": true,
             "type": "integer",
             "format": "id"
           },
@@ -577,21 +593,21 @@
             "name": "name",
             "in": "query",
             "description": "name of the image",
-            "required": "true",
+            "required": true,
             "type": "string"
           },
           {
             "name": "path",
             "in": "query",
             "description": "path of the image",
-            "required": "true",
+            "required": true,
             "type": "string"
           },
           {
             "name": "type",
             "in": "query",
             "description": "type of image",
-            "required": "true",
+            "required": true,
             "type": "string"
           }
         ],
@@ -611,7 +627,7 @@
         ]
       }
     },
-    "api/{api_id}/images/{image_id}": {
+    "/api/{api_id}/images/{image_id}": {
       "delete": {
         "summary": "Delete API Image",
         "description": "Deletes an image for an API",
@@ -621,14 +637,14 @@
             "name": "api_id",
             "in": "path",
             "description": "id for the API",
-            "required": "true",
+            "required": true,
             "type": "string"
           },
           {
             "name": "image_id",
             "in": "path",
             "description": "id for the image",
-            "required": "true",
+            "required": true,
             "type": "string"
           }
         ],
@@ -648,7 +664,7 @@
         ]
       }
     },
-    "api/{api_id}/screenshots/": {
+    "/api/{api_id}/screenshots/": {
       "get": {
         "summary": "Retrieve API Screenshot",
         "description": "Returns the screenshots for an API",
@@ -658,7 +674,7 @@
             "name": "api_id",
             "in": "path",
             "description": "id for the API",
-            "required": "true",
+            "required": true,
             "type": "integer",
             "format": "id"
           }
@@ -687,7 +703,7 @@
             "name": "api_id",
             "in": "path",
             "description": "id for the API",
-            "required": "true",
+            "required": true,
             "type": "integer",
             "format": "id"
           },
@@ -695,21 +711,21 @@
             "name": "name",
             "in": "query",
             "description": "name of the screenshot",
-            "required": "true",
+            "required": true,
             "type": "string"
           },
           {
             "name": "path",
             "in": "query",
             "description": "path of the screenshot",
-            "required": "true",
+            "required": true,
             "type": "string"
           },
           {
             "name": "type",
             "in": "query",
             "description": "type of screenshot",
-            "required": "true",
+            "required": true,
             "type": "string"
           }
         ],
@@ -729,7 +745,7 @@
         ]
       }
     },
-    "api/{api_id}/screenshots/{screenshot_id}": {
+    "/api/{api_id}/screenshots/{screenshot_id}": {
       "delete": {
         "summary": "Delete API Screenshot",
         "description": "Deletes a screenshot for an API",
@@ -739,14 +755,14 @@
             "name": "api_id",
             "in": "path",
             "description": "id for the API",
-            "required": "true",
+            "required": true,
             "type": "string"
           },
           {
             "name": "screenshot_id",
             "in": "path",
             "description": "id for the screenshot",
-            "required": "true",
+            "required": true,
             "type": "string"
           }
         ],
@@ -766,7 +782,7 @@
         ]
       }
     },
-    "api/{api_id}/buildingblocks/": {
+    "/api/{api_id}/buildingblocks/": {
       "get": {
         "summary": "Retrieve API Building Blocks",
         "description": "Returns the building blocks for an API",
@@ -776,7 +792,7 @@
             "name": "api_id",
             "in": "path",
             "description": "id for the API",
-            "required": "true",
+            "required": true,
             "type": "integer",
             "format": "id"
           }
@@ -805,7 +821,7 @@
             "name": "api_id",
             "in": "path",
             "description": "id for the API",
-            "required": "true",
+            "required": true,
             "type": "integer",
             "format": "id"
           },
@@ -813,28 +829,28 @@
             "name": "building_block_api",
             "in": "query",
             "description": "id for the building block",
-            "required": "true",
+            "required": true,
             "type": "integer"
           },
           {
             "name": "organization_id",
             "in": "query",
             "description": "id for the organization",
-            "required": "false",
+            "required": false,
             "type": "integer"
           },
           {
             "name": "tool_id",
             "in": "query",
             "description": "id for the tool",
-            "required": "false",
+            "required": false,
             "type": "integer"
           },
           {
             "name": "url",
             "in": "query",
             "description": "the url for the building block",
-            "required": "false",
+            "required": false,
             "type": "string"
           }
         ],
@@ -855,7 +871,7 @@
         ]
       }
     },
-    "api/{api_id}/buildingblocks/{buildingblock_id}": {
+    "/api/{api_id}/buildingblocks/{buildingblock_id}": {
       "delete": {
         "summary": "Delete API Building Block",
         "description": "Deletes a building block for an API",
@@ -865,14 +881,14 @@
             "name": "api_id",
             "in": "path",
             "description": "id for the API",
-            "required": "true",
+            "required": true,
             "type": "string"
           },
           {
             "name": "buildingblock_id",
             "in": "path",
             "description": "id for the building block",
-            "required": "true",
+            "required": true,
             "type": "string"
           }
         ],
@@ -893,7 +909,7 @@
         ]
       }
     },
-    "api/{api_id}/logs/": {
+    "/api/{api_id}/logs/": {
       "get": {
         "summary": "Retrieve API Logs",
         "description": "Returns the logs for a API",
@@ -903,7 +919,7 @@
             "name": "api_id",
             "in": "path",
             "description": "id for the API",
-            "required": "true",
+            "required": true,
             "type": "integer",
             "format": "id"
           }
@@ -932,7 +948,7 @@
             "name": "api_id",
             "in": "path",
             "description": "id for the api item",
-            "required": "true",
+            "required": true,
             "type": "integer",
             "format": "id"
           },
@@ -940,22 +956,22 @@
             "name": "type",
             "in": "query",
             "description": "type of log entry",
-            "required": "false",
+            "required": false,
             "type": "string"
           },
           {
             "name": "details",
             "in": "query",
             "description": "log details",
-            "required": "false",
+            "required": false,
             "type": "string"
           },
           {
             "name": "log_date",
             "in": "query",
             "description": "date of the log entry",
-            "required": "true",
-            "type": "date"
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {
@@ -975,7 +991,7 @@
         ]
       }
     },
-    "api/{api_id}/logs/{log_id}": {
+    "/api/{api_id}/logs/{log_id}": {
       "delete": {
         "summary": "Delete API Log",
         "description": "Deletes a log for an API",
@@ -985,14 +1001,14 @@
             "name": "api_id",
             "in": "path",
             "description": "id for the api item",
-            "required": "true",
+            "required": true,
             "type": "string"
           },
           {
             "name": "log_id",
             "in": "path",
             "description": "id for the log",
-            "required": "true",
+            "required": true,
             "type": "string"
           }
         ],
@@ -1050,7 +1066,7 @@
         },
         "original_date": {
           "description": "orignal date for the api item",
-          "type": "date",
+          "type": "string",
           "format": "datetime"
         },
         "author": {
@@ -1246,21 +1262,6 @@
         },
         "log_date": {
           "description": "log date",
-          "type": "string"
-        }
-      }
-    },
-    "errorModel": {
-      "required": [
-        "code",
-        "message"
-      ],
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
           "type": "string"
         }
       }
