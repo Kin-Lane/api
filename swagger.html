@@ -57,6 +57,14 @@ overview: true
         //addApiKeyAuthorization();     
 
       window.swaggerUi.load();
+		      
+		var boxes = document.getElementsByTagName("input");
+		
+		for(var i = 0; i < boxes.length; i++)
+			{		
+			console.log(boxes[i].name);
+			};    
+      
   });
   </script>  
 
