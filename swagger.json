@@ -2,8 +2,8 @@
   "swagger": "2.0",
   "info": {
     "title": "API",
-    "description": "This is a API API (mind blown)",
-    "termsOfService": "http://stack.network/terms-of-service.html",
+    "description": "This is my API for tracking on APIs.",
+    "termsOfService": "http://kinlane.com/terms-of-service.html",
     "version": "v1"
   },
   "host": "api.api.kinlane.com",
@@ -18,20 +18,20 @@
     "api/": {
       "get": {
         "summary": "retrieves all apis",
-        "description": "pulls all apis, with filter by keyword",
+        "description": "pulls all apis w/ filter by keyword",
         "operationId": "getAPIs",
         "parameters": [
           {
             "name": "query",
             "in": "query",
-            "description": "a text query to search across api",
+            "description": "a text query to search across APIs",
             "required": true,
             "type": "string"
           }
         ],
         "responses": {
           "200": {
-            "description": "api response",
+            "description": "API Response",
             "schema": {
               "type": "array",
               "items": {
@@ -41,8 +41,7 @@
           }
         },
         "tags": [
-          "api",
-          "apiging"
+          "api"
         ]
       },
       "post": {
@@ -53,35 +52,28 @@
           {
             "name": "name",
             "in": "query",
-            "description": "name of the api",
+            "description": "name of the API",
             "required": true,
             "type": "string"
           },
           {
-            "name": "description",
+            "name": "about",
             "in": "query",
-            "description": "description of the api",
+            "description": "details about the API",
             "required": true,
             "type": "string"
           },
           {
-            "name": "url",
+            "name": "rank",
             "in": "query",
-            "description": "url for the api",
+            "description": "ranking of API",
             "required": true,
             "type": "string"
           },
           {
-            "name": "baseurl",
+            "name": "organization_id",
             "in": "query",
-            "description": "baseurl for the api",
-            "required": true,
-            "type": "string"
-          },          
-          {
-            "name": "tags",
-            "in": "query",
-            "description": "tags for the api",
+            "description": "organization ID for the API",
             "required": true,
             "type": "string"
           }
@@ -99,20 +91,20 @@
         },
         "tags": [
           "api",
-          "apiging"
+          "links"
         ]
       }
     },
-    "api/{slug}": {
+    "api/{api_id}": {
       "get": {
-        "summary": "Retrieve a api using its slug",
-        "description": "Returns the api detail",
+        "summary": "Retrieve a API",
+        "description": "Returns an API using its ID",
         "operationId": "getAPI",
         "parameters": [
           {
-            "name": "slug",
+            "name": "api_id",
             "in": "path",
-            "description": "slug for the api, notice this is in the path, not a query variable",
+            "description": "id for the API",
             "required": "true",
             "type": "integer",
             "format": "id"
@@ -130,101 +122,893 @@
           }
         },
         "tags": [
-          "api",
-          "apiging"
+          "api"
         ]
       },
       "put": {
-        "summary": "update api",
-        "description": "update api",
+        "summary": "Updated API Item",
+        "description": "Updated API Item",
         "operationId": "updateAPI",
         "parameters": [
           {
-            "name": "slug",
-            "in": "path",
-            "description": "unique slug for the api",
-            "required": true,
-            "type": "string"
-          },
-          {
             "name": "name",
             "in": "query",
-            "description": "name of the api",
+            "description": "name of the API",
             "required": true,
             "type": "string"
           },
           {
-            "name": "description",
+            "name": "about",
             "in": "query",
-            "description": "description of the api",
+            "description": "details about the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "rank",
+            "in": "query",
+            "description": "ranking of API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "description": "organization ID for the API",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/api"
+              }
+            }
+          }
+        },
+        "tags": [
+          "api"
+        ]
+      },
+      "delete": {
+        "summary": "delete a API",
+        "description": "deletes an API",
+        "operationId": "deleteAPI",
+        "parameters": [
+          {
+            "name": "api_id",
+            "in": "path",
+            "description": "id for the API",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "api response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/api"
+              }
+            }
+          }
+        },
+        "tags": [
+          "api"
+        ]
+      }
+    },
+    "api/{api_id}/tags/": {
+      "get": {
+        "summary": "API Tags",
+        "description": "Returns the tags for an API",
+        "operationId": "getAPITags",
+        "parameters": [
+          {
+            "name": "api_id",
+            "in": "path",
+            "description": "id for API",
+            "required": "true",
+            "type": "integer",
+            "format": "id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API Tags Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/tag"
+              }
+            }
+          }
+        },
+        "tags": [
+          "api"
+        ]
+      },
+      "post": {
+        "summary": "add tag",
+        "description": "add tag for API",
+        "operationId": "addAPITag",
+        "parameters": [
+          {
+            "name": "tag",
+            "in": "query",
+            "description": "tag name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "api response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/tag"
+              }
+            }
+          }
+        },
+        "tags": [
+          "api"
+        ]
+      }
+    },
+    "api/{api_id}/tags/{tag}": {
+      "delete": {
+        "summary": "delete a api tag",
+        "description": "deletes a tag applied to API",
+        "operationId": "deleteAPITag",
+        "parameters": [
+          {
+            "name": "api_id",
+            "in": "path",
+            "description": "id for the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "tag",
+            "in": "path",
+            "description": "tag to remove from API",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API Tag Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/tag"
+              }
+            }
+          }
+        },
+        "tags": [
+          "api",
+          "tags"
+        ]
+      }
+    },
+    "api/{api_id}/notes/": {
+      "get": {
+        "summary": "Retrieve API notes",
+        "description": "Returns the notes for an API",
+        "operationId": "getAPINotes",
+        "parameters": [
+          {
+            "name": "api_id",
+            "in": "path",
+            "description": "id for the API",
+            "required": "true",
+            "type": "integer",
+            "format": "id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API Notes Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/note"
+              }
+            }
+          }
+        },
+        "tags": [
+          "api"
+        ]
+      },
+      "post": {
+        "summary": "Add API Note",
+        "description": "Add a note for the API",
+        "operationId": "addAPINote",
+        "parameters": [
+          {
+            "name": "api_id",
+            "in": "path",
+            "description": "id for the api item",
+            "required": "true",
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "type of the note",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "note",
+            "in": "query",
+            "description": "the full text of note",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API Note Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/note"
+              }
+            }
+          }
+        },
+        "tags": [
+          "api",
+          "notes"
+        ]
+      }
+    },
+    "api/{api_id}/notes/{note_id}": {
+      "delete": {
+        "summary": "Delete API Note",
+        "description": "Deletes a note for a API",
+        "operationId": "deleteAPINote",
+        "parameters": [
+          {
+            "name": "api_id",
+            "in": "path",
+            "description": "id for the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "note_id",
+            "in": "path",
+            "description": "id for the note",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API Note Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/note"
+              }
+            }
+          }
+        },
+        "tags": [
+          "api"
+        ]
+      }
+    },
+    "api/{api_id}/urls/": {
+      "get": {
+        "summary": "Retrieve API URLs",
+        "description": "Returns the URLs for an API",
+        "operationId": "getAPIURLs",
+        "parameters": [
+          {
+            "name": "api_id",
+            "in": "path",
+            "description": "id for the API",
+            "required": "true",
+            "type": "integer",
+            "format": "id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API URL Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/url"
+              }
+            }
+          }
+        },
+        "tags": [
+          "url"
+        ]
+      },
+      "post": {
+        "summary": "Add API URL",
+        "description": "Add a URL for the API",
+        "operationId": "addAPIURL",
+        "parameters": [
+          {
+            "name": "api_id",
+            "in": "path",
+            "description": "id for the API",
+            "required": "true",
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "type of url",
             "required": true,
             "type": "string"
           },
           {
             "name": "url",
             "in": "query",
-            "description": "url for the api",
+            "description": "the url",
             "required": true,
             "type": "string"
           },
           {
-            "name": "baseurl",
+            "name": "name",
             "in": "query",
-            "description": "base url for the api",
-            "required": true,
-            "type": "string"
-          },          
-          {
-            "name": "tags",
-            "in": "query",
-            "description": "tags for the api",
+            "description": "a name for the url",
             "required": true,
             "type": "string"
           }
         ],
         "responses": {
           "200": {
-            "description": "api response",
+            "description": "API URL Response",
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/api"
+                "$ref": "#/definitions/url"
               }
             }
           }
         },
         "tags": [
-          "api",
-          "apiging"
+          "url"
         ]
-      },
+      }
+    },
+    "api/{api_id}/urls/{url_id}": {
       "delete": {
-        "summary": "delete api",
-        "description": "deletes an api",
-        "operationId": "deleteAPI",
+        "summary": "Delete API URL",
+        "description": "Deletes a URL for an API",
+        "operationId": "deleteAPIURL",
         "parameters": [
           {
-            "name": "slug",
+            "name": "api_id",
             "in": "path",
-            "description": "unique slug for the api",
+            "description": "id for the api item",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "url_ID",
+            "in": "path",
+            "description": "id for the url",
             "required": true,
             "type": "string"
           }
         ],
         "responses": {
           "200": {
-            "description": "api response",
+            "description": "API URL Response",
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/api"
+                "$ref": "#/definitions/url"
+              }
+            }
+          }
+        },
+        "tags": [
+          "url"
+        ]
+      }
+    },
+    "api/{api_id}/images/": {
+      "get": {
+        "summary": "Retrieve API images",
+        "description": "Returns the images for an API",
+        "operationId": "getAPIImages",
+        "parameters": [
+          {
+            "name": "api_id",
+            "in": "path",
+            "description": "id for the API",
+            "required": "true",
+            "type": "integer",
+            "format": "id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API Image Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/image"
+              }
+            }
+          }
+        },
+        "tags": [
+          "api"
+        ]
+      },
+      "post": {
+        "summary": "Add API Image",
+        "description": "Add an image for the API",
+        "operationId": "addAPIImage",
+        "parameters": [
+          {
+            "name": "api_id",
+            "in": "path",
+            "description": "id for the API",
+            "required": "true",
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "name of the image",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "path",
+            "in": "query",
+            "description": "path of the image",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "type of image",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API Image Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/image"
+              }
+            }
+          }
+        },
+        "tags": [
+          "image"
+        ]
+      }
+    },
+    "api/{api_id}/images/{image_id}": {
+      "delete": {
+        "summary": "Delete API Image",
+        "description": "Deletes an image for an API",
+        "operationId": "deleteAPIImage",
+        "parameters": [
+          {
+            "name": "api_id",
+            "in": "path",
+            "description": "id for the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "image_id",
+            "in": "path",
+            "description": "id for the image",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API Image Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/image"
+              }
+            }
+          }
+        },
+        "tags": [
+          "api"
+        ]
+      }
+    },
+    "api/{api_id}/screenshots/": {
+      "get": {
+        "summary": "Retrieve API Screenshot",
+        "description": "Returns the screenshots for an API",
+        "operationId": "getAPIScreenshots",
+        "parameters": [
+          {
+            "name": "api_id",
+            "in": "path",
+            "description": "id for the API",
+            "required": "true",
+            "type": "integer",
+            "format": "id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API Screenshot Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/screenshot"
+              }
+            }
+          }
+        },
+        "tags": [
+          "api"
+        ]
+      },
+      "post": {
+        "summary": "Add API Screenshot",
+        "description": "Add a screenshot for the API",
+        "operationId": "addAPIScreenshot",
+        "parameters": [
+          {
+            "name": "api_id",
+            "in": "path",
+            "description": "id for the API",
+            "required": "true",
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "name of the screenshot",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "path",
+            "in": "query",
+            "description": "path of the screenshot",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "type of screenshot",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API Screenshot Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/note"
+              }
+            }
+          }
+        },
+        "tags": [
+          "screenshot"
+        ]
+      }
+    },
+    "api/{api_id}/screenshots/{screenshot_id}": {
+      "delete": {
+        "summary": "Delete API Screenshot",
+        "description": "Deletes a screenshot for an API",
+        "operationId": "deleteAPIScreenshot",
+        "parameters": [
+          {
+            "name": "api_id",
+            "in": "path",
+            "description": "id for the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "screenshot_id",
+            "in": "path",
+            "description": "id for the screenshot",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API Screenshot Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/note"
+              }
+            }
+          }
+        },
+        "tags": [
+          "api"
+        ]
+      }
+    },
+    "api/{api_id}/buildingblocks/": {
+      "get": {
+        "summary": "Retrieve API Building Blocks",
+        "description": "Returns the building blocks for an API",
+        "operationId": "getAPINotes",
+        "parameters": [
+          {
+            "name": "api_id",
+            "in": "path",
+            "description": "id for the API",
+            "required": "true",
+            "type": "integer",
+            "format": "id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API Building Block Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/note"
+              }
+            }
+          }
+        },
+        "tags": [
+          "api"
+        ]
+      },
+      "post": {
+        "summary": "Add API Building Block",
+        "description": "Add a building block for an API",
+        "operationId": "addAPIBuildingBlock",
+        "parameters": [
+          {
+            "name": "api_id",
+            "in": "path",
+            "description": "id for the API",
+            "required": "true",
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "building_block_api",
+            "in": "query",
+            "description": "id for the building block",
+            "required": "true",
+            "type": "integer"
+          },
+          {
+            "name": "organization_id",
+            "in": "query",
+            "description": "id for the organization",
+            "required": "false",
+            "type": "integer"
+          },
+          {
+            "name": "tool_id",
+            "in": "query",
+            "description": "id for the tool",
+            "required": "false",
+            "type": "integer"
+          },
+          {
+            "name": "url",
+            "in": "query",
+            "description": "the url for the building block",
+            "required": "false",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API Building Block Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/buildingblock"
               }
             }
           }
         },
         "tags": [
           "api",
-          "apiging"
+          "building blocks"
+        ]
+      }
+    },
+    "api/{api_id}/buildingblocks/{buildingblock_id}": {
+      "delete": {
+        "summary": "Delete API Building Block",
+        "description": "Deletes a building block for an API",
+        "operationId": "deleteAPINot",
+        "parameters": [
+          {
+            "name": "api_id",
+            "in": "path",
+            "description": "id for the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "buildingblock_id",
+            "in": "path",
+            "description": "id for the building block",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API Building Block Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/note"
+              }
+            }
+          }
+        },
+        "tags": [
+          "api",
+          "building blocks"
+        ]
+      }
+    },
+    "api/{api_id}/logs/": {
+      "get": {
+        "summary": "Retrieve API Logs",
+        "description": "Returns the logs for a API",
+        "operationId": "getAPILogs",
+        "parameters": [
+          {
+            "name": "api_id",
+            "in": "path",
+            "description": "id for the API",
+            "required": "true",
+            "type": "integer",
+            "format": "id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API Log response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/log"
+              }
+            }
+          }
+        },
+        "tags": [
+          "api"
+        ]
+      },
+      "post": {
+        "summary": "Add API Log",
+        "description": "Add a note for the api item",
+        "operationId": "addAPINote",
+        "parameters": [
+          {
+            "name": "api_id",
+            "in": "path",
+            "description": "id for the api item",
+            "required": "true",
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "type of log entry",
+            "required": "false",
+            "type": "string"
+          },
+          {
+            "name": "details",
+            "in": "query",
+            "description": "log details",
+            "required": "false",
+            "type": "string"
+          },
+          {
+            "name": "log_date",
+            "in": "query",
+            "description": "date of the log entry",
+            "required": "true",
+            "type": "date"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API Log response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/note"
+              }
+            }
+          }
+        },
+        "tags": [
+          "api",
+          "notes"
+        ]
+      }
+    },
+    "api/{api_id}/logs/{log_id}": {
+      "delete": {
+        "summary": "Delete API Log",
+        "description": "Deletes a log for an API",
+        "operationId": "deleteAPINot",
+        "parameters": [
+          {
+            "name": "api_id",
+            "in": "path",
+            "description": "id for the api item",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "log_id",
+            "in": "path",
+            "description": "id for the log",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API Log response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/note"
+              }
+            }
+          }
+        },
+        "tags": [
+          "api"
         ]
       }
     }
@@ -232,31 +1016,237 @@
   "definitions": {
     "api": {
       "properties": {
-        "name": {
-          "description": "name of the api",
+        "api_id": {
+          "description": "id for the api item",
           "type": "string",
           "format": "label"
         },
-        "description": {
-          "description": "description of the api",
+        "title": {
+          "description": "title of the api item",
+          "type": "string"
+        },
+        "link": {
+          "description": "url for the api item",
+          "type": "string"
+        },
+        "item_date": {
+          "description": "date applied to the api item",
+          "type": "string"
+        },
+        "details": {
+          "description": "raw details for the api item",
+          "type": "string",
+          "format": "id"
+        },
+        "status": {
+          "description": "status of the api item",
+          "type": "string",
+          "format": "id"
+        },
+        "public_comment": {
+          "description": "any public comment for the api item",
+          "type": "string",
+          "format": "id"
+        },
+        "original_date": {
+          "description": "orignal date for the api item",
+          "type": "date",
+          "format": "datetime"
+        },
+        "author": {
+          "description": "author for the api item",
+          "type": "string",
+          "format": "id"
+        },
+        "processed": {
+          "description": "has the api item been processed",
+          "type": "string",
+          "format": "id"
+        },
+        "domain": {
+          "description": "root domain for the api item",
+          "type": "string",
+          "format": "id"
+        },
+        "screenshot_url": {
+          "description": "screenshot url for the api item",
+          "type": "string",
+          "format": "id"
+        },
+        "resolved_url": {
+          "description": "resolved url for the api item",
+          "type": "string",
+          "format": "id"
+        },
+        "weekly_summary": {
+          "description": "include in weekly summary",
+          "type": "string",
+          "format": "id"
+        },
+        "weekly_roundup": {
+          "description": "include in weekly roundup",
+          "type": "string",
+          "format": "id"
+        }
+      }
+    },
+    "tag": {
+      "properties": {
+        "tag_id": {
+          "description": "id for the tag",
+          "type": "integer",
+          "format": "id"
+        },
+        "tag": {
+          "description": "text tag",
+          "type": "string"
+        },
+        "api_count": {
+          "description": "number of items api with tag",
+          "type": "integer"
+        }
+      }
+    },
+    "note": {
+      "properties": {
+        "note_id": {
+          "description": "id for the api item",
+          "type": "integer",
+          "format": "id"
+        },
+        "type": {
+          "description": "type of note",
+          "type": "string"
+        },
+        "note": {
+          "description": "text of note",
+          "type": "string"
+        }
+      }
+    },
+    "url": {
+      "properties": {
+        "note_id": {
+          "description": "id for the API",
+          "type": "integer",
+          "format": "id"
+        },
+        "type": {
+          "description": "the type of url",
           "type": "string"
         },
         "url": {
-          "description": "url for the api",
+          "description": "url for the url",
           "type": "string"
         },
-        "baseurl": {
-          "description": "url for the api",
+        "name": {
+          "description": "name of the url",
           "type": "string"
-        },        
-        "tags": {
-          "description": "tags for the api",
-          "type": "string"
-        },
-        "slug": {
-          "description": "slug for the api",
-          "type": "string",
+        }
+      }
+    },
+    "image": {
+      "properties": {
+        "api_id": {
+          "description": "id for the API",
+          "type": "integer",
           "format": "id"
+        },
+        "image_id": {
+          "description": "id for the image",
+          "type": "integer",
+          "format": "id"
+        },
+        "name": {
+          "description": "name of the image",
+          "type": "string"
+        },
+        "path": {
+          "description": "path of the image",
+          "type": "string"
+        },
+        "type": {
+          "description": "type of image",
+          "type": "string"
+        }
+      }
+    },
+    "screenshot": {
+      "properties": {
+        "api_id": {
+          "description": "id for the API",
+          "type": "integer",
+          "format": "id"
+        },
+        "screenshot_id": {
+          "description": "id for the screenshot",
+          "type": "integer",
+          "format": "id"
+        },
+        "name": {
+          "description": "name of the screenshot",
+          "type": "string"
+        },
+        "path": {
+          "description": "path of the screenshot",
+          "type": "string"
+        },
+        "type": {
+          "description": "type of screenshot",
+          "type": "string"
+        }
+      }
+    },
+    "buildingblock": {
+      "properties": {
+        "api_id": {
+          "description": "id for the API",
+          "type": "integer",
+          "format": "id"
+        },
+        "building_block_api": {
+          "description": "id for the building block",
+          "type": "integer",
+          "format": "id"
+        },
+        "organization_id": {
+          "description": "id for the organization",
+          "type": "integer",
+          "format": "id"
+        },
+        "tool_id": {
+          "description": "id for the tool",
+          "type": "integer",
+          "format": "id"
+        },
+        "url": {
+          "description": "url of the building block",
+          "type": "string"
+        }
+      }
+    },
+    "log": {
+      "properties": {
+        "api_id": {
+          "description": "id for the API",
+          "type": "integer",
+          "format": "id"
+        },
+        "type": {
+          "description": "type of log",
+          "type": "string"
+        },
+        "note": {
+          "description": "text of note",
+          "type": "string"
+        },
+        "details": {
+          "description": "details of log",
+          "type": "string"
+        },
+        "log_date": {
+          "description": "log date",
+          "type": "string"
         }
       }
     },
