@@ -1428,9 +1428,7 @@
         "tags": [
           "Definitions"
         ]
-      }
-    },
-    "/api/{api_id}/definitions/import/swagger/1.2/": {
+      },
       "post": {
         "summary": "imports a Swagger 1.2 definition",
         "description": "imports a Swagger 1.2 definition",
@@ -1524,9 +1522,7 @@
         "tags": [
           "Definitions"
         ]
-      }
-    },
-    "/api/{api_id}/definitions/import/swagger/2.0/": {
+      },
       "post": {
         "summary": "import a Swagger 2.0 definition",
         "description": "import a Swagger 2.0 definition",
