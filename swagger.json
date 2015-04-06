@@ -34,7 +34,7 @@
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
-          },                  
+          },
           {
             "name": "query",
             "in": "query",
@@ -76,7 +76,7 @@
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
-          },        
+          },
           {
             "name": "name",
             "in": "query",
@@ -149,7 +149,7 @@
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
-          }          
+          }
         ],
         "responses": {
           "200": {
@@ -178,7 +178,7 @@
             "required": true,
             "type": "integer",
             "format": "id"
-          },   
+          },
           {
             "name": "appid",
             "in": "query",
@@ -192,7 +192,7 @@
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
-          },                 
+          },
           {
             "name": "name",
             "in": "query",
@@ -262,7 +262,7 @@
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
-          }          
+          }
         ],
         "responses": {
           "200": {
@@ -307,7 +307,7 @@
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
-          }          
+          }
         ],
         "responses": {
           "200": {
@@ -336,7 +336,7 @@
             "required": true,
             "type": "integer",
             "format": "id"
-          },   
+          },
           {
             "name": "appid",
             "in": "query",
@@ -350,7 +350,7 @@
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
-          },                 
+          },
           {
             "name": "tag",
             "in": "query",
@@ -401,7 +401,7 @@
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
-          },          
+          },
           {
             "name": "tag",
             "in": "path",
@@ -453,7 +453,7 @@
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
-          }          
+          }
         ],
         "responses": {
           "200": {
@@ -496,7 +496,7 @@
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
-          },          
+          },
           {
             "name": "type",
             "in": "query",
@@ -554,7 +554,7 @@
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
-          },          
+          },
           {
             "name": "note_id",
             "in": "path",
@@ -606,7 +606,7 @@
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
-          }          
+          }
         ],
         "responses": {
           "200": {
@@ -649,7 +649,7 @@
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
-          },          
+          },
           {
             "name": "type",
             "in": "query",
@@ -714,7 +714,7 @@
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
-          },          
+          },
           {
             "name": "url_id",
             "in": "path",
@@ -766,7 +766,7 @@
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
-          }          
+          }
         ],
         "responses": {
           "200": {
@@ -809,7 +809,7 @@
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
-          },          
+          },
           {
             "name": "name",
             "in": "query",
@@ -874,7 +874,7 @@
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
-          },          
+          },
           {
             "name": "image_id",
             "in": "path",
@@ -926,7 +926,7 @@
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
-          }          
+          }
         ],
         "responses": {
           "200": {
@@ -969,7 +969,7 @@
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
-          },          
+          },
           {
             "name": "name",
             "in": "query",
@@ -1034,7 +1034,7 @@
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
-          },          
+          },
           {
             "name": "screenshot_id",
             "in": "path",
@@ -1086,7 +1086,7 @@
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
-          }          
+          }
         ],
         "responses": {
           "200": {
@@ -1129,7 +1129,7 @@
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
-          },          
+          },
           {
             "name": "building_block_api",
             "in": "query",
@@ -1201,7 +1201,7 @@
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
-          },          
+          },
           {
             "name": "buildingblock_id",
             "in": "path",
@@ -1253,7 +1253,7 @@
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
-          }          
+          }
         ],
         "responses": {
           "200": {
@@ -1296,7 +1296,7 @@
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
-          },          
+          },
           {
             "name": "type",
             "in": "query",
@@ -1361,7 +1361,7 @@
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
-          },          
+          },
           {
             "name": "log_id",
             "in": "path",
@@ -1383,6 +1383,90 @@
         },
         "tags": [
           "Logs"
+        ]
+      }
+    },
+    "/api/{api_id}/definitions/export/swagger/1.2/": {
+      "get": {
+        "summary": "export a Swagger 1.2 definition",
+        "description": "export a Swagger 1.2 definition",
+        "operationId": "exportSwagger12Definition",
+        "responses": {
+          "200": {
+            "description": "API Definition Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/definition"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Definitions"
+        ]
+      }
+    },
+    "/api/{api_id}/definitions/import/swagger/1.2/": {
+      "post": {
+        "summary": "imports a Swagger 1.2 definition",
+        "description": "imports a Swagger 1.2 definition",
+        "operationId": "importSwagger12Definition",
+        "responses": {
+          "200": {
+            "description": "API Definition Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/definition"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Definitions"
+        ]
+      }
+    },
+    "/api/{api_id}/definitions/export/swagger/2.0/": {
+      "get": {
+        "summary": "exports a Swagger 2.0 definition",
+        "description": "exports a Swagger 2.0 definition",
+        "operationId": "exportSwagger20Definition",
+        "responses": {
+          "200": {
+            "description": "API Definition Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/definition"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Definitions"
+        ]
+      }
+    },
+    "/api/{api_id}/definitions/import/swagger/2.0/": {
+      "post": {
+        "summary": "import a Swagger 2.0 definition",
+        "description": "import a Swagger 2.0 definition",
+        "operationId": "getAPILogs",
+        "responses": {
+          "200": {
+            "description": "API Definition Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/definition"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Definitions"
         ]
       }
     }
@@ -1620,6 +1704,14 @@
         },
         "log_date": {
           "description": "log date",
+          "type": "string"
+        }
+      }
+    },
+    "definition": {
+      "properties": {
+        "url": {
+          "description": "url for the definition",
           "type": "string"
         }
       }
