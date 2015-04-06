@@ -1530,7 +1530,7 @@
       "post": {
         "summary": "import a Swagger 2.0 definition",
         "description": "import a Swagger 2.0 definition",
-        "operationId": "getAPILogs",
+        "operationId": "importSwagger20Definition",
         "parameters": [
           {
             "name": "api_id",
