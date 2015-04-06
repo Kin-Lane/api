@@ -1391,6 +1391,29 @@
         "summary": "export a Swagger 1.2 definition",
         "description": "export a Swagger 1.2 definition",
         "operationId": "exportSwagger12Definition",
+        "parameters": [
+          {
+            "name": "api_id",
+            "in": "path",
+            "description": "id for the api item",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          }
+        ],        
         "responses": {
           "200": {
             "description": "API Definition Response",
@@ -1412,6 +1435,37 @@
         "summary": "imports a Swagger 1.2 definition",
         "description": "imports a Swagger 1.2 definition",
         "operationId": "importSwagger12Definition",
+        "parameters": [
+          {
+            "name": "api_id",
+            "in": "path",
+            "description": "id for the api item",
+            "required": true,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "appid",
+            "in": "formData",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "formData",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "url",
+            "in": "formData",
+            "description": "url of the Swagger definition",
+            "required": true,
+            "type": "string"
+          }
+        ],        
         "responses": {
           "200": {
             "description": "API Definition Response",
@@ -1433,6 +1487,29 @@
         "summary": "exports a Swagger 2.0 definition",
         "description": "exports a Swagger 2.0 definition",
         "operationId": "exportSwagger20Definition",
+        "parameters": [
+          {
+            "name": "api_id",
+            "in": "path",
+            "description": "id for the api item",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          }
+        ],        
         "responses": {
           "200": {
             "description": "API Definition Response",
@@ -1454,6 +1531,37 @@
         "summary": "import a Swagger 2.0 definition",
         "description": "import a Swagger 2.0 definition",
         "operationId": "getAPILogs",
+        "parameters": [
+          {
+            "name": "api_id",
+            "in": "path",
+            "description": "id for the api item",
+            "required": true,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "appid",
+            "in": "formData",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "formData",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "url",
+            "in": "formData",
+            "description": "url of the Swagger definition",
+            "required": true,
+            "type": "string"
+          }
+        ],        
         "responses": {
           "200": {
             "description": "API Definition Response",
