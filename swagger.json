@@ -9,7 +9,7 @@
   "host": "api.api.kinlane.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "produces": [
     "apilication/json"
