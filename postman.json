@@ -1,0 +1,1115 @@
+{
+	"apiVersion": "1.0.0",
+	"swaggerVersion": "1.2",
+	"basePath": "api.api.kinlane.com",
+	"resourcePath": "/",
+	"produces": ["application/json"],
+	"consumes": ["application/json"],
+	"apis": [{
+		"path": "/api/",
+		"operations": [{
+			"method": "get",
+			"summary": "retrieves all apis",
+			"notes": "retrieves all apis",
+			"nickname": "getAPIs",
+			"parameters": [{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "query",
+				"description": "a text query to search across APIs"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		},
+		{
+			"method": "post",
+			"summary": "add api",
+			"notes": "add api",
+			"nickname": "addAPI",
+			"parameters": [{
+				"paramType": "query",
+				"name": "about",
+				"description": "details about the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "name",
+				"description": "name of the API"
+			},
+			{
+				"paramType": "query",
+				"name": "organization_id",
+				"description": "organization ID for the API"
+			},
+			{
+				"paramType": "query",
+				"name": "rank",
+				"description": "ranking of API"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		},
+		{
+			"method": "delete",
+			"summary": "delete an API",
+			"notes": "delete an API",
+			"nickname": "deleteAPI",
+			"parameters": [{
+				"paramType": "path",
+				"name": "api_id",
+				"description": "id for the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the API"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/api/{api_id}/",
+		"operations": [{
+			"method": "get",
+			"summary": "retrieve an API",
+			"notes": "retrieve an API",
+			"nickname": "getAPI",
+			"parameters": [{
+				"paramType": "path",
+				"name": "api_id",
+				"description": "id for the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the API"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		},
+		{
+			"method": "put",
+			"summary": "update an API",
+			"notes": "update an API",
+			"nickname": "updateAPI",
+			"parameters": [{
+				"paramType": "query",
+				"name": "about",
+				"description": "details about the API"
+			},
+			{
+				"paramType": "path",
+				"name": "api_id",
+				"description": "id for the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "name",
+				"description": "name of the API"
+			},
+			{
+				"paramType": "query",
+				"name": "organization_id",
+				"description": "organization ID for the API"
+			},
+			{
+				"paramType": "query",
+				"name": "rank",
+				"description": "ranking of API"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		},
+		{
+			"method": "get",
+			"summary": "retrieve an APIs building blocks",
+			"notes": "retrieve an APIs building blocks",
+			"nickname": "getAPIBuildingBlocks",
+			"parameters": [{
+				"paramType": "path",
+				"name": "api_id",
+				"description": "id for the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the API"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/api/{api_id}/buildingblocks/",
+		"operations": [{
+			"method": "post",
+			"summary": "add an API building block",
+			"notes": "add an API building block",
+			"nickname": "addAPIBuildingBlock",
+			"parameters": [{
+				"paramType": "path",
+				"name": "api_id",
+				"description": "id for the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "building_block_api",
+				"description": "id for the building block"
+			},
+			{
+				"paramType": "query",
+				"name": "organization_id",
+				"description": "id for the organization"
+			},
+			{
+				"paramType": "query",
+				"name": "tool_id",
+				"description": "id for the tool"
+			},
+			{
+				"paramType": "query",
+				"name": "url",
+				"description": "the url for the building block"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		},
+		{
+			"method": "delete",
+			"summary": "delete an API building block",
+			"notes": "delete an API building block",
+			"nickname": "deleteAPIBuildingBlocks",
+			"parameters": [{
+				"paramType": "path",
+				"name": "api_id",
+				"description": "id for the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the API"
+			},
+			{
+				"paramType": "path",
+				"name": "buildingblock_id",
+				"description": "id for the building block"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/api/{api_id}/buildingblocks/{buildingblock_id}",
+		"operations": [{
+			"method": "get",
+			"summary": "export a Swagger 1.2 definition",
+			"notes": "export a Swagger 1.2 definition",
+			"nickname": "exportSwagger12Definition",
+			"parameters": [{
+				"paramType": "path",
+				"name": "api_id",
+				"description": "id for the api item"
+			},
+			{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the API"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/api/{api_id}/definitions/export/swagger/1.2/",
+		"operations": [{
+			"method": "get",
+			"summary": "exports a Swagger 2.0 definition",
+			"notes": "exports a Swagger 2.0 definition",
+			"nickname": "exportSwagger20Definition",
+			"parameters": [{
+				"paramType": "path",
+				"name": "api_id",
+				"description": "id for the api item"
+			},
+			{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the API"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/api/{api_id}/definitions/export/swagger/2.0/",
+		"operations": [{
+			"method": "post",
+			"summary": "imports a Swagger 1.2 definition",
+			"notes": "imports a Swagger 1.2 definition",
+			"nickname": "importSwagger12Definition",
+			"parameters": [{
+				"paramType": "path",
+				"name": "api_id",
+				"description": "id for the api item"
+			},
+			{
+				"paramType": "formData",
+				"name": "appid",
+				"description": "your appid for accessing the API"
+			},
+			{
+				"paramType": "formData",
+				"name": "appkey",
+				"description": "your appkey for accessing the API"
+			},
+			{
+				"paramType": "formData",
+				"name": "url",
+				"description": "url of the Swagger definition"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/api/{api_id}/definitions/import/swagger/1.2/",
+		"operations": [{
+			"method": "post",
+			"summary": "import a Swagger 2.0 definition",
+			"notes": "import a Swagger 2.0 definition",
+			"nickname": "importSwagger20Definition",
+			"parameters": [{
+				"paramType": "path",
+				"name": "api_id",
+				"description": "id for the api item"
+			},
+			{
+				"paramType": "formData",
+				"name": "appid",
+				"description": "your appid for accessing the API"
+			},
+			{
+				"paramType": "formData",
+				"name": "appkey",
+				"description": "your appkey for accessing the API"
+			},
+			{
+				"paramType": "formData",
+				"name": "url",
+				"description": "url of the Swagger definition"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/api/{api_id}/definitions/import/swagger/2.0/",
+		"operations": [{
+			"method": "get",
+			"summary": "retrieve an APIs images",
+			"notes": "retrieve an APIs images",
+			"nickname": "getAPIImages",
+			"parameters": [{
+				"paramType": "path",
+				"name": "api_id",
+				"description": "id for the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the API"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/api/{api_id}/images/",
+		"operations": [{
+			"method": "post",
+			"summary": "add an API image",
+			"notes": "add an API image",
+			"nickname": "addAPIImage",
+			"parameters": [{
+				"paramType": "path",
+				"name": "api_id",
+				"description": "id for the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "name",
+				"description": "name of the image"
+			},
+			{
+				"paramType": "query",
+				"name": "path",
+				"description": "path of the image"
+			},
+			{
+				"paramType": "query",
+				"name": "type",
+				"description": "type of image"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		},
+		{
+			"method": "delete",
+			"summary": "delete an API image",
+			"notes": "delete an API image",
+			"nickname": "deleteAPIImage",
+			"parameters": [{
+				"paramType": "path",
+				"name": "api_id",
+				"description": "id for the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the API"
+			},
+			{
+				"paramType": "path",
+				"name": "image_id",
+				"description": "id for the image"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/api/{api_id}/images/{image_id}",
+		"operations": [{
+			"method": "get",
+			"summary": "retrieve an APIs logs",
+			"notes": "retrieve an APIs logs",
+			"nickname": "getAPILogs",
+			"parameters": [{
+				"paramType": "path",
+				"name": "api_id",
+				"description": "id for the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the API"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/api/{api_id}/logs/",
+		"operations": [{
+			"method": "post",
+			"summary": "add an API log",
+			"notes": "add an API log",
+			"nickname": "addAPILog",
+			"parameters": [{
+				"paramType": "path",
+				"name": "api_id",
+				"description": "id for the api item"
+			},
+			{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "details",
+				"description": "log details"
+			},
+			{
+				"paramType": "query",
+				"name": "log_date",
+				"description": "date of the log entry"
+			},
+			{
+				"paramType": "query",
+				"name": "type",
+				"description": "type of log entry"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		},
+		{
+			"method": "delete",
+			"summary": "delete an API log",
+			"notes": "delete an API log",
+			"nickname": "deleteAPILog",
+			"parameters": [{
+				"paramType": "path",
+				"name": "api_id",
+				"description": "id for the api item"
+			},
+			{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the API"
+			},
+			{
+				"paramType": "path",
+				"name": "log_id",
+				"description": "id for the log"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/api/{api_id}/logs/{log_id}",
+		"operations": [{
+			"method": "get",
+			"summary": "retrieve an APIs notes",
+			"notes": "retrieve an APIs notes",
+			"nickname": "getAPINotes",
+			"parameters": [{
+				"paramType": "path",
+				"name": "api_id",
+				"description": "id for the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the API"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/api/{api_id}/notes/",
+		"operations": [{
+			"method": "post",
+			"summary": "add an API note",
+			"notes": "add an API note",
+			"nickname": "addAPINote",
+			"parameters": [{
+				"paramType": "path",
+				"name": "api_id",
+				"description": "id for the api item"
+			},
+			{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "note",
+				"description": "the full text of note"
+			},
+			{
+				"paramType": "query",
+				"name": "type",
+				"description": "type of the note"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		},
+		{
+			"method": "delete",
+			"summary": "delete an API note",
+			"notes": "delete an API note",
+			"nickname": "deleteAPINote",
+			"parameters": [{
+				"paramType": "path",
+				"name": "api_id",
+				"description": "id for the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the API"
+			},
+			{
+				"paramType": "path",
+				"name": "note_id",
+				"description": "id for the note"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/api/{api_id}/notes/{note_id}",
+		"operations": [{
+			"method": "get",
+			"summary": "retrieve API screenshots",
+			"notes": "retrieve API screenshots",
+			"nickname": "getAPIScreenshots",
+			"parameters": [{
+				"paramType": "path",
+				"name": "api_id",
+				"description": "id for the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the API"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/api/{api_id}/screenshots/",
+		"operations": [{
+			"method": "post",
+			"summary": "add an API screenshot",
+			"notes": "add an API screenshot",
+			"nickname": "addAPIScreenshot",
+			"parameters": [{
+				"paramType": "path",
+				"name": "api_id",
+				"description": "id for the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "name",
+				"description": "name of the screenshot"
+			},
+			{
+				"paramType": "query",
+				"name": "path",
+				"description": "path of the screenshot"
+			},
+			{
+				"paramType": "query",
+				"name": "type",
+				"description": "type of screenshot"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		},
+		{
+			"method": "delete",
+			"summary": "delete an API screenshot",
+			"notes": "delete an API screenshot",
+			"nickname": "deleteAPIScreenshot",
+			"parameters": [{
+				"paramType": "path",
+				"name": "api_id",
+				"description": "id for the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the API"
+			},
+			{
+				"paramType": "path",
+				"name": "screenshot_id",
+				"description": "id for the screenshot"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/api/{api_id}/screenshots/{screenshot_id}",
+		"operations": [{
+			"method": "get",
+			"summary": "retrieve API tags",
+			"notes": "retrieve API tags",
+			"nickname": "getAPITags",
+			"parameters": [{
+				"paramType": "path",
+				"name": "api_id",
+				"description": "id for API"
+			},
+			{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the API"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/api/{api_id}/tags/",
+		"operations": [{
+			"method": "post",
+			"summary": "add tag to API",
+			"notes": "add tag to API",
+			"nickname": "addAPITag",
+			"parameters": [{
+				"paramType": "path",
+				"name": "api_id",
+				"description": "id for the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "tag",
+				"description": "tag name"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		},
+		{
+			"method": "delete",
+			"summary": "delete an API tag",
+			"notes": "delete an API tag",
+			"nickname": "deleteAPITag",
+			"parameters": [{
+				"paramType": "path",
+				"name": "api_id",
+				"description": "id for the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the API"
+			},
+			{
+				"paramType": "path",
+				"name": "tag",
+				"description": "tag to remove from API"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/api/{api_id}/tags/{tag}",
+		"operations": [{
+			"method": "get",
+			"summary": "retrieve an APIs URLs",
+			"notes": "retrieve an APIs URLs",
+			"nickname": "getAPIURLs",
+			"parameters": [{
+				"paramType": "path",
+				"name": "api_id",
+				"description": "id for the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the API"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	},
+	{
+		"path": "/api/{api_id}/urls/",
+		"operations": [{
+			"method": "post",
+			"summary": "add an API URL",
+			"notes": "add an API URL",
+			"nickname": "addAPIURL",
+			"parameters": [{
+				"paramType": "path",
+				"name": "api_id",
+				"description": "id for the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "name",
+				"description": "a name for the url"
+			},
+			{
+				"paramType": "query",
+				"name": "type",
+				"description": "type of url"
+			},
+			{
+				"paramType": "query",
+				"name": "url",
+				"description": "the url"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		},
+		{
+			"method": "delete",
+			"summary": "delete an API URL",
+			"notes": "delete an API URL",
+			"nickname": "deleteAPIURL",
+			"parameters": [{
+				"paramType": "path",
+				"name": "api_id",
+				"description": "id for the api item"
+			},
+			{
+				"paramType": "query",
+				"name": "appid",
+				"description": "your appid for accessing the API"
+			},
+			{
+				"paramType": "query",
+				"name": "appkey",
+				"description": "your appkey for accessing the API"
+			},
+			{
+				"paramType": "path",
+				"name": "url_id",
+				"description": "id for the url"
+			}],
+			"responses": {
+				"code": "200",
+				"message": "OK"
+			}
+		}]
+	}],
+	"models": [{
+		"id": "0",
+		"properties": {
+			"api_id": {
+				"description": "",
+				"type": "post"
+			},
+			"title": {
+				"description": "",
+				"type": "post"
+			},
+			"link": {
+				"description": "",
+				"type": "post"
+			},
+			"item_date": {
+				"description": "",
+				"type": "post"
+			},
+			"details": {
+				"description": "",
+				"type": "post"
+			},
+			"status": {
+				"description": "",
+				"type": "post"
+			},
+			"public_comment": {
+				"description": "",
+				"type": "post"
+			},
+			"original_date": {
+				"description": "",
+				"type": "post"
+			},
+			"author": {
+				"description": "",
+				"type": "post"
+			},
+			"processed": {
+				"description": "",
+				"type": "post"
+			},
+			"domain": {
+				"description": "",
+				"type": "post"
+			},
+			"screenshot_url": {
+				"description": "",
+				"type": "post"
+			},
+			"resolved_url": {
+				"description": "",
+				"type": "post"
+			},
+			"weekly_summary": {
+				"description": "",
+				"type": "post"
+			},
+			"weekly_roundup": {
+				"description": "",
+				"type": "post"
+			},
+			"tag_id": {
+				"description": "",
+				"type": "post"
+			},
+			"tag": {
+				"description": "",
+				"type": "post"
+			},
+			"api_count": {
+				"description": "",
+				"type": "post"
+			},
+			"note_id": {
+				"description": "",
+				"type": "post"
+			},
+			"type": {
+				"description": "",
+				"type": "post"
+			},
+			"note": {
+				"description": "",
+				"type": "post"
+			},
+			"url": {
+				"description": "",
+				"type": "post"
+			},
+			"name": {
+				"description": "",
+				"type": "post"
+			},
+			"image_id": {
+				"description": "",
+				"type": "post"
+			},
+			"path": {
+				"description": "",
+				"type": "post"
+			},
+			"screenshot_id": {
+				"description": "",
+				"type": "post"
+			},
+			"building_block_api": {
+				"description": "",
+				"type": "post"
+			},
+			"organization_id": {
+				"description": "",
+				"type": "post"
+			},
+			"tool_id": {
+				"description": "",
+				"type": "post"
+			},
+			"log_date": {
+				"description": "",
+				"type": "post"
+			}
+		}
+	}]
+}
