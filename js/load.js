@@ -3,7 +3,7 @@ var $login = getUrlVar('login');
 
   function deploySwagger()
   	{		
-	  var url = "http://kin-lane.github.io/" + $repo + "/swagger.json";
+	  var url = "https://kin-lane.github.io/" + $repo + "/swagger.json";
 	  
 	  window.swaggerUi = new SwaggerUi({
 	    url: url,
