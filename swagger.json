@@ -1578,7 +1578,7 @@
         ]
       }
     },
-    "/api/{api_id}/definitions/code/php/generate/arrayparams/": {
+    "/api/{api_id}/definitions/code/php/generate/path/parameters/": {
       "get": {
         "summary": "generate php array parameters",
         "description": "generate php array parameters",
@@ -1636,7 +1636,59 @@
           "Definition Code"
         ]
       }
-    }    
+    },
+    "/api/{api_id}/definitions/code/php/generate/definition/parameters/": {
+      "get": {
+        "summary": "generate php array parameters",
+        "description": "generate php array parameters",
+        "operationId": "generatePHPArrayParameters",
+        "parameters": [
+          {
+            "name": "api_id",
+            "in": "path",
+            "description": "id for the api item",
+            "required": true,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "query",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "filterobject",
+            "in": "query",
+            "description": "the api definition object to filter by",
+            "required": false,
+            "type": "string"
+          }
+        ],        
+        "responses": {
+          "200": {
+            "description": "API PHP Generate Snippet Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/snippet"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Definition Code"
+        ]
+      }
+    }     
   },
   "definitions": {
     "api": {
