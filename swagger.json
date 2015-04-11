@@ -1578,7 +1578,7 @@
         ]
       }
     },
-    "/api/{api_id}/definitions/code/php/generate/arrayparameters/": {
+    "/api/{api_id}/definitions/code/php/generate/arrayparams/": {
       "get": {
         "summary": "generate php array parameters",
         "description": "generate php array parameters",
