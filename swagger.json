@@ -1577,7 +1577,52 @@
           "Definitions"
         ]
       }
-    }
+    },
+    "/api/{api_id}/definitions/code/php/generate/arrayparameters/": {
+      "post": {
+        "summary": "generate php array parameters",
+        "description": "generate php array parameters",
+        "operationId": "generatePHPArrayParameters",
+        "parameters": [
+          {
+            "name": "api_id",
+            "in": "path",
+            "description": "id for the api item",
+            "required": true,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "appid",
+            "in": "formData",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "formData",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          }
+        ],        
+        "responses": {
+          "200": {
+            "description": "API PHP Generate Snippet Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/snippet"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Definition Code"
+        ]
+      }
+    }    
   },
   "definitions": {
     "api": {
@@ -1690,6 +1735,14 @@
         }
       }
     },
+    "snippet": {
+      "properties": {
+        "content": {
+          "description": "content of the snippet",
+          "type": "string"
+        }
+      }
+    },    
     "url": {
       "properties": {
         "note_id": {
