@@ -1605,6 +1605,20 @@
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "filterpath",
+            "in": "query",
+            "description": "the api path to filter by",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "filterverb",
+            "in": "query",
+            "description": "the api verb to filter by",
+            "required": false,
+            "type": "string"
           }
         ],        
         "responses": {
