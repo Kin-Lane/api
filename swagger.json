@@ -1578,6 +1578,51 @@
         ]
       }
     },
+    "/api/{api_id}/definitions/export/apisjson/.14/": {
+      "post": {
+        "summary": "export an apis.json definition",
+        "description": "export an apis.json definition",
+        "operationId": "exportAPIsJSON",
+        "parameters": [
+          {
+            "name": "api_id",
+            "in": "path",
+            "description": "id for the api item",
+            "required": true,
+            "type": "integer",
+            "format": "id"
+          },
+          {
+            "name": "appid",
+            "in": "formData",
+            "description": "your appid for accessing the API",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "appkey",
+            "in": "formData",
+            "description": "your appkey for accessing the API",
+            "required": true,
+            "type": "string"
+          }
+        ],        
+        "responses": {
+          "200": {
+            "description": "API Definition Response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/definition"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Definitions"
+        ]
+      }
+    },    
     "/api/{api_id}/definitions/code/php/generate/path/parameters/": {
       "get": {
         "summary": "generate php array parameters",
