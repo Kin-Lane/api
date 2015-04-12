@@ -1579,7 +1579,7 @@
       }
     },
     "/api/{api_id}/definitions/export/apisjson/.14/": {
-      "post": {
+      "get": {
         "summary": "export an apis.json definition",
         "description": "export an apis.json definition",
         "operationId": "exportAPIsJSON",
@@ -1594,14 +1594,14 @@
           },
           {
             "name": "appid",
-            "in": "formData",
+            "in": "query",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "formData",
+            "in": "query",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
