@@ -2,7 +2,7 @@
   "libraries": {
     "php": {
       "icon-url": "https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-php-file.png",
-      "zip-url": "https://kin-lane.github.io/api/code/libraries/apimatic-api-php.zipp"
+      "zip-url": "https://kin-lane.github.io/api/code/libraries/apimatic-api-php.zip"
     },
     "python": {
       "icon-url": "https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-python-file.png",
