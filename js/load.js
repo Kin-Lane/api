@@ -117,7 +117,7 @@ if(document.getElementById("swagger-ui-container"))
 	
 if(document.getElementById("code-page"))
 	{
-	loadCodeFromAPIsJSON('/apis.json',0,0);
+	loadCodeFromAPIsJSON('/api/apis.json',0,0);
 	}											
 
 if($oAuth_Token!='')
