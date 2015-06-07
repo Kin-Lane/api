@@ -530,7 +530,7 @@
         ]
       }
     },
-    "/api/{api_id}/notes/{note_id}": {
+    "/api/{api_id}/notes/{note_id}/": {
       "delete": {
         "summary": "delete an API note",
         "description": "delete an API note",
@@ -691,7 +691,7 @@
         ]
       }
     },
-    "/api/{api_id}/urls/{url_id}": {
+    "/api/{api_id}/urls/{url_id}/": {
       "delete": {
         "summary": "delete an API URL",
         "description": "delete an API URL",
@@ -1342,7 +1342,7 @@
         ]
       }
     },
-    "/api/{api_id}/logs/{log_id}": {
+    "/api/{api_id}/logs/{log_id}/": {
       "delete": {
         "summary": "delete an API log",
         "description": "delete an API log",
@@ -1422,7 +1422,7 @@
             "required": true,
             "type": "string"
           }
-        ],        
+        ],
         "responses": {
           "200": {
             "description": "API Definition Response",
@@ -1474,7 +1474,7 @@
             "required": true,
             "type": "string"
           }
-        ],        
+        ],
         "responses": {
           "200": {
             "description": "API Definition Response",
@@ -1519,7 +1519,7 @@
             "required": true,
             "type": "string"
           }
-        ],        
+        ],
         "responses": {
           "200": {
             "description": "API Definition Response",
@@ -1571,7 +1571,7 @@
             "required": true,
             "type": "string"
           }
-        ],        
+        ],
         "responses": {
           "200": {
             "description": "API Definition Response",
@@ -1616,7 +1616,7 @@
             "required": true,
             "type": "string"
           }
-        ],        
+        ],
         "responses": {
           "200": {
             "description": "API Definition Response",
@@ -1632,7 +1632,7 @@
           "Definitions"
         ]
       }
-    },   
+    },
     "/api/{api_id}/definitions/export/apisjson/.14/master/": {
       "get": {
         "summary": "export an apis.json master definition",
@@ -1661,7 +1661,7 @@
             "required": true,
             "type": "string"
           }
-        ],        
+        ],
         "responses": {
           "200": {
             "description": "API Definition Response",
@@ -1677,7 +1677,7 @@
           "Definitions"
         ]
       }
-    },      
+    },
     "/api/{api_id}/definitions/code/php/generate/path/parameters/": {
       "get": {
         "summary": "generate php array parameters",
@@ -1720,7 +1720,7 @@
             "required": false,
             "type": "string"
           }
-        ],        
+        ],
         "responses": {
           "200": {
             "description": "API PHP Generate Snippet Response",
@@ -1772,7 +1772,7 @@
             "required": false,
             "type": "string"
           }
-        ],        
+        ],
         "responses": {
           "200": {
             "description": "API PHP Generate Snippet Response",
@@ -1788,7 +1788,7 @@
           "Definition Code"
         ]
       }
-    }     
+    }
   },
   "definitions": {
     "api": {
@@ -1908,7 +1908,7 @@
           "type": "string"
         }
       }
-    },    
+    },
     "url": {
       "properties": {
         "note_id": {
