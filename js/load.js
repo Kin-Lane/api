@@ -113,6 +113,11 @@ if(document.getElementById("jsonQuestionEditor"))
 if(document.getElementById("swagger-ui-container"))
 	{				  
 	 setTimeout(deploySwagger, 3000);			
+	}		
+	
+if(document.getElementById("code-page"))
+	{
+	loadCodeFromAPIsJSON('/apis.json',0,0);
 	}											
 
 if($oAuth_Token!='')

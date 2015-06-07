@@ -33,8 +33,8 @@
           "url": "https://kin-lane.github.io/api/postman.json"
         },
         {
-          "type": "x-api-code-libraries",
-          "url": "https://kin-lane.github.io/api/api-code-libraries.json"
+          "type": "x-apimatic-sdks",
+          "url": "https://kin-lane.github.io/api/code/apimatic-sdks.json"
         },
         {
           "type": "x-api-science",
