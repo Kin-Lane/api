@@ -35,7 +35,11 @@
         {
           "type": "x-api-code-libraries",
           "url": "https://kin-lane.github.io/api/api-code-libraries.json"
-        }        
+        },
+        {
+          "type": "x-api-science",
+          "url": "https://kin-lane.github.io/api/status/"
+        }                
       ],
       "contact": [
         {
