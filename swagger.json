@@ -133,7 +133,7 @@
             "in": "path",
             "description": "id for the API",
             "required": true,
-            "type": "integer",
+            "type": "string",
             "format": "id"
           },
           {
@@ -176,7 +176,7 @@
             "in": "path",
             "description": "id for the API",
             "required": true,
-            "type": "integer",
+            "type": "string",
             "format": "id"
           },
           {
@@ -247,7 +247,8 @@
             "in": "path",
             "description": "id for the API",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "format": "id"
           },
           {
             "name": "appid",
@@ -291,7 +292,7 @@
             "in": "path",
             "description": "id for API",
             "required": true,
-            "type": "integer",
+            "type": "string",
             "format": "id"
           },
           {
@@ -334,7 +335,7 @@
             "in": "path",
             "description": "id for the API",
             "required": true,
-            "type": "integer",
+            "type": "string",
             "format": "id"
           },
           {
@@ -386,7 +387,8 @@
             "in": "path",
             "description": "id for the API",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "format": "id"
           },
           {
             "name": "appid",
@@ -437,7 +439,7 @@
             "in": "path",
             "description": "id for the API",
             "required": true,
-            "type": "integer",
+            "type": "string",
             "format": "id"
           },
           {
@@ -480,7 +482,7 @@
             "in": "path",
             "description": "id for the api item",
             "required": true,
-            "type": "integer",
+            "type": "string",
             "format": "id"
           },
           {
@@ -539,7 +541,8 @@
             "in": "path",
             "description": "id for the API",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "format": "id"
           },
           {
             "name": "appid",
@@ -590,7 +593,7 @@
             "in": "path",
             "description": "id for the API",
             "required": true,
-            "type": "integer",
+            "type": "string",
             "format": "id"
           },
           {
@@ -633,7 +636,7 @@
             "in": "path",
             "description": "id for the API",
             "required": true,
-            "type": "integer",
+            "type": "string",
             "format": "id"
           },
           {
@@ -699,7 +702,8 @@
             "in": "path",
             "description": "id for the api item",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "format": "id"
           },
           {
             "name": "appid",
@@ -750,7 +754,7 @@
             "in": "path",
             "description": "id for the API",
             "required": true,
-            "type": "integer",
+            "type": "string",
             "format": "id"
           },
           {
@@ -793,7 +797,7 @@
             "in": "path",
             "description": "id for the API",
             "required": true,
-            "type": "integer",
+            "type": "string",
             "format": "id"
           },
           {
@@ -859,7 +863,8 @@
             "in": "path",
             "description": "id for the API",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "format": "id"
           },
           {
             "name": "appid",
@@ -910,7 +915,7 @@
             "in": "path",
             "description": "id for the API",
             "required": true,
-            "type": "integer",
+            "type": "string",
             "format": "id"
           },
           {
@@ -953,7 +958,7 @@
             "in": "path",
             "description": "id for the API",
             "required": true,
-            "type": "integer",
+            "type": "string",
             "format": "id"
           },
           {
@@ -1019,7 +1024,8 @@
             "in": "path",
             "description": "id for the API",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "format": "id"
           },
           {
             "name": "appid",
@@ -1070,7 +1076,7 @@
             "in": "path",
             "description": "id for the API",
             "required": true,
-            "type": "integer",
+            "type": "string",
             "format": "id"
           },
           {
@@ -1113,7 +1119,7 @@
             "in": "path",
             "description": "id for the API",
             "required": true,
-            "type": "integer",
+            "type": "string",
             "format": "id"
           },
           {
@@ -1131,25 +1137,25 @@
             "type": "string"
           },
           {
-            "name": "building_block_api",
+            "name": "building_block_id",
             "in": "query",
             "description": "id for the building block",
             "required": true,
-            "type": "integer"
+            "type": "string"
           },
           {
             "name": "organization_id",
             "in": "query",
             "description": "id for the organization",
             "required": false,
-            "type": "integer"
+            "type": "string"
           },
           {
             "name": "tool_id",
             "in": "query",
             "description": "id for the tool",
             "required": false,
-            "type": "integer"
+            "type": "string"
           },
           {
             "name": "url",
@@ -1186,7 +1192,8 @@
             "in": "path",
             "description": "id for the API",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "format": "id"
           },
           {
             "name": "appid",
@@ -1237,7 +1244,7 @@
             "in": "path",
             "description": "id for the API",
             "required": true,
-            "type": "integer",
+            "type": "string",
             "format": "id"
           },
           {
@@ -1280,7 +1287,7 @@
             "in": "path",
             "description": "id for the api item",
             "required": true,
-            "type": "integer",
+            "type": "string",
             "format": "id"
           },
           {
@@ -1346,7 +1353,8 @@
             "in": "path",
             "description": "id for the api item",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "format": "id"
           },
           {
             "name": "appid",
@@ -1397,7 +1405,8 @@
             "in": "path",
             "description": "id for the api item",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "format": "id"
           },
           {
             "name": "appid",
@@ -1441,7 +1450,7 @@
             "in": "path",
             "description": "id for the api item",
             "required": true,
-            "type": "integer",
+            "type": "string",
             "format": "id"
           },
           {
@@ -1493,7 +1502,8 @@
             "in": "path",
             "description": "id for the api item",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "format": "id"
           },
           {
             "name": "appid",
@@ -1537,7 +1547,7 @@
             "in": "path",
             "description": "id for the api item",
             "required": true,
-            "type": "integer",
+            "type": "string",
             "format": "id"
           },
           {
@@ -1589,7 +1599,7 @@
             "in": "path",
             "description": "id for the api item",
             "required": true,
-            "type": "integer",
+            "type": "string",
             "format": "id"
           },
           {
@@ -1634,7 +1644,7 @@
             "in": "path",
             "description": "id for the api item",
             "required": true,
-            "type": "integer",
+            "type": "string",
             "format": "id"
           },
           {
@@ -1679,7 +1689,7 @@
             "in": "path",
             "description": "id for the api item",
             "required": true,
-            "type": "integer",
+            "type": "string",
             "format": "id"
           },
           {
@@ -1738,7 +1748,7 @@
             "in": "path",
             "description": "id for the api item",
             "required": true,
-            "type": "integer",
+            "type": "string",
             "format": "id"
           },
           {
@@ -1861,7 +1871,7 @@
       "properties": {
         "tag_id": {
           "description": "id for the tag",
-          "type": "integer",
+          "type": "string",
           "format": "id"
         },
         "tag": {
@@ -1878,7 +1888,7 @@
       "properties": {
         "note_id": {
           "description": "id for the api item",
-          "type": "integer",
+          "type": "string",
           "format": "id"
         },
         "type": {
@@ -1903,7 +1913,7 @@
       "properties": {
         "note_id": {
           "description": "id for the API",
-          "type": "integer",
+          "type": "string",
           "format": "id"
         },
         "type": {
@@ -1924,12 +1934,12 @@
       "properties": {
         "api_id": {
           "description": "id for the API",
-          "type": "integer",
+          "type": "string",
           "format": "id"
         },
         "image_id": {
           "description": "id for the image",
-          "type": "integer",
+          "type": "string",
           "format": "id"
         },
         "name": {
@@ -1950,12 +1960,12 @@
       "properties": {
         "api_id": {
           "description": "id for the API",
-          "type": "integer",
+          "type": "string",
           "format": "id"
         },
         "screenshot_id": {
           "description": "id for the screenshot",
-          "type": "integer",
+          "type": "string",
           "format": "id"
         },
         "name": {
@@ -1976,22 +1986,22 @@
       "properties": {
         "api_id": {
           "description": "id for the API",
-          "type": "integer",
+          "type": "string",
           "format": "id"
         },
-        "building_block_api": {
+        "building_block_id": {
           "description": "id for the building block",
-          "type": "integer",
+          "type": "string",
           "format": "id"
         },
         "organization_id": {
           "description": "id for the organization",
-          "type": "integer",
+          "type": "string",
           "format": "id"
         },
         "tool_id": {
           "description": "id for the tool",
-          "type": "integer",
+          "type": "string",
           "format": "id"
         },
         "url": {
@@ -2004,7 +2014,7 @@
       "properties": {
         "api_id": {
           "description": "id for the API",
-          "type": "integer",
+          "type": "string",
           "format": "id"
         },
         "type": {
