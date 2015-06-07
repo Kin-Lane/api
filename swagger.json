@@ -39,7 +39,7 @@
             "name": "query",
             "in": "query",
             "description": "a text query to search across APIs",
-            "required": true,
+            "required": false,
             "type": "string"
           }
         ],
@@ -480,7 +480,7 @@
           {
             "name": "api_id",
             "in": "path",
-            "description": "id for the api item",
+            "description": "id for the api",
             "required": true,
             "type": "string",
             "format": "id"
@@ -700,7 +700,7 @@
           {
             "name": "api_id",
             "in": "path",
-            "description": "id for the api item",
+            "description": "id for the api",
             "required": true,
             "type": "string",
             "format": "id"
@@ -1285,7 +1285,7 @@
           {
             "name": "api_id",
             "in": "path",
-            "description": "id for the api item",
+            "description": "id for the api",
             "required": true,
             "type": "string",
             "format": "id"
@@ -1351,7 +1351,7 @@
           {
             "name": "api_id",
             "in": "path",
-            "description": "id for the api item",
+            "description": "id for the api",
             "required": true,
             "type": "string",
             "format": "id"
@@ -1403,7 +1403,7 @@
           {
             "name": "api_id",
             "in": "path",
-            "description": "id for the api item",
+            "description": "id for the api",
             "required": true,
             "type": "string",
             "format": "id"
@@ -1448,7 +1448,7 @@
           {
             "name": "api_id",
             "in": "path",
-            "description": "id for the api item",
+            "description": "id for the api",
             "required": true,
             "type": "string",
             "format": "id"
@@ -1500,7 +1500,7 @@
           {
             "name": "api_id",
             "in": "path",
-            "description": "id for the api item",
+            "description": "id for the api",
             "required": true,
             "type": "string",
             "format": "id"
@@ -1545,7 +1545,7 @@
           {
             "name": "api_id",
             "in": "path",
-            "description": "id for the api item",
+            "description": "id for the api",
             "required": true,
             "type": "string",
             "format": "id"
@@ -1597,7 +1597,7 @@
           {
             "name": "api_id",
             "in": "path",
-            "description": "id for the api item",
+            "description": "id for the api",
             "required": true,
             "type": "string",
             "format": "id"
@@ -1642,7 +1642,7 @@
           {
             "name": "api_id",
             "in": "path",
-            "description": "id for the api item",
+            "description": "id for the api",
             "required": true,
             "type": "string",
             "format": "id"
@@ -1687,7 +1687,7 @@
           {
             "name": "api_id",
             "in": "path",
-            "description": "id for the api item",
+            "description": "id for the api",
             "required": true,
             "type": "string",
             "format": "id"
@@ -1746,7 +1746,7 @@
           {
             "name": "api_id",
             "in": "path",
-            "description": "id for the api item",
+            "description": "id for the api",
             "required": true,
             "type": "string",
             "format": "id"
@@ -1794,64 +1794,64 @@
     "api": {
       "properties": {
         "api_id": {
-          "description": "id for the api item",
+          "description": "id for the api",
           "type": "string",
           "format": "label"
         },
         "title": {
-          "description": "title of the api item",
+          "description": "title of the api",
           "type": "string"
         },
         "link": {
-          "description": "url for the api item",
+          "description": "url for the api",
           "type": "string"
         },
         "item_date": {
-          "description": "date applied to the api item",
+          "description": "date applied to the api",
           "type": "string"
         },
         "details": {
-          "description": "raw details for the api item",
+          "description": "raw details for the api",
           "type": "string",
           "format": "id"
         },
         "status": {
-          "description": "status of the api item",
+          "description": "status of the api",
           "type": "string",
           "format": "id"
         },
         "public_comment": {
-          "description": "any public comment for the api item",
+          "description": "any public comment for the api",
           "type": "string",
           "format": "id"
         },
         "original_date": {
-          "description": "orignal date for the api item",
+          "description": "orignal date for the api",
           "type": "string",
           "format": "datetime"
         },
         "author": {
-          "description": "author for the api item",
+          "description": "author for the api",
           "type": "string",
           "format": "id"
         },
         "processed": {
-          "description": "has the api item been processed",
+          "description": "has the api been processed",
           "type": "string",
           "format": "id"
         },
         "domain": {
-          "description": "root domain for the api item",
+          "description": "root domain for the api",
           "type": "string",
           "format": "id"
         },
         "screenshot_url": {
-          "description": "screenshot url for the api item",
+          "description": "screenshot url for the api",
           "type": "string",
           "format": "id"
         },
         "resolved_url": {
-          "description": "resolved url for the api item",
+          "description": "resolved url for the api",
           "type": "string",
           "format": "id"
         },
@@ -1887,7 +1887,7 @@
     "note": {
       "properties": {
         "note_id": {
-          "description": "id for the api item",
+          "description": "id for the api",
           "type": "string",
           "format": "id"
         },
