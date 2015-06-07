@@ -14,14 +14,13 @@
   "apis": [
     {
       "name": "API",
-      "description": "A API resource.",
+      "description": "The system I use to manage all the APIs that I track on as part of the API Evangelist network.",
       "image": "https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-a.png",
       "humanURL": "https://kin-lane.github.io/api/",
       "baseURL": "http://api.api.kinlane.com",
       "tags": [
         "API",
-        "Application Programming Interface",
-        "API"
+        "Application Programming Interface"
       ],
       "properties": [
         {
@@ -54,23 +53,31 @@
     {
       "name": "API API (Inception)",
       "url": "https://kin-lane.github.io/api/apis.json"
-    },   
+    },
     {
       "name": "Audio API",
       "url": "https://kin-lane.github.io/audio/apis.json"
     },
     {
-      "name": "Comment API",
-      "url": "https://kin-lane.github.io/comment/apis.json"
+      "name": "Blog API",
+      "url": "https://kin-lane.github.io/blog/apis.json"
     },
+    {
+      "name": "Building Block API",
+      "url": "https://kin-lane.github.io/buildingblock/apis.json"
+    },
+    {
+      "name": "Certification API",
+      "url": "https://kin-lane.github.io/certification/apis.json"
+    },    
     {
       "name": "Curated API",
       "url": "https://kin-lane.github.io/curated/apis.json"
-    },     
+    },
     {
       "name": "Glossary API",
       "url": "https://kin-lane.github.io/glossary/apis.json"
-    },     
+    },
     {
       "name": "Image API",
       "url": "https://kin-lane.github.io/image/apis.json"
@@ -78,11 +85,23 @@
     {
       "name": "Job API",
       "url": "https://kin-lane.github.io/job/apis.json"
-    },     
+    },
+    {
+      "name": "Keyword API",
+      "url": "https://kin-lane.github.io/keyword/apis.json"
+    },    
     {
       "name": "Link API",
       "url": "https://kin-lane.github.io/link/apis.json"
     },
+    {
+      "name": "Linkrot API",
+      "url": "https://kin-lane.github.io/linkrot/apis.json"
+    },   
+    {
+      "name": "News API",
+      "url": "https://kin-lane.github.io/news/apis.json"
+    },     
     {
       "name": "Note API",
       "url": "https://kin-lane.github.io/note/apis.json"
@@ -90,31 +109,51 @@
     {
       "name": "Organization API",
       "url": "https://kin-lane.github.io/organization/apis.json"
-    },     
+    },
     {
       "name": "Page API",
       "url": "https://kin-lane.github.io/page/apis.json"
     },
     {
+      "name": "Paper API",
+      "url": "https://kin-lane.github.io/paper/apis.json"
+    },
+    {
       "name": "Patent API",
       "url": "https://kin-lane.github.io/patent/apis.json"
-    },    
+    },
     {
       "name": "People API",
       "url": "https://kin-lane.github.io/people/apis.json"
-    },     
+    },
     {
       "name": "Project API",
       "url": "https://kin-lane.github.io/project/apis.json"
     },
     {
+      "name": "Question API",
+      "url": "https://kin-lane.github.io/question/apis.json"
+    },
+    {
+      "name": "Slide API",
+      "url": "https://kin-lane.github.io/slide/apis.json"
+    },    
+    {
       "name": "Tag API",
       "url": "https://kin-lane.github.io/tag/apis.json"
-    },      
+    },
+    {
+      "name": "Task API",
+      "url": "https://kin-lane.github.io/task/apis.json"
+    },    
+    {
+      "name": "Tip API",
+      "url": "https://kin-lane.github.io/tip/apis.json"
+    },
     {
       "name": "Tool API",
       "url": "https://kin-lane.github.io/tool/apis.json"
-    },         
+    },
     {
       "name": "Video API",
       "url": "https://kin-lane.github.io/video/apis.json"
