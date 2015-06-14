@@ -9,7 +9,7 @@
   "host": "api.api.kinlane.com",
   "basePath": "/",
   "schemes": [
-    "http","https"
+    "https"
   ],
   "produces": [
     "apilication/json"
@@ -23,14 +23,14 @@
         "parameters": [
           {
             "name": "appid",
-            "in": "header",
+            "in": "query",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "header",
+            "in": "query",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
@@ -73,14 +73,14 @@
         "parameters": [
           {
             "name": "appid",
-            "in": "header",
+            "in": "query",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "header",
+            "in": "query",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
@@ -154,14 +154,14 @@
           },
           {
             "name": "appid",
-            "in": "header",
+            "in": "query",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "header",
+            "in": "query",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
@@ -205,14 +205,14 @@
           },
           {
             "name": "appid",
-            "in": "header",
+            "in": "query",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "header",
+            "in": "query",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
@@ -284,14 +284,14 @@
           },
           {
             "name": "appid",
-            "in": "header",
+            "in": "query",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "header",
+            "in": "query",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
@@ -337,14 +337,14 @@
           },
           {
             "name": "appid",
-            "in": "header",
+            "in": "query",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "header",
+            "in": "query",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
@@ -388,14 +388,14 @@
           },
           {
             "name": "appid",
-            "in": "header",
+            "in": "query",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "header",
+            "in": "query",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
@@ -448,14 +448,14 @@
           },
           {
             "name": "appid",
-            "in": "header",
+            "in": "query",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "header",
+            "in": "query",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
@@ -508,14 +508,14 @@
           },
           {
             "name": "appid",
-            "in": "header",
+            "in": "query",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "header",
+            "in": "query",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
@@ -559,14 +559,14 @@
           },
           {
             "name": "appid",
-            "in": "header",
+            "in": "query",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "header",
+            "in": "query",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
@@ -626,14 +626,14 @@
           },
           {
             "name": "appid",
-            "in": "header",
+            "in": "query",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "header",
+            "in": "query",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
@@ -686,14 +686,14 @@
           },
           {
             "name": "appid",
-            "in": "header",
+            "in": "query",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "header",
+            "in": "query",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
@@ -737,14 +737,14 @@
           },
           {
             "name": "appid",
-            "in": "header",
+            "in": "query",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "header",
+            "in": "query",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
@@ -811,14 +811,14 @@
           },
           {
             "name": "appid",
-            "in": "header",
+            "in": "query",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "header",
+            "in": "query",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
@@ -871,14 +871,14 @@
           },
           {
             "name": "appid",
-            "in": "header",
+            "in": "query",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "header",
+            "in": "query",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
@@ -922,14 +922,14 @@
           },
           {
             "name": "appid",
-            "in": "header",
+            "in": "query",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "header",
+            "in": "query",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
@@ -996,14 +996,14 @@
           },
           {
             "name": "appid",
-            "in": "header",
+            "in": "query",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "header",
+            "in": "query",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
@@ -1056,14 +1056,14 @@
           },
           {
             "name": "appid",
-            "in": "header",
+            "in": "query",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "header",
+            "in": "query",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
@@ -1107,14 +1107,14 @@
           },
           {
             "name": "appid",
-            "in": "header",
+            "in": "query",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "header",
+            "in": "query",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
@@ -1181,14 +1181,14 @@
           },
           {
             "name": "appid",
-            "in": "header",
+            "in": "query",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "header",
+            "in": "query",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
@@ -1241,14 +1241,14 @@
           },
           {
             "name": "appid",
-            "in": "header",
+            "in": "query",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "header",
+            "in": "query",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
@@ -1292,14 +1292,14 @@
           },
           {
             "name": "appid",
-            "in": "header",
+            "in": "query",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "header",
+            "in": "query",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
@@ -1373,14 +1373,14 @@
           },
           {
             "name": "appid",
-            "in": "header",
+            "in": "query",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "header",
+            "in": "query",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
@@ -1433,14 +1433,14 @@
           },
           {
             "name": "appid",
-            "in": "header",
+            "in": "query",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "header",
+            "in": "query",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
@@ -1484,14 +1484,14 @@
           },
           {
             "name": "appid",
-            "in": "header",
+            "in": "query",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "header",
+            "in": "query",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
@@ -1558,14 +1558,14 @@
           },
           {
             "name": "appid",
-            "in": "header",
+            "in": "query",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "header",
+            "in": "query",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
@@ -1618,14 +1618,14 @@
           },
           {
             "name": "appid",
-            "in": "header",
+            "in": "query",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "header",
+            "in": "query",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
@@ -1731,14 +1731,14 @@
           },
           {
             "name": "appid",
-            "in": "header",
+            "in": "query",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "header",
+            "in": "query",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
@@ -1844,14 +1844,14 @@
           },
           {
             "name": "appid",
-            "in": "header",
+            "in": "query",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "header",
+            "in": "query",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
@@ -1897,14 +1897,14 @@
           },
           {
             "name": "appid",
-            "in": "header",
+            "in": "query",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "header",
+            "in": "query",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
@@ -1950,14 +1950,14 @@
           },
           {
             "name": "appid",
-            "in": "header",
+            "in": "query",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "header",
+            "in": "query",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
@@ -2017,14 +2017,14 @@
           },
           {
             "name": "appid",
-            "in": "header",
+            "in": "query",
             "description": "your appid for accessing the API",
             "required": true,
             "type": "string"
           },
           {
             "name": "appkey",
-            "in": "header",
+            "in": "query",
             "description": "your appkey for accessing the API",
             "required": true,
             "type": "string"
@@ -2066,12 +2066,12 @@
     "appid": {
       "type": "apiKey",
       "name": "appid",
-      "in": "header"
+      "in": "query"
     },
     "appkey": {
       "type": "apiKey",
       "name": "appkey",
-      "in": "header"
+      "in": "query"
     }
   },
   "definitions": {
