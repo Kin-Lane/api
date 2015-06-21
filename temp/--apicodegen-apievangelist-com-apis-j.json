@@ -1,0 +1,42 @@
+{
+  "name": "Kin Lane - Organization",
+  "description": "This is my default organization API, using it to manage organization using a single API. It is a Stack Network API resource, with supporting docker container for the API.",
+  "image": "https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-organization.jpg",
+  "tags": [
+    "application programming interface",
+    "API",
+    "Organization"
+  ],
+  "created": "2014-04-07",
+  "modified": "2014-07-09",
+  "url": "https://kin-lane.github.io/organization/apis.json",
+  "SpecificationVersion": "0.14",
+  "apis": [
+    {
+      "name": "Organization",
+      "description": "A organization API resource.",
+      "image": "https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-organization.jpg",
+      "humanURL": "https://kin-lane.github.io/organization/",
+      "baseURL": "http://organization.api.kinlane.com",
+      "tags": [
+        "API",
+        "Application Programming Interface",
+        "Organization"
+      ],
+      "properties": [
+        {
+          "type": "swagger",
+          "url": "http://api-codegen.apievangelist.com/swagger.json"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "API Evangliest",
+          "email": "info@apievangelist.com",
+          "X-twitter": "apievangelist"
+        }
+      ]
+    }
+  ],
+  "include": []
+}
