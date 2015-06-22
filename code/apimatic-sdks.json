@@ -14,7 +14,7 @@
     },
     "java": {
       "icon-url": "https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-java-file.png",
-      "zip-url": "https://kin-lane.github.io/api/code/libraries/apimatic-api-android.zip"
+      "zip-url": "https://kin-lane.github.io/api/code/libraries/apimatic-api-java.zip"
     },
     "csharp": {
       "icon-url": "https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-csharp-file.png",
