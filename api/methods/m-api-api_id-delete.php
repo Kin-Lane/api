@@ -2,6 +2,9 @@
 $route = '/api/:api_id/';	
 $app->delete($route, function ($api_id) use ($app){
 	
+	$host = $_SERVER['HTTP_HOST'];
+	$api_id = prepareIdIn($api_id,$host);
+
 	$Add = 1;
 	$ReturnObject = array();
 	

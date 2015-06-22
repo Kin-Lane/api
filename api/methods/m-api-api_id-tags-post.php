@@ -3,7 +3,7 @@ $route = '/api/:api_id/tags/';
 $app->post($route, function ($api_id)  use ($app){
 
 	$host = $_SERVER['HTTP_HOST'];		
-	$api_id = decrypt($api_id,$host);	
+	$api_id = prepareIdIn($api_id,$host);		
 
 	$ReturnObject = array();
 		
@@ -19,14 +19,14 @@ $app->post($route, function ($api_id)  use ($app){
 		if($CheckTagResults && mysql_num_rows($CheckTagResults))
 			{
 			$Tag = mysql_fetch_assoc($CheckTagResults);		
-			$Tag_ID = $Tag['Tag_ID'];
+			$tag_id = $Tag['Tag_ID'];
 			}
 		else
 			{
 
 			$query = "INSERT INTO tags(Tag) VALUES('" . trim($_POST['Tag']) . "'); ";
 			mysql_query($query) or die('Query failed: ' . mysql_error());	
-			$Tag_ID = mysql_insert_id();			
+			$tag_id = mysql_insert_id();			
 			}
 
 		$CheckTagPivotQuery = "SELECT * FROM api_tag_pivot where Tag_ID = " . trim($Tag_ID) . " AND API_ID = " . trim($api_id);
@@ -42,10 +42,10 @@ $app->post($route, function ($api_id)  use ($app){
 			mysql_query($query) or die('Query failed: ' . mysql_error());					
 			}
 
-		$Tag_ID = encrypt($Tag_ID,$host);
+		$tag_id = prepareIdOut($tag_id,$host);
 
 		$F = array();
-		$F['tag_id'] = $Tag_ID;
+		$F['tag_id'] = $tag_id;
 		$F['tag'] = $tag;
 		$F['api_count'] = 0;
 		

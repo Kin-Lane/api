@@ -3,8 +3,8 @@ $route = '/api/:api_id/notes/:note_id';
 $app->put($route, function ($api_id,$note_id)  use ($app){
 
 	$host = $_SERVER['HTTP_HOST'];		
-	$api_id = decrypt($api_id,$host);
-	$note_id = decrypt($note_id,$host);
+	$api_id = prepareIdIn($api_id,$host);	
+	$note_id = prepareIdIn($note_id,$host);
 
 	$ReturnObject = array();
 		
@@ -21,7 +21,7 @@ $app->put($route, function ($api_id,$note_id)  use ($app){
 		mysql_query($query) or die('Query failed: ' . mysql_error());					
 		$Note_ID = mysql_insert_id();		
 			
-		$note_id = encrypt($note_id,$host);	
+		$note_id = prepareIdOut($note_id,$host);
 			
 		$F = array();
 		$F['note_id'] = $note_id;

@@ -2,10 +2,8 @@
 $route = '/api/:api_id/definitions/utility/clean/path/';
 $app->get($route, function ($api_id)  use ($app,$awsAccessKey,$awsSecretKey,$awsSiteBucket,$awsRootURL,$guser,$gpass){
 	
-	$api_id = str_replace(" ","+",$api_id);
-	$api_id =  str_replace("~","/",$api_id);;
-	$host = $_SERVER['HTTP_HOST'];		
-	$api_id = decrypt($api_id,$host);	
+	$host = $_SERVER['HTTP_HOST'];
+	$api_id = prepareIdIn($api_id,$host);	
 	
 	$ReturnObject = array();
 		

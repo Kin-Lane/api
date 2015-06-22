@@ -3,7 +3,7 @@ $route = '/api/:api_id/urls/';
 $app->get($route, function ($api_id)  use ($app){
 	
 	$host = $_SERVER['HTTP_HOST'];		
-	$api_id = decrypt($api_id,$host);
+	$api_id = prepareIdIn($api_id,$host);
 
 	$ReturnObject = array();
 		
@@ -20,7 +20,7 @@ $app->get($route, function ($api_id)  use ($app){
 		$url = $Database['URL'];
 		$name = $Database['Name'];
 
-		$url_id = decrypt($url_id,$host);
+		$url_id = prepareIdOut($url_id,$host);
 		
 		$F = array();
 		$F['url_id'] = $url_id;

@@ -3,7 +3,7 @@ $route = '/api/:api_id/notes/';
 $app->post($route, function ($api_id)  use ($app){
 
 	$host = $_SERVER['HTTP_HOST'];		
-	$api_id = decrypt($api_id,$host);
+	$api_id = prepareIdIn($api_id,$host);
 
 	$ReturnObject = array();
 		
@@ -17,12 +17,12 @@ $app->post($route, function ($api_id)  use ($app){
 
 		$query = "INSERT INTO api_notes(API_ID,Type,Note) VALUES(" . $api_id . "," . $Type . "," . $Note . "); ";
 		mysql_query($query) or die('Query failed: ' . mysql_error());					
-		$Note_ID = mysql_insert_id();		
+		$note_id = mysql_insert_id();		
 			
-		$Note_ID = decrypt($Note_ID,$host);		
+		$note_id = prepareIdOut($note_id,$host);	
 			
 		$F = array();
-		$F['note_id'] = $Note_ID;
+		$F['note_id'] = $note_id;
 		$F['type'] = $Type;
 		$F['note'] = $Note;
 		

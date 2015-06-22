@@ -3,7 +3,7 @@ $route = '/api/:api_id/';
 $app->get($route, function ($api_id)  use ($app){
 				
 	$host = $_SERVER['HTTP_HOST'];		
-	$api_id =  decrypt($api_id,$host);	
+	$api_id = prepareIdIn($api_id,$host);	
 
 	$ReturnObject = array();
 		
@@ -26,8 +26,7 @@ $app->get($route, function ($api_id)  use ($app){
 				
 		// manipulation zone
 		
-		$host = $_SERVER['HTTP_HOST'];		
-		$api_id =  encrypt($api_id,$host);			
+		$api_id = prepareIdOut($api_id,$host);		
 		
 		$F = array();
 		$F['api_id'] = $api_id;

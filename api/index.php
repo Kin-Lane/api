@@ -3,12 +3,13 @@ date_default_timezone_set('America/Los_Angeles');
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
-require 'config.php';
-require '../Slim/Slim.php';
-require('../3scale/ThreeScaleClient.php');
+require_once('config.php');
+require_once('../Slim/Slim.php');
+require_once('../3scale/ThreeScaleClient.php');
 require_once('../client/GitHubClient.php');
 require_once('../parse/index.php');
-require '/var/www/html/system/class-amazon-s3.php';
+require_once('../libraries/common.php');
+require_once('/var/www/html/system/class-amazon-s3.php');
 
 $gclient = new GitHubClient();
 $gclient->setCredentials($guser, $gpass);

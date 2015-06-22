@@ -3,8 +3,8 @@ $route = '/api/:api_id/logs/:log_id';
 $app->put($route, function ($api_id,$log_id)  use ($app){
 
 	$host = $_SERVER['HTTP_HOST'];		
-	$api_id = decrypt($api_id,$host);
-	$log_id = decrypt($log_id,$host);
+	$api_id = prepareIdIn($api_id,$host);
+	$log_id = prepareIdIn($log_id,$host);
 
 	$ReturnObject = array();
 		
@@ -21,7 +21,7 @@ $app->put($route, function ($api_id,$log_id)  use ($app){
 		mysql_query($query) or die('Query failed: ' . mysql_error());					
 		$log_ID = mysql_insert_id();		
 			
-		$log_id = encrypt($log_id,$host);	
+		$log_id = prepareIdOut($log_id,$host);	
 			
 		$F = array();
 		$F['log_id'] = $log_id;

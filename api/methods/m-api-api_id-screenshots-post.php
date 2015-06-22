@@ -3,7 +3,7 @@ $route = '/api/:api_id/screenshots/';
 $app->post($route, function ($api_id)  use ($app){
 
 	$host = $_SERVER['HTTP_HOST'];		
-	$api_id = decrypt($api_id,$host);
+	$api_id = prepareIdIn($api_id,$host);
 
 	$ReturnObject = array();
 		
@@ -20,7 +20,7 @@ $app->post($route, function ($api_id)  use ($app){
 		mysql_query($query) or die('Query failed: ' . mysql_error());					
 		$screenshot_id = mysql_insert_id();		
 			
-		$screenshot_id = decrypt($screenshot_id,$host);	
+		$screenshot_id = prepareIdOut($screenshot_id,$host);
 			
 		$F = array();
 		$F['screenshot_id'] = $screenshot_id;

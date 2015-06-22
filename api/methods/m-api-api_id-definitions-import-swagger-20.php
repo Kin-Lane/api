@@ -2,13 +2,8 @@
 $route = '/api/:api_id/definitions/import/swagger/2.0/';
 $app->post($route, function ($api_id)  use ($app){
 
-	$api_id = str_replace(" ","+",$api_id);
-	$api_id =  str_replace("~","/",$api_id);	
-	//echo 'API_ID: ' . $api_id . "<br />";
 	$host = $_SERVER['HTTP_HOST'];
-	//echo $host . "<br />";		
-	$api_id = decrypt($api_id,$host);
-	//echo 'API_ID: ' . $api_id . "<br />";
+	$api_id = prepareIdIn($api_id,$host);
 
 	$ReturnObject = array();
 		

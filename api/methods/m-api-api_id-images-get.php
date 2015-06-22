@@ -3,7 +3,7 @@ $route = '/api/:api_id/images/';
 $app->get($route, function ($api_id)  use ($app){
 
 	$host = $_SERVER['HTTP_HOST'];		
-	$api_id = decrypt($api_id,$host);
+	$api_id = prepareIdIn($api_id,$host);
 
 	$ReturnObject = array();
 		
@@ -20,7 +20,7 @@ $app->get($route, function ($api_id)  use ($app){
 		$path = $Database['Image_Path'];
 		$name = $Database['Image_Name'];	
 
-		$image_id = encrypt($image_id,$host);
+		$image_id = prepareIdOut($image_id,$host);
 
 		$F = array();
 		$F['image_id'] = $image_id;

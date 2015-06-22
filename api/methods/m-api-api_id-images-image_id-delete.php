@@ -3,8 +3,8 @@ $route = '/api/:api_id/images/:image_id';
 $app->delete($route, function ($api_id,$image_id)  use ($app){
 
 	$host = $_SERVER['HTTP_HOST'];		
-	$api_id = decrypt($api_id,$host);
-	$image_id = decrypt($image_id,$host);
+	$api_id = prepareIdIn($api_id,$host);
+	$image_id = prepareIdIn($image_id,$host);
 
 	$ReturnObject = array();
 		
@@ -14,7 +14,7 @@ $app->delete($route, function ($api_id,$image_id)  use ($app){
 	$DeleteQuery = "DELETE FROM api_image WHERE API_Image_ID = " . $image_id;
 	$DeleteResult = mysql_query($DeleteQuery) or die('Query failed: ' . mysql_error());
 
-	$image_id = encrypt($image_id,$host);
+	$image_id = prepareIdOut($image_id,$host);
 	
 	$F = array();
 	$F['image_id'] = $image_id;

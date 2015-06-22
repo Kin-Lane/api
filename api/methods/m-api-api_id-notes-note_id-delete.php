@@ -3,8 +3,8 @@ $route = '/api/:api_id/notes/:note_id';
 $app->delete($route, function ($api_id,$note_id)  use ($app){
 
 	$host = $_SERVER['HTTP_HOST'];		
-	$api_id = decrypt($api_id,$host);
-	$note_id = decrypt($note_id,$host);
+	$api_id = prepareIdIn($api_id,$host);	
+	$note_id = prepareIdIn($note_id,$host);	
 
 	$ReturnObject = array();
 		
@@ -14,7 +14,7 @@ $app->delete($route, function ($api_id,$note_id)  use ($app){
 	$DeleteQuery = "DELETE FROM api_note WHERE ID = " . trim($note_id) . " AND API_ID = " . trim($api_id);
 	$DeleteResult = mysql_query($DeleteQuery) or die('Query failed: ' . mysql_error());
 
-	$note_id = encrypt($note_id,$host);	
+	$note_id = prepareIdOut($note_id,$host);
 	
 	$F = array();
 	$F['note_id'] = $note_id;

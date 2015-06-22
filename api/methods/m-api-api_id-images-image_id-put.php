@@ -3,8 +3,8 @@ $route = '/api/:api_id/images/:image_id';
 $app->put($route, function ($api_id,$image_id)  use ($app){
 
 	$host = $_SERVER['HTTP_HOST'];		
-	$api_id = decrypt($api_id,$host);
-	$image_id = decrypt($image_id,$host);
+	$api_id = prepareIdIn($api_id,$host);
+	$image_id = prepareIdIn($image_id,$host);
 
 	$ReturnObject = array();
 		
@@ -22,7 +22,7 @@ $app->put($route, function ($api_id,$image_id)  use ($app){
 		mysql_query($query) or die('Query failed: ' . mysql_error());					
 		$image_id = mysql_insert_id();		
 			
-		$image_id = encrypt($image_id,$host);	
+		$image_id = prepareIdOut($image_id,$host);
 			
 		$F = array();
 		$F['image_id'] = $image_id;

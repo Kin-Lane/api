@@ -1,5 +1,4 @@
 <?php
-include "/var/www/html/system/common.php";
 
 $dbserver = "laneworks-2.cjgvjastiugl.us-east-1.rds.amazonaws.com";
 //$dbname = "stack_network_kinlane_blogapi";

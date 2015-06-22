@@ -3,7 +3,7 @@ $route = '/api/:api_id/definitions/export/apisjson/.14/';	;
 $app->get($route, function ($api_id)  use ($app){
 	
 	$host = $_SERVER['HTTP_HOST'];		
-	$api_id = decrypt($api_id,$host);	
+	$api_id = prepareIdIn($api_id,$host);	
 	
 	$ReturnObject = array();
 		

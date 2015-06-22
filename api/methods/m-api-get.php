@@ -29,7 +29,7 @@ $app->get($route, function ()  use ($app){
 		$api_id = $Database['API_ID'];
 		
 		$host = $_SERVER['HTTP_HOST'];		
-		$api_id =  encrypt($api_id,$host);
+		$api_id = prepareIdOut($api_id,$host);
 		
 		$name = $Database['Name'];
 		$about = $Database['About'];

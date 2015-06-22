@@ -3,7 +3,7 @@ $route = '/api/:api_id/tags/';
 $app->get($route, function ($api_id)  use ($app){
 
 	$host = $_SERVER['HTTP_HOST'];		
-	$api_id = decrypt($api_id,$host);	
+	$api_id = prepareIdIn($api_id,$host);	
 
 	$ReturnObject = array();
 		
@@ -20,6 +20,8 @@ $app->get($route, function ($api_id)  use ($app){
 		$tag_id = $Database['Tag_ID'];
 		$tag = $Database['Tag'];
 		$api_count = $Database['API_Count'];
+
+		$tag_id = prepareIdOut($tag_id,$host);
 
 		$F = array();
 		$F['tag_id'] = $tag_id;

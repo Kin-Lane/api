@@ -3,7 +3,7 @@ $route = '/api/:api_id/notes/';
 $app->get($route, function ($api_id)  use ($app){
 
 	$host = $_SERVER['HTTP_HOST'];		
-	$api_id = decrypt($api_id,$host);	
+	$api_id = prepareIdIn($api_id,$host);	
 
 	$ReturnObject = array();
 		
@@ -15,14 +15,14 @@ $app->get($route, function ($api_id)  use ($app){
 	while ($Database = mysql_fetch_assoc($DatabaseResult))
 		{
 
-		$Note_ID = $Database['ID'];
+		$note_id = $Database['ID'];
 		$Type = $Database['Type'];
 		$Note = $Database['Note'];
 	
-		$Note_ID = decrypt($Note_ID,$host);	
+		$note_id = prepareIdOut($note_id,$host);
 
 		$F = array();
-		$F['note_id'] = $Note_ID;
+		$F['note_id'] = $note_id;
 		$F['type'] = $Type;
 		$F['note'] = $Note;
 		

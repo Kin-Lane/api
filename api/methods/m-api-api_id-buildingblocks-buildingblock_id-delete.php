@@ -3,8 +3,8 @@ $route = '/api/:api_id/buildingblocks/:buildingblock_id';
 $app->delete($route, function ($api_id,$buildingblock_id)  use ($app){
 
 	$host = $_SERVER['HTTP_HOST'];		
-	$api_id = decrypt($api_id,$host);
-	$buildingblock_id = decrypt($buildingblock_id,$host);
+	$api_id = prepareIdIn($api_id,$host);
+	$buildingblock_id = prepareIdIn($buildingblock_id,$host);
 
 	$ReturnObject = array();
 		
@@ -14,8 +14,8 @@ $app->delete($route, function ($api_id,$buildingblock_id)  use ($app){
 	$DeleteQuery = "DELETE FROM api_building_block_pivot WHERE Building_Block_ID = " . $buildingblock_id . " AND API_ID = " . $api_id;
 	$DeleteResult = mysql_query($DeleteQuery) or die('Query failed: ' . mysql_error());
 	
-	$api_id = encrypt($api_id,$host);
-	$buildingblock_id = encrypt($buildingblock_id,$host);
+	$api_id = prepareIdOut($api_id,$host);
+	$buildingblock_id = prepareIdOut($buildingblock_id,$host);
 
 	$F = array();
 	$F['api_id'] = $api_id;

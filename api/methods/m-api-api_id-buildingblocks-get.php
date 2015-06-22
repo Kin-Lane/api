@@ -3,7 +3,7 @@ $route = '/api/:api_id/buildingblocks/';
 $app->get($route, function ($api_id)  use ($app){
 
 	$host = $_SERVER['HTTP_HOST'];		
-	$api_id = decrypt($api_id,$host);
+	$api_id = prepareIdIn($api_id,$host);
 
 	$ReturnObject = array();
 		
@@ -32,7 +32,8 @@ $app->get($route, function ($api_id)  use ($app){
 		$url = $Database['Sort_Order'];
 				
 		$building_block_id = encrypt($building_block_id,$host);
-		$organization_id = encrypt($organization_id,$host);		
+		$organization_id = encrypt($organization_id,$host);	
+		$tools_id = encrypt($tools_id,$host);		
 						
 		$F = array();
 		$F['buildingblock_id'] = $building_block_id;

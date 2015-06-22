@@ -3,7 +3,7 @@ $route = '/api/:api_id/buildingblocks/';
 $app->post($route, function ($api_id)  use ($app){
 
 	$host = $_SERVER['HTTP_HOST'];		
-	$api_id = decrypt($api_id,$host);
+	$api_id = prepareIdIn($api_id,$host);
 
 	$ReturnObject = array();
 		
@@ -28,9 +28,9 @@ $app->post($route, function ($api_id)  use ($app){
 		mysql_query($query) or die('Query failed: ' . mysql_error());					
 		$buildingblock_id = mysql_insert_id();		
 			
-		$building_block_id = encrypt($building_block_id,$host);
-		$organization_id = encrypt($organization_id,$host);
-		$tools_id = encrypt($tools_id,$host);			
+		$building_block_id = prepareIdOut($building_block_id,$host);
+		$organization_id = prepareIdOut($organization_id,$host);
+		$tools_id = prepareIdOut($tools_id,$host);			
 			
 		$F = array();
 		$F['building_block_id'] = $building_block_id;

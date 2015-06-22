@@ -3,7 +3,7 @@ $route = '/api/:api_id/screenshots/';
 $app->get($route, function ($api_id)  use ($app){
 
 	$host = $_SERVER['HTTP_HOST'];		
-	$api_id = decrypt($api_id,$host);
+	$api_id = prepareIdIn($api_id,$host);
 
 	$ReturnObject = array();
 		
@@ -20,7 +20,7 @@ $app->get($route, function ($api_id)  use ($app){
 		$name = $Database['Name'];
 		$type = $Database['Type'];
 
-		$screenshot_id = encrypt($screenshot_id,$host);
+		$screenshot_id = prepareIdOut($screenshot_id,$host);
 	
 		$F = array();
 		$F['screenshot_id'] = $screenshot_id;

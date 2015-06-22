@@ -31,7 +31,7 @@ $app->post($route, function () use ($app){
 		}
 
 	$host = $_SERVER['HTTP_HOST'];		
-	$api_id =  encrypt($api_id,$host);		
+	$api_id = prepareIdOut($api_id,$host);	
 	
 	$F = array();
 	$F['api_id'] = $api_id;
