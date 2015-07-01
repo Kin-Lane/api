@@ -4,7 +4,7 @@ $app->get($route, function ($api_id)  use ($app,$awsAccessKey,$awsSecretKey,$aws
 
 	$host = $_SERVER['HTTP_HOST'];
 	$api_id = prepareIdIn($api_id,$host);
-echo $api_id . "<br />";
+
 	$ReturnObject = array();
 
  	$request = $app->request();
@@ -30,7 +30,7 @@ echo $api_id . "<br />";
 
 	$NameSlug = "";
 	$CompanyQuery = "SELECT c.Company_ID, c.Name FROM company c JOIN company_api_pivot cap ON c.Company_ID = cap.Company_ID WHERE cap.API_ID = " . $api_id;
-	echo $CompanyQuery . "<br />";
+	//echo $CompanyQuery . "<br />";
 	$CompanyResults = mysql_query($CompanyQuery) or die('Query failed: ' . mysql_error());
 	if($CompanyResults && mysql_num_rows($CompanyResults))
 		{
@@ -42,7 +42,7 @@ echo $api_id . "<br />";
 
 	$TagArray = array();
 	$TagQuery = "SELECT t.Tag FROM company c JOIN company_tag_pivot ctp ON c.Company_ID = ctp.Company_ID JOIN tags t ON ctp.Tag_ID = t.Tag_ID WHERE c.Company_ID = " . $Company_ID;
-	echo $TagQuery . "<br />";
+	//echo $TagQuery . "<br />";
 	$TagResults = mysql_query($TagQuery) or die('Query failed: ' . mysql_error());
 
 	if($TagResults && mysql_num_rows($TagResults))
@@ -55,7 +55,7 @@ echo $api_id . "<br />";
 		}
 
 	$DefinitionQuery = "SELECT * FROM api_swagger WHERE API_ID = " . $api_id . " ORDER BY import_date DESC";
-	echo $DefinitionQuery . chr(13);
+	//echo $DefinitionQuery . chr(13);
 	$DefinitionResult = mysql_query($DefinitionQuery) or die('Query failed: ' . mysql_error());
 
 	if($DefinitionResult && mysql_num_rows($DefinitionResult))
