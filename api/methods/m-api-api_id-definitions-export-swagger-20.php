@@ -373,7 +373,8 @@ $app->get($route, function ($api_id)  use ($app,$awsAccessKey,$awsSecretKey,$aws
 				{
 				//echo $key . "<br />";
 				//var_dump($value);
-				$Swagger['securityDefinitions']->[$value->name] = $value;
+				$name = $value['name'];
+				$Swagger['securityDefinitions']->[$name] = $value;
 				}
 			}
 
