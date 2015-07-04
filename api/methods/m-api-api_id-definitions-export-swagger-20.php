@@ -366,12 +366,11 @@ $app->get($route, function ($api_id)  use ($app,$awsAccessKey,$awsSecretKey,$aws
 			}
 		}
 
-		if(count($SecurityDefinition)>1)
+		if(count($SecurityDefinition)>0)
 			{
 			$Swagger['securityDefinitions'] = new stdClass();
 			foreach ($SecurityDefinition as $key => $value)
 				{
-				//echo $key . " = " . $value;
 				$Swagger['securityDefinitions']->$key = $value;
 				}
 			}
@@ -468,7 +467,7 @@ $app->get($route, function ($api_id)  use ($app,$awsAccessKey,$awsSecretKey,$aws
 		}
 
 	$Swagger_JSON = stripslashes(format_json(json_encode($Swagger)));
-
+echo $Swagger_JSON . "<br />";
 	$export_file_name = PrepareFileName($info_title);
 	$export_file_name = $export_file_name . "-" . date('Y-m-d-H-i-s') . ".json";
 
@@ -499,7 +498,7 @@ $app->get($route, function ($api_id)  use ($app,$awsAccessKey,$awsSecretKey,$aws
 	$ReturnObject['url'] = $Swagger_Path;
 
 	$ReturnJSON = stripslashes(format_json(json_encode($ReturnObject)));
-	echo $ReturnJSON;
+	//echo $ReturnJSON;
 	echo "<hr />";
 	// Send to API Stack
 
