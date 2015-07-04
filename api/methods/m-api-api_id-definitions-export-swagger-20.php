@@ -312,6 +312,27 @@ $app->get($route, function ($api_id)  use ($app,$awsAccessKey,$awsSecretKey,$aws
 					$SwaggerPathTypeDetail['tags'] = $TagArray;
 					}
 
+				$SwaggerPathTypeDetail['security'] = array();
+
+				$SwaggerSecurityDefinitionQuery = "SELECT aspsd.ID as ID, assd.Name as name FROM api_swagger_security_definitions assd JOIN api_swagger_path_security_definition aspsd ON assd.ID = aspsd.api_swagger_security_definition_id WHERE api_swagger_path_id = " . $Swagger_Path_ID;
+				//echo $SwaggerSecurityDefinitionQuery . "<br />";
+				$SwaggerSecurityDefinitionResults = mysql_query($SwaggerSecurityDefinitionQuery) or die('Query failed: ' . mysql_error());
+
+				if($SwaggerSecurityDefinitionResults && mysql_num_rows($SwaggerSecurityDefinitionResults))
+					{
+					while ($SwaggerSecurityDefinition = mysql_fetch_assoc($SwaggerSecurityDefinitionResults))
+						{
+						$Security_Path_Security_Definition_ID = $SwaggerSecurityDefinition['ID'];
+						$security_definition_name = $SwaggerSecurityDefinition['name'];
+
+						$S = array();
+						$S[$security_definition_name] = array();
+
+						array_push($SwaggerPathTypeDetail['security'], $S);
+
+						}
+					}
+
 				$SwaggerPath->$path->$type = $SwaggerPathTypeDetail;
 				unset($SwaggerPathTypeDetail);
 
@@ -319,6 +340,33 @@ $app->get($route, function ($api_id)  use ($app,$awsAccessKey,$awsSecretKey,$aws
 			}
 
 		$Swagger['paths'] = $SwaggerPath;
+
+		$SecurityDefinition = array();
+
+		$SwaggerDefinitionQuery = "SELECT * FROM api_swagger_security_definitions WHERE API_Swagger_ID = " . $API_Swagger_ID;
+		//echo $SwaggerPathFieldQuery . "<br />";
+		$SwaggerDefinitionResults = mysql_query($SwaggerDefinitionQuery) or die('Query failed: ' . mysql_error());
+
+		if($SwaggerDefinitionResults && mysql_num_rows($SwaggerDefinitionResults))
+			{
+			while ($SwaggerDefinition = mysql_fetch_assoc($SwaggerDefinitionResults))
+				{
+				$Definition_ID = $SwaggerDefinition['ID'];
+				$security_definition_name = $SwaggerDefinition['name'];
+				$security_definition_type = $SwaggerDefinition['definition_type'];
+				$security_definition_description = $SwaggerDefinition['description'];
+				$security_definition_in = $SwaggerDefinition['definition_in'];
+
+				$SecurityDefinitionArray[$definition_name] = array();
+				$SecurityDefinitionPropertiesArray['type'] = $security_definition_type;
+				$SecurityDefinitionPropertiesArray['name'] = $security_definition_name;
+				$SecurityDefinitionPropertiesArray['in'] = $security_definition_in
+
+				array_push($SecurityDefinition, $SecurityDefinitionPropertiesArray);
+			}
+		}
+
+		$Swagger['securityDefinitions'] = $SecurityDefinition;
 
 		$DefinitionArray = array();
 
@@ -450,7 +498,8 @@ $app->get($route, function ($api_id)  use ($app,$awsAccessKey,$awsSecretKey,$aws
 	$ReturnObject['url'] = $Swagger_Path;
 
 	$ReturnJSON = stripslashes(format_json(json_encode($ReturnObject)));
-	//echo $ReturnJSON;
+	echo $ReturnJSON;
+	echo "<hr />";
 	// Send to API Stack
 
 	$swagger_store_file = "data/" . $Company_Slug . "/" . $API_Name_Slug . "-swagger.json";
