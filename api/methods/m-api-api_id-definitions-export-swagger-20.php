@@ -470,7 +470,7 @@ $app->get($route, function ($api_id)  use ($app,$awsAccessKey,$awsSecretKey,$aws
 		}
 
 	$Swagger_JSON = stripslashes(format_json(json_encode($Swagger)));
-echo $Swagger_JSON . "<br />";
+	//echo $Swagger_JSON . "<br />";
 	$export_file_name = PrepareFileName($info_title);
 	$export_file_name = $export_file_name . "-" . date('Y-m-d-H-i-s') . ".json";
 
@@ -502,7 +502,7 @@ echo $Swagger_JSON . "<br />";
 
 	$ReturnJSON = stripslashes(format_json(json_encode($ReturnObject)));
 	//echo $ReturnJSON;
-	echo "<hr />";
+	//echo "<hr />";
 	// Send to API Stack
 
 	$swagger_store_file = "data/" . $Company_Slug . "/" . $API_Name_Slug . "-swagger.json";
