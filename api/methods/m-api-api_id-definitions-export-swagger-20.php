@@ -360,7 +360,7 @@ $app->get($route, function ($api_id)  use ($app,$awsAccessKey,$awsSecretKey,$aws
 				$SecurityDefinitionArray[$definition_name] = array();
 				$SecurityDefinitionPropertiesArray['type'] = $security_definition_type;
 				$SecurityDefinitionPropertiesArray['name'] = $security_definition_name;
-				$SecurityDefinitionPropertiesArray['in'] = $security_definition_in
+				$SecurityDefinitionPropertiesArray['in'] = $security_definition_in;
 
 				array_push($SecurityDefinition, $SecurityDefinitionPropertiesArray);
 			}
