@@ -366,7 +366,15 @@ $app->get($route, function ($api_id)  use ($app,$awsAccessKey,$awsSecretKey,$aws
 			}
 		}
 
-		$Swagger['securityDefinitions'] = $SecurityDefinition;
+		if(count($SecurityDefinition)>1)
+			{
+			$Swagger['securityDefinitions'] = new stdClass();
+			foreach ($SecurityDefinition as $key => $value)
+				{
+				//echo $key . " = " . $value;
+				$Swagger['securityDefinitions']->$key = $value;
+				}
+			}
 
 		$DefinitionArray = array();
 
@@ -437,13 +445,6 @@ $app->get($route, function ($api_id)  use ($app,$awsAccessKey,$awsSecretKey,$aws
 
 				$DefinitionPropertiesArray['properties'] = $DefinitionPropertyArray;
 				unset($C);
-
-				//var_dump($Properties);
-
-				//foreach ($DefinitionPropertiesArray as $key => $value)
-					//{
-					//$DefinitionPropertiesArray = $value;
-					//}
 
 				$DefinitionArray[$definition_name] = $DefinitionPropertiesArray;
 
