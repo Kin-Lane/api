@@ -16,9 +16,11 @@ $app->get($route, function ($api_id)  use ($app,$awsAccessKey,$awsSecretKey,$aws
 	$info_title = "";
 	$info_description = "";
 	$info_termsOfService = "";
+
 	$info_contact_name = "";
 	$info_contact_url = "";
 	$info_contact_email = "";
+
 	$info_license_name = "";
 	$info_license_url = "";
 	$info_version = "";
@@ -69,6 +71,7 @@ $app->get($route, function ($api_id)  use ($app,$awsAccessKey,$awsSecretKey,$aws
 
 		$info_description = $Definition['info_description'];
 		$info_termsOfService = $Definition['info_termsOfService'];
+		
 		$info_contact_name = $Definition['info_contact_name'];
 		$info_contact_url = $Definition['info_contact_url'];
 		$info_contact_email = $Definition['info_contact_email'];
