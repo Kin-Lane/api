@@ -367,7 +367,8 @@ $app->get($route, function ($api_id)  use ($app,$awsAccessKey,$awsSecretKey,$aws
 
 				$SecurityDefinitionArray[$security_definition_name] = array();
 				$SecurityDefinitionPropertiesArray['type'] = $security_definition_type;
-				if($security_definition_name!='')
+
+				if($security_definition_name!='' && $SecurityDefinitionPropertiesArray['type'] <> 'oauth2')
 					{
 					$SecurityDefinitionPropertiesArray['name'] = $security_definition_name;
 					}
@@ -452,6 +453,7 @@ $app->get($route, function ($api_id)  use ($app,$awsAccessKey,$awsSecretKey,$aws
 						$Swagger_Definition_Property_ID = $SwaggerDefinitionProperty['ID'];
 						$property_name = $SwaggerDefinitionProperty['name'];
 						$property_description = $SwaggerDefinitionProperty['description'];
+
 						$property_description = str_replace(chr(34),"",$property_description);
 						$property_description = str_replace(chr(39),"",$property_description);
 						$property_type = $SwaggerDefinitionProperty['fieldtype'];
@@ -462,7 +464,7 @@ $app->get($route, function ($api_id)  use ($app,$awsAccessKey,$awsSecretKey,$aws
 						//if($property_type=='') { $property_type = "string"; }
 
 						$C = array();
-						if($property_type!='')
+						if($property_description!='')
 							{
 							$C['description'] = $property_description;
 							}
