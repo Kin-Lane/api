@@ -360,10 +360,10 @@ $app->get($route, function ($api_id)  use ($app,$awsAccessKey,$awsSecretKey,$aws
 				$security_definition_description = $SwaggerDefinition['description'];
 				$security_definition_in = $SwaggerDefinition['definition_in'];
 
-				$security_definition_flow = $SwaggerSecurityDefinition['flow'];
-				$security_definition_authorizationurl = $SwaggerSecurityDefinition['authorizationUrl'];
-				$security_definition_tokenurl = $SwaggerSecurityDefinition['tokenUrl'];
-				$security_definition_scopes = $SwaggerSecurityDefinition['scopes'];
+				$security_definition_flow = $SwaggerDefinition['flow'];
+				$security_definition_authorizationurl = $SwaggerDefinition['authorizationUrl'];
+				$security_definition_tokenurl = $SwaggerDefinition['tokenUrl'];
+				$security_definition_scopes = $SwaggerDefinition['scopes'];
 
 				$SecurityDefinitionArray[$security_definition_name] = array();
 				$SecurityDefinitionPropertiesArray['type'] = $security_definition_type;
