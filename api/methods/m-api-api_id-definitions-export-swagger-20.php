@@ -421,7 +421,7 @@ $app->get($route, function ($api_id)  use ($app,$awsAccessKey,$awsSecretKey,$aws
 				//echo $key . "<br />";
 				//var_dump($value);
 				$name = $value['name'];
-				unset($value['name']);
+				if($value['type']=='oauth2'){ unset($value['name']); }
 				$Swagger['securityDefinitions']->$name = $value;
 				}
 			}
