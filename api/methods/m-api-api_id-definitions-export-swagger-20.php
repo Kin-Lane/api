@@ -368,6 +368,10 @@ $app->get($route, function ($api_id)  use ($app,$awsAccessKey,$awsSecretKey,$aws
 				$SecurityDefinitionArray[$security_definition_name] = array();
 				$SecurityDefinitionPropertiesArray['type'] = $security_definition_type;
 
+				if($security_definition_name!='' && $SecurityDefinitionPropertiesArray['type'] <> 'oauth2')
+					{
+					//$SecurityDefinitionPropertiesArray['name'] = $security_definition_name;
+					}
 				if($security_definition_in!='')
 					{
 					$SecurityDefinitionPropertiesArray['in'] = $security_definition_in;
