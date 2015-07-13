@@ -368,7 +368,7 @@ $app->get($route, function ($api_id)  use ($app,$awsAccessKey,$awsSecretKey,$aws
 				$SecurityDefinitionArray[$security_definition_name] = array();
 				$SecurityDefinitionPropertiesArray['type'] = $security_definition_type;
 
-				if($security_definition_name!='' && $SecurityDefinitionPropertiesArray['type'] <> 'oauth2')
+				if($security_definition_name!='')
 					{
 					//$SecurityDefinitionPropertiesArray['name'] = $security_definition_name;
 					}
@@ -420,11 +420,8 @@ $app->get($route, function ($api_id)  use ($app,$awsAccessKey,$awsSecretKey,$aws
 				{
 				//echo $key . "<br />";
 				//var_dump($value);
-				if(isset($value['name']))
-					{
-					$name = $value['name'];
-					$Swagger['securityDefinitions']->$name = $value;
-					}
+				$name = $value['name'];
+				$Swagger['securityDefinitions']->$name = $value;
 				}
 			}
 
