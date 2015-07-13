@@ -71,7 +71,7 @@ $app->get($route, function ($api_id)  use ($app,$awsAccessKey,$awsSecretKey,$aws
 
 		$info_description = $Definition['info_description'];
 		$info_termsOfService = $Definition['info_termsOfService'];
-		
+
 		$info_contact_name = $Definition['info_contact_name'];
 		$info_contact_url = $Definition['info_contact_url'];
 		$info_contact_email = $Definition['info_contact_email'];
@@ -360,10 +360,53 @@ $app->get($route, function ($api_id)  use ($app,$awsAccessKey,$awsSecretKey,$aws
 				$security_definition_description = $SwaggerDefinition['description'];
 				$security_definition_in = $SwaggerDefinition['definition_in'];
 
+				$security_definition_flow = $SwaggerSecurityDefinition['flow'];
+				$security_definition_authorizationurl = $SwaggerSecurityDefinition['authorizationUrl'];
+				$security_definition_tokenurl = $SwaggerSecurityDefinition['tokenUrl'];
+				$security_definition_scopes = $SwaggerSecurityDefinition['scopes'];
+
 				$SecurityDefinitionArray[$security_definition_name] = array();
 				$SecurityDefinitionPropertiesArray['type'] = $security_definition_type;
-				$SecurityDefinitionPropertiesArray['name'] = $security_definition_name;
-				$SecurityDefinitionPropertiesArray['in'] = $security_definition_in;
+				if($security_definition_name!='')
+					{
+					$SecurityDefinitionPropertiesArray['name'] = $security_definition_name;
+					}
+				if($security_definition_in!='')
+					{
+					$SecurityDefinitionPropertiesArray['in'] = $security_definition_in;
+					}
+				if($security_definition_flow!='')
+					{
+					$SecurityDefinitionPropertiesArray['flow'] = $security_definition_flow;
+					}
+				if($security_definition_authorizationurl!='')
+					{
+					$SecurityDefinitionPropertiesArray['authorizationUrl'] = $security_definition_authorizationurl;
+					}
+				if($security_definition_tokenurl!='')
+					{
+					$SecurityDefinitionPropertiesArray['tokenUrl'] = $security_definition_tokenurl;
+					}
+
+				$SwaggerSecurityDefinitionScopeQuery = "SELECT * FROM api_swagger_security_definition_scope WHERE Security_Definition_ID = " . $Definition_ID . " ORDER BY scope_name";
+				//echo $SwaggerSecurityDefinitionScopeQuery . "<br />";
+				$SwaggerSecurityDefinitionScopeResults = mysql_query($SwaggerSecurityDefinitionScopeQuery) or die('Query failed: ' . mysql_error());
+
+				if($SwaggerSecurityDefinitionScopeResults && mysql_num_rows($SwaggerSecurityDefinitionScopeResults))
+					{
+					$Scopes = array();
+					while ($SwaggerSecurityDefinitionScopeResults = mysql_fetch_assoc($SwaggerSecurityDefinitionScopeResults))
+						{
+						$Security_Definition_Scope_ID = $SwaggerSecurityDefinition['Security_Definition_Scope_ID'];
+						$security_definition_scope_name = $SwaggerSecurityDefinition['scope_name'];
+						$security_definition_scope_value = $SwaggerSecurityDefinition['scope_value'];
+
+						$Scope = array();
+						$Scope[$security_definition_scope_name] = $security_definition_scope_value;
+						array_push($Scopes, $Scope);
+						}
+					$SecurityDefinitionPropertiesArray['scopes'] = $Scopes;
+					}
 
 				array_push($SecurityDefinition, $SecurityDefinitionPropertiesArray);
 			}
