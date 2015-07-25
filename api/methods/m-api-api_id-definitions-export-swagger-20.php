@@ -95,9 +95,20 @@ $app->get($route, function ($api_id)  use ($app,$awsAccessKey,$awsSecretKey,$aws
 		$Info['termsOfService'] = $info_termsOfService;
 
 		$Contact = array();
-		$Contact['name'] = $info_contact_name;
-		$Contact['url'] = $info_contact_url;
-		$Contact['email'] = $info_contact_email;
+		if($info_contact_name!='')
+			{
+			$Contact['name'] = $info_contact_name;
+			}
+		if($info_contact_url!='')
+			{
+			$Contact['url'] = $info_contact_url;
+			}
+
+		if($info_contact_email!='')
+			{
+			$Contact['email'] = $info_contact_email;
+			}
+
 		if($info_contact_name!='')
 			{
 			$Info['contact'] = array();
@@ -208,7 +219,14 @@ $app->get($route, function ($api_id)  use ($app,$awsAccessKey,$awsSecretKey,$aws
 							}
 						if($field_default!='' && $field_in != 'body')
 							{
-							$SwaggerPathTypeField['default'] = $field_default;
+							if($field_format=='integer')
+								{
+								$SwaggerPathTypeField['default'] = intval($field_default);
+								}
+							else
+								{
+								$SwaggerPathTypeField['default'] = $field_default;
+								}
 							}
 
 						if($field_in == 'body')
