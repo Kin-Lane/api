@@ -91,8 +91,15 @@ $app->get($route, function ($api_id)  use ($app,$awsAccessKey,$awsSecretKey,$aws
 
 		$Info = array();
 		$Info['title'] = $info_title;
-		$Info['description'] = $info_description;
-		$Info['termsOfService'] = $info_termsOfService;
+		if($info_description!='')
+			{
+			$Info['description'] = $info_description;
+			}
+
+		if($info_termsOfService!='')
+			{
+			$Info['termsOfService'] = $info_termsOfService;
+			}
 
 		$Contact = array();
 		if($info_contact_name!='')
