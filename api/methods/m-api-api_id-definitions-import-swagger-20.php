@@ -1,4 +1,5 @@
 <?php
+
 $route = '/api/:api_id/definitions/import/swagger/2.0/';
 $app->post($route, function ($api_id)  use ($app){
 
