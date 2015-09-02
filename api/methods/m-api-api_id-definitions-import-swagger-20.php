@@ -169,7 +169,7 @@ $app->post($route, function ($api_id)  use ($app){
 	$InsertQuery .= "'" . mysql_real_escape_string($SwaggerBasePath) . "'";
 	$InsertQuery .= ")";
 	
-	echo $InsertQuery . "<br />";
+	//echo $InsertQuery . "<br />";
 	mysql_query($InsertQuery) or die('Query failed: ' . mysql_error());				
 	$api_definition_id = mysql_insert_id();		
 
@@ -349,7 +349,7 @@ $app->post($route, function ($api_id)  use ($app){
 					
 					if(isset($value['schema']['items']))
 						{
-						$response_schema = $value['schema']['items']['$ref'];
+						$response_schema = $value['schema']['items'];
 						//var_dump($response_schema);
 						}
 					else
