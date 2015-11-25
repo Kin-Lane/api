@@ -1,7 +1,7 @@
 <?php
 
 $route = '/api/';
-$app->get($route, function ()  use ($app,$contentType){
+$app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 
 	$ReturnObject = array();
 	$ReturnObject['contentType'] = $contentType;
