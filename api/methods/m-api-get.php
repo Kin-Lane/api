@@ -59,6 +59,7 @@ $app->get($route, function ()  use ($app,$contentType){
 
 			$app->response()->header("Content-Type", "application/json");
 			echo stripslashes(format_json(json_encode($ReturnObject)));
+			}
 	else
 			{
 			$app->response()->header("Content-Type", "application/json");
@@ -67,7 +68,6 @@ $app->get($route, function ()  use ($app,$contentType){
 			$apis_json = file_get_contents($apis_json_url);
 			echo stripslashes(format_json($apis_json));
 			}
-
 	});
 
 ?>
