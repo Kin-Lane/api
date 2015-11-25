@@ -21,7 +21,7 @@ $app = new \Slim\Slim();
 $request = $app->request();
 $Params = $request->params();
 $mediaType = $request->getMediaType();
-$contentType = $req->getContentType();
+$contentType = $request->getContentType();
 //var_dump($_GET);
 
 if(isset($Params['appid'])){ $appid = $Params['appid']; } else { $appid = ""; }
