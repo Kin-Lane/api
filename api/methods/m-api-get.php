@@ -62,6 +62,10 @@ $app->get($route, function ()  use ($app,$contentType){
 	else
 			{
 			$app->response()->header("Content-Type", "application/json");
+
+			$apis_json_url = "http://" . $githuborg . ".github.io/" . $githubrepo . "/apis.json";
+			$apis_json = file_get_contents($apis_json_url);
+			echo stripslashes(format_json($apis_json));
 			}
 
 	});
