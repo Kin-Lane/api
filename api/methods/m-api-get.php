@@ -8,7 +8,14 @@ $app->get($route, function ()  use ($app,$contentType){
 
 	if($contentType = 'application/vnd.apis+json')
 		{
+		$app->response()->header("Content-Type", "application/json");
 
+		$apis_json_url = "http://" . $githuborg . ".github.io/" . $githubrepo . "/apis.json";
+		$apis_json = file_get_contents($apis_json_url);
+		echo stripslashes(format_json($apis_json));
+		}
+	else
+		{
 		if(isset($_REQUEST['query'])){ $query = $_REQUEST['query']; } else { $query = '';}
 
 		if($query!='')
@@ -59,14 +66,6 @@ $app->get($route, function ()  use ($app,$contentType){
 
 			$app->response()->header("Content-Type", "application/json");
 			echo stripslashes(format_json(json_encode($ReturnObject)));
-			}
-	else
-			{
-			$app->response()->header("Content-Type", "application/json");
-
-			$apis_json_url = "http://" . $githuborg . ".github.io/" . $githubrepo . "/apis.json";
-			$apis_json = file_get_contents($apis_json_url);
-			echo stripslashes(format_json($apis_json));
 			}
 	});
 
