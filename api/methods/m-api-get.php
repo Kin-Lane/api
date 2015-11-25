@@ -1,11 +1,11 @@
 <?php
 
 $route = '/api/';
-$app->get($route, function ()  use ($app,$mediaType){
+$app->get($route, function ()  use ($app,$contentType){
 
 	$ReturnObject = array();
-	$ReturnObject['mediaType'] = $mediaType;
-	
+	$ReturnObject['contentType'] = $contentType;
+
 	if(isset($_REQUEST['query'])){ $query = $_REQUEST['query']; } else { $query = '';}
 
 	if($query!='')
