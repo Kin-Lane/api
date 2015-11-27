@@ -137,7 +137,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 
 														$ThisDefinition[$refDefinitions] = $apis_path['definitions'][$refDefinitions];
 
-														if(!is_array($Explode[$Break]['definitions']))
+														if(!isset($Explode[$Break]['definitions']) || !is_array($Explode[$Break]['definitions']))
 															{
 															$Explode[$Break]['definitions'] = array();
 															}
