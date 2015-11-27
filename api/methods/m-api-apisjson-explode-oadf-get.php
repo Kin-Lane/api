@@ -55,7 +55,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 					$oadf_url = $apis_properties->url;
 
 					//$oadf_url = "http://theapistack.com/data/twitter/twitter-api-swagger.json";
-					echo "pulling: " . $oadf_url . "<br />";
+					//echo "pulling: " . $oadf_url . "<br />";
 					$oadf_json = file_get_contents($oadf_url);
 					$apis_path = json_decode($oadf_json,true);
 
@@ -154,17 +154,8 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 
 							}
 						}
-
+						
 					}
-
-				//var_dump($Explode);
-				$Explode_JSON = prettyPrint(json_encode($Explode));
-				//echo "count: " . strlen($Explode_JSON) . "<br/>";
-				if(strlen($Explode_JSON) > 50)
-					{
-					//echo $Explode_JSON . "<br />";
-					}
-
 				// End Each Property
 				}
 			// End Each API
