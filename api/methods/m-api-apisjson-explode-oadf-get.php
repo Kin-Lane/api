@@ -154,7 +154,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 
 							}
 						}
-						
+
 					}
 				// End Each Property
 				}
@@ -162,7 +162,8 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 			}
 
 		$app->response()->header("Content-Type", "application/json");
-		echo stripslashes(format_json(json_encode($Explode_JSON)));
+		echo stripslashes(format_json(json_encode($Explode)));
+
 		}
 	});
 
