@@ -3,6 +3,8 @@
 $route = '/api/apisjson/explode/oadf/';
 $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 
+	$Explode = array();
+
 	$ReturnObject = array();
 	$ReturnObject['contentType'] = $contentType;
 
@@ -53,14 +55,12 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 					$oadf_url = $apis_properties->url;
 
 					//$oadf_url = "http://theapistack.com/data/twitter/twitter-api-swagger.json";
-
+					echo "pulling: " . $oadf_url . "<br />";
 					$oadf_json = file_get_contents($oadf_url);
 					$apis_path = json_decode($oadf_json,true);
 
 					$group = "";
 					$first = 0;
-
-					$Explode = array();
 
 					// Traverse Each Path
 					foreach($apis_path['paths'] as $key => $value)
