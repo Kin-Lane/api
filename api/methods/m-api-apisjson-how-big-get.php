@@ -32,7 +32,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 			foreach($apis->properties as $apis_properties)
 				{
 				$type = $apis_properties->type;
-				if($type=="Swagger")
+				if($type=="Swagger" || $type=="swagger" || $type=="X-oadf")
 					{
 					$oadf_url = $apis_properties->url;
 					$oadf_json = file_get_contents($oadf_url);
