@@ -61,14 +61,20 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 						foreach($value as $key2 => $value2)
 							{
 							$ThisVerbs++;
-							foreach($value2['parameters'] as $parameters)
+							if(isset($value2['parameters']))
 								{
-								$ThisParameters++;
+								foreach($value2['parameters'] as $parameters)
+									{
+									$ThisParameters++;
+									}
 								}
-							foreach($value2['responses'] as $responses)
-								{
-								$ThisResponses++;
-								}
+								if(isset($value2['responses']))
+									{
+									foreach($value2['responses'] as $responses)
+										{
+										$ThisResponses++;
+										}
+									}
 							}
 						}
 
