@@ -1,9 +1,6 @@
 <?php
-
 $route = '/api/apisjson/how-big/';
 $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
-
-	$ReturnObject = array();
 
 	$ReturnObject = array();
 	//$ReturnObject['contentType'] = $contentType;
@@ -101,8 +98,6 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 
 		$app->response()->header("Content-Type", "application/json");
 		echo stripslashes(format_json(json_encode($ReturnObject)));
-
 		}
 	});
-
 ?>

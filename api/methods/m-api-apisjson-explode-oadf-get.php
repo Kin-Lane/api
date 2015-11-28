@@ -1,5 +1,4 @@
 <?php
-
 $route = '/api/apisjson/explode/oadf/';
 $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 
