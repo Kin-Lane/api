@@ -115,8 +115,11 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 								{
 								$baseCount = "method count: " . count($methodArray) . "<br />";
 
-								$LetterOADF['paths']->$key = new stdClass();
-								$LetterOADF['paths']->$key = $value;
+								$ThisPath = array();
+								$ThisPath[$key] = $value;
+
+								$Explode[$Break]->$key = new stdClass();
+								$Explode[$Break]->$key = $ThisPath[$key];
 
 								if(isset($value2['responses']))
 									{
@@ -147,10 +150,10 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 									}
 								}
 
-								//$Explode[$Break]['paths'] = new stdClass();
+								$Explode[$Break]['paths'] = new stdClass();
 								$Explode[$Break]['paths'] = $ThisPaths;
 
-								//$Explode[$Break]['definitions'] = new stdClass();
+								$Explode[$Break]['definitions'] = new stdClass();
 								$Explode[$Break]['definitions'] = $ThisDefinitions;
 							}
 						}
