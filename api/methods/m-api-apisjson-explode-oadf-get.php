@@ -62,7 +62,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 					$first = 0;
 
 					$ThisPaths = new stdClass;
-					$ThisDefinitions = array();
+					$ThisDefinitions = new stdClass;
 
 					// Traverse Each Path
 					foreach($apis_path['paths'] as $key => $value)
@@ -105,7 +105,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 
 								$LetterOADF['produces'] = array();
 
-								$LetterOADF['paths'] = array();
+								$LetterOADF['paths'] = new stdClass;
 
 								$Explode[$Break] = $LetterOADF;
 
@@ -131,18 +131,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 													$refDefinitions = str_replace("#/definitions/","",$refDefinitions);
 													if($apis_path['definitions'][$refDefinitions])
 														{
-
-														$ThisDefinition = array();
-
-														$ThisDefinition[$refDefinitions] = $apis_path['definitions'][$refDefinitions];
-
-														if(!isset($Explode[$Break]['definitions']) || !is_array($Explode[$Break]['definitions']))
-															{
-															$Explode[$Break]['definitions'] = array();
-															}
-
-														array_push($ThisDefinitions,$ThisDefinition);
-
+														$ThisDefinitions[$refDefinitions] = $apis_path['definitions'][$refDefinitions];
 														}
 													}
 												}
@@ -151,10 +140,10 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 									}
 								}
 
-							$Explode[$Break]['paths'] = new stdClass;
-							$Explode[$Break]['paths'] = $ThisPaths;
-							$Explode[$Break]['definitions'] = new stdClass;
-							$Explode[$Break]['definitions'] = $ThisDefinitions;
+							$Explode[$Break]->paths = new stdClass;
+							$Explode[$Break]->paths = $ThisPaths;
+							$Explode[$Break]->definitions = new stdClass;
+							$Explode[$Break]->definitions = $ThisDefinitions;
 
 							}
 						}
