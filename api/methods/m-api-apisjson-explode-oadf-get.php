@@ -99,7 +99,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 								$LetterOADF['host'] = $apis_path['host'];
 
 								$basePath = $apis_path['basePath'];
-								if(substr($basePath,strlen($basePath),1) == "/")
+								if(substr($basePath,strlen($basePath)-1,1) == "/")
 									{
 									$basePath = substr($basePath,0,strlen($basePath)-1);
 									}
