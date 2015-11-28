@@ -132,7 +132,8 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 													$refDefinitions = str_replace("#/definitions/","",$refDefinitions);
 													if($apis_path['definitions'][$refDefinitions])
 														{
-														$ThisDefinitions[$refDefinitions] = $apis_path['definitions'][$refDefinitions];
+														$ThisDefinitions->$refDefinitions = new stdClass;
+														$ThisDefinitions->$refDefinitions = $apis_path['definitions'][$refDefinitions];
 														}
 													}
 												}
