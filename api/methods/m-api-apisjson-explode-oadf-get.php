@@ -118,8 +118,6 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 								$LetterOADF['paths']->$key = new stdClass();
 								$LetterOADF['paths']->$key = $value;
 
-								array_push($ThisPaths,$ThisPath[$key]);
-
 								if(isset($value2['responses']))
 									{
 									foreach($value2['responses'] as $response)
