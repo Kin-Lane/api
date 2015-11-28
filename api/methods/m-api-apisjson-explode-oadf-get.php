@@ -79,8 +79,8 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 
 								$Break = $methodArray[0];
 
-								$ThisPaths = array();
-								$ThisDefinitions = array();
+								$ThisPaths = new stdClass();
+								$ThisDefinitions = new stdClass();
 
 								$Explode[$Break] = array();
 
