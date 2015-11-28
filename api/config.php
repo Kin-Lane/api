@@ -20,8 +20,8 @@ $gpass = "kpawwjN4dnJy4j";
 
 $three_scale_provider_key = "9c72d79253c63772cc2a81d4e4bd07f8";
 
-$awsAccessKey = "09VXKKVP882KS7F74D02";
-$awsSecretKey = "uj+430Xa3uNVsdvXYbKvH5du7mNPLslb8jL74BPJ";
+$awsAccessKey = "AKIAJETEGN7ZAE6LIPYA";
+$awsSecretKey = "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";
 $awsSiteBucket = "kinlane-productions";
 $awsRootURL = "http://kinlane-productions.s3.amazonaws.com/";
 
