@@ -79,6 +79,9 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 
 								$Break = $methodArray[0];
 
+								$ThisPaths = array();
+								$ThisDefinitions = array();
+
 								$Explode[$Break] = array();
 								$Explode[$Break]['definitions'] = array();
 
@@ -115,7 +118,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 								$ThisPath = array();
 								$ThisPath[$key] = $value;
 
-								array_push($Explode[$Break]['paths'],$ThisPath);
+								array_push($ThisPaths,$ThisPath);
 
 								if(isset($value2['responses']))
 									{
@@ -136,12 +139,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 
 														$ThisDefinition[$refDefinitions] = $apis_path['definitions'][$refDefinitions];
 
-														if(!isset($Explode[$Break]['definitions']) || !is_array($Explode[$Break]['definitions']))
-															{
-															$Explode[$Break]['definitions'] = array();
-															}
-
-														array_push($Explode[$Break]['definitions'],$ThisDefinition);
+														array_push($ThisDefinitions,$ThisDefinition);
 
 														}
 													}
@@ -151,6 +149,10 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 									}
 								}
 
+								$Explode[$Break]['paths'] = array();
+								$Explode[$Break]['paths'] = $ThisPaths;
+								$Explode[$Break]['definitions'] = array();
+								$Explode[$Break]['definitions'] = $ThisDefinitions;
 							}
 						}
 
