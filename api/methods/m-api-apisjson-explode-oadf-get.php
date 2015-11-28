@@ -153,11 +153,11 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 									}
 								}
 
-								$Explode[$Break]['paths'] = new stdClass();
-								$Explode[$Break]['paths'] = $ThisPaths;
+								$Explode[$Break->paths = new stdClass();
+								$Explode[$Break->paths = $ThisPaths;
 
-								$Explode[$Break]['definitions'] = new stdClass();
-								$Explode[$Break]['definitions'] = $ThisDefinitions;
+								$Explode[$Break]->definitions = new stdClass();
+								$Explode[$Break]->definitions = $ThisDefinitions;
 							}
 						}
 
