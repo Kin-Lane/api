@@ -68,21 +68,21 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 						foreach($value as $key2 => $value2)
 							{
 
-							$ThisPaths = array();
-							$ThisDefinitions = array();
-
-							$Explode[$Break] = array();
-
 							$summary = $value2['summary'];
 							$description = $value2['description'];
 
 							$methodArray = explode("/",$summary);
 							$path = 0;
 
+							$ThisPaths = array();
+							$ThisDefinitions = array();							
+
 							if($group != $methodArray[0])
 								{
 
 								$Break = $methodArray[0];
+
+								$Explode[$Break] = array();
 
 								$LetterOADF = array();
 
