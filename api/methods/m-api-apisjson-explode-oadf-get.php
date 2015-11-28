@@ -103,7 +103,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 
 								$LetterOADF['produces'] = array();
 
-								$LetterOADF['paths'] = array();
+								$LetterOADF['paths'] = new stdClass();
 
 								$Explode[$Break] = $LetterOADF;
 
@@ -153,7 +153,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 								}
 
 								$Explode[$Break]['paths'] = $ThisPaths;
-								
+
 							}
 						}
 
