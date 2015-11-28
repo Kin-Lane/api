@@ -80,7 +80,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 								$Break = $methodArray[0];
 
 								$ThisPaths = new stdClass;
-								$ThisDefinitions = new stdClass;								
+								$ThisDefinitions = new stdClass;
 
 								$Explode[$Break] = array();
 								$Explode[$Break]['definitions'] = array();
@@ -97,6 +97,12 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 								$LetterOADF['info'] = $apis_path['info'];
 
 								$LetterOADF['host'] = $apis_path['host'];
+
+								$basePath = $apis_path['basePath'];
+								if(substr($basePath,strlen($basePath),1) == "/")
+									{
+									$basePath = substr($basePath,0,strlen($basePath)-1);
+									}
 								$LetterOADF['basePath'] = $apis_path['basePath'];
 
 								$LetterOADF['schemes'] = $apis_path['schemes'];
@@ -114,6 +120,10 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 								}
 							else
 								{
+								if(substr($key,0,1) != "/")
+									{
+									$key = "/" . $key;
+									}
 
 								$ThisPaths->$key = new stdClass;
 								$ThisPaths->$key = $value;
