@@ -79,6 +79,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 
 								$Break = $methodArray[0];
 								$ThisPaths = array();
+								$ThisDefinitions = array();
 
 								$Explode[$Break] = array();
 								$Explode[$Break]['definitions'] = array();
@@ -103,7 +104,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 
 								$LetterOADF['produces'] = array();
 
-								$LetterOADF['paths'] = new stdClass();
+								$LetterOADF['paths'] = array();
 
 								$Explode[$Break] = $LetterOADF;
 
@@ -112,7 +113,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 								}
 							else
 								{
-								$baseCount = "method count: " . count($methodArray) . "<br />";
+
 								$ThisPath = array();
 								$ThisPath[$key] = $value;
 
@@ -142,7 +143,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 															$Explode[$Break]['definitions'] = array();
 															}
 
-														array_push($Explode[$Break]['definitions'],$ThisDefinition);
+														array_push($ThisDefinitions,$ThisDefinition);
 
 														}
 													}
@@ -151,9 +152,8 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 										}
 									}
 								}
-
-								$Explode[$Break]['paths'] = $ThisPaths;
-
+							$Explode[$Break]['paths'] = $ThisPaths;
+							$Explode[$Break]['definitions'] = $ThisDefinitions
 							}
 						}
 
