@@ -74,15 +74,14 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 							$methodArray = explode("/",$summary);
 							$path = 0;
 
-							$ThisPaths = array();
-							$ThisDefinitions = array();							
-
 							if($group != $methodArray[0])
 								{
 
 								$Break = $methodArray[0];
+								$ThisPaths = array();
 
 								$Explode[$Break] = array();
+								$Explode[$Break]['definitions'] = array();
 
 								$LetterOADF = array();
 
@@ -104,7 +103,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 
 								$LetterOADF['produces'] = array();
 
-								$LetterOADF['paths'] = new stdClass();
+								$LetterOADF['paths'] = array();
 
 								$Explode[$Break] = $LetterOADF;
 
@@ -114,17 +113,10 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 							else
 								{
 								$baseCount = "method count: " . count($methodArray) . "<br />";
+								$ThisPath = array();
+								$ThisPath[$key] = $value;
 
-								$ThisPath = new stdClass();
-								$ThisPath->$key = $value;
-
-								if(!is_object($Explode[$Break]))
-									{
-									$Explode[$Break] = new stdClass();
-									}
-
-								$Explode[$Break]->$key = new stdClass();
-								$Explode[$Break]->$key = $ThisPath[$key];
+								array_push($ThisPaths,$ThisPath);
 
 								if(isset($value2['responses']))
 									{
@@ -145,7 +137,12 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 
 														$ThisDefinition[$refDefinitions] = $apis_path['definitions'][$refDefinitions];
 
-														array_push($ThisDefinitions,$ThisDefinition);
+														if(!isset($Explode[$Break]['definitions']) || !is_array($Explode[$Break]['definitions']))
+															{
+															$Explode[$Break]['definitions'] = array();
+															}
+
+														array_push($Explode[$Break]['definitions'],$ThisDefinition);
 
 														}
 													}
@@ -155,11 +152,8 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 									}
 								}
 
-								$Explode[$Break]->paths = new stdClass();
-								$Explode[$Break]->paths = $ThisPaths;
-
-								$Explode[$Break]->definitions = new stdClass();
-								$Explode[$Break]->definitions = $ThisDefinitions;
+								$Explode[$Break]['paths'] = $ThisPaths;
+								
 							}
 						}
 
