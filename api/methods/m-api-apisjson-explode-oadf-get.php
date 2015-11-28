@@ -68,6 +68,11 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 						foreach($value as $key2 => $value2)
 							{
 
+							$ThisPaths = array();
+							$ThisDefinitions = array();
+
+							$Explode[$Break] = array();
+
 							$summary = $value2['summary'];
 							$description = $value2['description'];
 
@@ -78,11 +83,6 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 								{
 
 								$Break = $methodArray[0];
-
-								$ThisPaths = new stdClass();
-								$ThisDefinitions = new stdClass();
-
-								$Explode[$Break] = array();
 
 								$LetterOADF = array();
 
