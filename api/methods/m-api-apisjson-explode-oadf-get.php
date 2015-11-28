@@ -61,6 +61,9 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 					$group = "";
 					$first = 0;
 
+					$ThisPaths = array();
+					$ThisDefinitions = array();
+
 					// Traverse Each Path
 					foreach($apis_path['paths'] as $key => $value)
 						{
@@ -78,8 +81,6 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 								{
 
 								$Break = $methodArray[0];
-								$ThisPaths = array();
-								$ThisDefinitions = array();
 
 								$Explode[$Break] = array();
 								$Explode[$Break]['definitions'] = array();
@@ -116,7 +117,6 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 
 								$ThisPath = array();
 								$ThisPath[$key] = $value;
-
 								array_push($ThisPaths,$ThisPath);
 
 								if(isset($value2['responses']))
@@ -152,9 +152,10 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 										}
 									}
 								}
+
 							$Explode[$Break]['paths'] = $ThisPaths;
 							$Explode[$Break]['definitions'] = $ThisDefinitions;
-							
+
 							}
 						}
 
