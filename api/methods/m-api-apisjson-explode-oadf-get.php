@@ -83,7 +83,6 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 								$ThisDefinitions = array();
 
 								$Explode[$Break] = array();
-								$Explode[$Break]['definitions'] = array();
 
 								$LetterOADF = array();
 
@@ -115,6 +114,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 							else
 								{
 								$baseCount = "method count: " . count($methodArray) . "<br />";
+
 								$ThisPath = array();
 								$ThisPath[$key] = $value;
 
@@ -149,9 +149,10 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 									}
 								}
 
-								$Explode[$Break]['paths'] = array();
+								$Explode[$Break]['paths'] = [];
 								$Explode[$Break]['paths'] = $ThisPaths;
-								$Explode[$Break]['definitions'] = array();
+
+								$Explode[$Break]['definitions'] = [];
 								$Explode[$Break]['definitions'] = $ThisDefinitions;
 							}
 						}
