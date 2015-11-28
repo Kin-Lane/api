@@ -116,7 +116,9 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 								{
 
 								$ThisPath = new stdClass;
+								$ThisPath[$key] = new stdClass;
 								$ThisPath[$key] = $value;
+
 								array_push($ThisPaths,$ThisPath);
 
 								if(isset($value2['responses']))
