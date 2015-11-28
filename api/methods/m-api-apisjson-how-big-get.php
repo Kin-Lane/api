@@ -30,19 +30,12 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 
 		foreach($oadf_apis as $apis)
 			{
-			// Begin each API
 			foreach($apis->properties as $apis_properties)
 				{
-				// Begin Each Property
 				$type = $apis_properties->type;
-
 				if($type=="Swagger")
 					{
-
 					$oadf_url = $apis_properties->url;
-
-					//echo $oadf_url . "<br />";
-
 					$oadf_json = file_get_contents($oadf_url);
 					$apis_path = json_decode($oadf_json,true);
 
@@ -85,17 +78,14 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 					$NumberofParameters = $NumberofParameters + $ThisParameters;
 					$NumberofResponses = $NumberofResponses + $ThisResponses;
 					$numberofDefinitions = $numberofDefinitions + $ThisDefinitions;
-
 					}
 				}
 			}
-
 		$ReturnObject['paths'] = $NumberofPaths;
 		$ReturnObject['verbs'] = $NumberofVerbs;
 		$ReturnObject['parameters'] = $NumberofParameters;
 		$ReturnObject['responses'] = $NumberofResponses;
 		$ReturnObject['definitions'] = $numberofDefinitions;
-
 		$app->response()->header("Content-Type", "application/json");
 		echo stripslashes(format_json(json_encode($ReturnObject)));
 		}
