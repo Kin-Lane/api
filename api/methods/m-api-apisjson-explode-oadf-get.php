@@ -61,9 +61,6 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 					$group = "";
 					$first = 0;
 
-					$ThisPaths = new stdClass;
-					$ThisDefinitions = new stdClass;
-
 					// Traverse Each Path
 					foreach($apis_path['paths'] as $key => $value)
 						{
@@ -81,6 +78,9 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 								{
 
 								$Break = $methodArray[0];
+
+								$ThisPaths = new stdClass;
+								$ThisDefinitions = new stdClass;								
 
 								$Explode[$Break] = array();
 								$Explode[$Break]['definitions'] = array();
