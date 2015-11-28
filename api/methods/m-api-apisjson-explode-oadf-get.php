@@ -116,8 +116,8 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 								{
 
 								$ThisPath = new stdClass;
-								$ThisPath[$key] = new stdClass;
-								$ThisPath[$key] = $value;
+								$ThisPath->$key = new stdClass;
+								$ThisPath->$key = $value;
 
 								array_push($ThisPaths,$ThisPath);
 
