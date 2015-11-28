@@ -22,8 +22,6 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 
 		$apis_json_results = file_get_contents($apisjson_url);
 
-		$apis_json_results = file_get_contents($apis_json_results);
-
 		$apis_json = json_decode($apis_json_results);
 		$oadf_apis = $apis_json->apis;
 
