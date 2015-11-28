@@ -6,7 +6,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 	$Explode = array();
 
 	$ReturnObject = array();
-	$ReturnObject['contentType'] = $contentType;
+	//$ReturnObject['contentType'] = $contentType;
 
 	if($contentType == 'application/apis+json')
 		{
