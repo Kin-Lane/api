@@ -116,7 +116,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 								$baseCount = "method count: " . count($methodArray) . "<br />";
 
 								$ThisPath = array();
-								$ThisPath[$key] = $value;
+								$LetterOADF['paths']->$key = $value;
 
 								array_push($ThisPaths,$ThisPath[$key]);
 
