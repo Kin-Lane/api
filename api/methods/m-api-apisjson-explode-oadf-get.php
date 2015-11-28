@@ -149,10 +149,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 									}
 								}
 
-								$Explode[$Break]['paths'] = [];
 								$Explode[$Break]['paths'] = $ThisPaths;
-
-								$Explode[$Break]['definitions'] = [];
 								$Explode[$Break]['definitions'] = $ThisDefinitions;
 							}
 						}
