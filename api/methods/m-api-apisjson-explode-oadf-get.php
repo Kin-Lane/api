@@ -119,7 +119,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 								$ThisPath[$key] = $value;
 								if(!is_object($Explode[$Break]))
 									{
-									$Explode[$Break]->$key = new stdClass();
+									$Explode[$Break] = new stdClass();
 									}
 								$Explode[$Break]->$key = new stdClass();
 								$Explode[$Break]->$key = $ThisPath[$key];
