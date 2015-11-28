@@ -61,7 +61,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 					$group = "";
 					$first = 0;
 
-					$ThisPaths = array();
+					$ThisPaths = new stdClass;
 					$ThisDefinitions = array();
 
 					// Traverse Each Path
@@ -119,7 +119,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 								$ThisPath->$key = new stdClass;
 								$ThisPath->$key = $value;
 
-								array_push($ThisPaths,$ThisPath);
+								$ThisPaths->append($ThisPath);
 
 								if(isset($value2['responses']))
 									{
