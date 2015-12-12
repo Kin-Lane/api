@@ -78,7 +78,7 @@ $app->post($route, function ($api_id)  use ($app){
 				$Swagger_Path_ID = mysql_insert_id();
 				}
 
-			if($operation['parameters'])
+			if(isset($operation['parameters']))
 				{
 				$parameters = $operation['parameters'];
 				}
