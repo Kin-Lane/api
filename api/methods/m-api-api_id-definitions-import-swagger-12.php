@@ -87,7 +87,14 @@ $app->post($route, function ($api_id)  use ($app){
 				$parameters = array();
 				}
 
-			$responseMessages = $operation['responseMessages'];
+			if(isset($operation['responseMessages']))
+				{
+				$responseMessages = $operation['responseMessages'];
+				}
+			else
+				{
+				$responseMessages = array();
+				}
 
 			//echo "method: " . $method . "<br />";
 			//echo "summary: " . $operation_summary . "<br />";
