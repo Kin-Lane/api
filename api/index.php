@@ -50,7 +50,7 @@ if ($appid!='' && $appkey!='')
 		$usageReports = $response->getUsageReports();
 
 		//echo "Success:";
-		echo "  Plan: " .          $response->getPlan();
+		//echo "  Plan: " .          $response->getPlan();
 		//echo "  Usage reports: " . var_export($usageReports, true);
 
 		if($Plan=="Internal" || $Plan=="Platform")
