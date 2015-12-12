@@ -58,8 +58,22 @@ $app->post($route, function ($api_id)  use ($app){
 			$method = $operation['method'];
 			$type = $method;
 			$operation_summary = $operation['summary'];
-			$operation_description = $operation['notes'];
-			$operation_operationId = $operation['nickname'];
+			if(isset($operation['notes']))
+				{
+				$operation_description = $operation['notes'];
+				}
+			else
+				{
+				$operation_description = "";
+				}
+			if(isset($operation['nickname']))
+				{
+				$operation_operationId = $operation['nickname'];
+				}
+			else
+				{
+				$operation_operationId = "";
+				}
 
 			$SwaggerPathQuery = "SELECT * FROM api_swagger_paths WHERE API_Swagger_ID = " . $api_definition_id . " AND path = '" . $path . "'  AND pathtype = '" . $type . "'";
 			//echo $SwaggerPathQuery . "<br />";
