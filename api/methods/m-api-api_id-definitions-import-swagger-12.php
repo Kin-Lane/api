@@ -78,7 +78,15 @@ $app->post($route, function ($api_id)  use ($app){
 				$Swagger_Path_ID = mysql_insert_id();
 				}
 
-			$parameters = $operation['parameters'];
+			if($operation['parameters'])
+				{
+				$parameters = $operation['parameters'];
+				}
+			else
+				{
+				$parameters = array();
+				}
+
 			$responseMessages = $operation['responseMessages'];
 
 			//echo "method: " . $method . "<br />";
