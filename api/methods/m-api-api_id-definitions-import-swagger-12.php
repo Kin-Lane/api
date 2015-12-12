@@ -41,7 +41,7 @@ $app->post($route, function ($api_id)  use ($app){
 	//echo "Produces: " . $SwaggerProduces . "<br />";
 
 	$InsertQuery = "INSERT INTO api_swagger(API_ID,import_date,import_id,host,basePath) VALUES(" . $api_id . ",'" . $import_date . "','" . $import_id . "','" . $SwaggerResourcePath . "','" . $SwaggerBasePath . "')";
-	echo $InsertQuery . "<br />";
+	//echo $InsertQuery . "<br />";
 	mysql_query($InsertQuery) or die('Query failed: ' . mysql_error());
 	$api_definition_id = mysql_insert_id();
 
