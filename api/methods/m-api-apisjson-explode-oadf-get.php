@@ -103,6 +103,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 								$path = 0;
 
 								$resource = $methodArray[0];
+								echo "Resource: " > $resource . "<br />";
 								if($resource=='/')
 									{
 									$resource = $methodArray[1];
