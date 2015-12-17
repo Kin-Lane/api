@@ -25,44 +25,16 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 
 		$apis_json = json_decode($apis_json_results);
 
-		$oadf_name = "";
-		if(isset($apis_json->name))
-			{
-			$oadf_name = $apis_json->name;
-			}
-		if(isset($apis_json->description))
-			{
-			$oadf_description = $apis_json->description;
-			}
-		if(isset($apis_json->image))
-			{
-			$oadf_image = $apis_json->image;
-			}
-		if(isset($apis_json->tags))
-			{
-			$oadf_tags = $apis_json->tags;
-			}
-		if(isset($apis_json->created))
-			{
-			$oadf_created = $apis_json->created;
-			}
-		if(isset($apis_json->modified))
-			{
-			$oadf_modified = $apis_json->modified;
-			}
-		if(isset($apis_json->url))
-			{
-			$oadf_url = $apis_json->url;
-			}
-		if(isset($apis_json->specificationVersion))
-			{
-			$oadf_specificationVersion = $apis_json->specificationVersion;
-			}
+		$oadf_name = $apis_json->name;
+		$oadf_description = $apis_json->description;
+		$oadf_image = $apis_json->image;
+		$oadf_tags = $apis_json->tags;
+		$oadf_created = $apis_json->created;
+		$oadf_modified = $apis_json->modified;
+		$oadf_url = $apis_json->url;
+		$oadf_specificationVersion = $apis_json->specificationVersion;
 
-		if(isset($apis_json->apis))
-			{
-			$oadf_apis = $apis_json->apis;
-			}
+		$oadf_apis = $apis_json->apis;
 
 		//var_dump($oadf_apis);
 
@@ -82,7 +54,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 					$oadf_url = $apis_properties->url;
 
 					//$oadf_url = "http://theapistack.com/data/twitter/twitter-api-swagger.json";
-					echo "pulling: " . $oadf_url . "<br />";
+					//echo "pulling: " . $oadf_url . "<br />";
 					$oadf_json = file_get_contents($oadf_url);
 					$apis_path = json_decode($oadf_json,true);
 
@@ -180,13 +152,13 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 									}
 								}
 
-								if(isset($Break))
-									{
-									$Explode[$Break]['paths'] = new stdClass;
-									$Explode[$Break]['paths'] = $ThisPaths;
-									$Explode[$Break]['definitions'] = new stdClass;
-									$Explode[$Break]['definitions'] = $ThisDefinitions;
-									}
+							if(isset($Break))
+								{
+								$Explode[$Break]['paths'] = new stdClass;
+								$Explode[$Break]['paths'] = $ThisPaths;
+								$Explode[$Break]['definitions'] = new stdClass;
+								$Explode[$Break]['definitions'] = $ThisDefinitions;
+								}
 							}
 						}
 
