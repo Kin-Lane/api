@@ -25,14 +25,39 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 
 		$apis_json = json_decode($apis_json_results);
 
-		$oadf_name = $apis_json->name;
-		$oadf_description = $apis_json->description;
-		$oadf_image = $apis_json->image;
-		$oadf_tags = $apis_json->tags;
-		$oadf_created = $apis_json->created;
-		$oadf_modified = $apis_json->modified;
-		$oadf_url = $apis_json->url;
-		$oadf_specificationVersion = $apis_json->specificationVersion;
+		$oadf_name = "";
+		if($apis_json->name)
+			{
+			$oadf_name = $apis_json->name;
+			}
+		if($apis_json->description)
+			{
+			$oadf_description = $apis_json->description;
+			}
+		if($apis_json->image)
+			{
+			$oadf_image = $apis_json->image;
+			}
+		if($apis_json->tags)
+			{
+			$oadf_tags = $apis_json->tags;
+			}
+		if($apis_json->created)
+			{
+			$oadf_created = $apis_json->created;
+			}
+		if($apis_json->modified)
+			{
+			$oadf_modified = $apis_json->modified;
+			}
+		if($apis_json->url)
+			{
+			$oadf_url = $apis_json->url;
+			}
+		if($apis_json->specificationVersion)
+			{
+			$oadf_specificationVersion = $apis_json->specificationVersion;
+			}
 
 		$oadf_apis = $apis_json->apis;
 
