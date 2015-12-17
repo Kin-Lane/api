@@ -90,7 +90,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 						// Traverse Each Path
 						foreach($apis_path['paths'] as $key => $value)
 							{
-
+							echo "key: " . $key . "<br />";
 							foreach($value as $key2 => $value2)
 								{
 
