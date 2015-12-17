@@ -19,6 +19,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 		{
 		if(isset($_REQUEST['apisjson_url'])){ $apisjson_url = $_REQUEST['apisjson_url']; } else { $apisjson_url = '';}
 
+		echo $apisjson_url . "<br />";
 		$apis_json_results = file_get_contents($apisjson_url);
 
 		//var_dump($apis_json);
