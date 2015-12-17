@@ -18,7 +18,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 	else
 		{
 		if(isset($_REQUEST['apisjson_url'])){ $apisjson_url = $_REQUEST['apisjson_url']; } else { $apisjson_url = '';}
-
+		//echo $apisjson_url . "<br />";
 		$apis_json_results = file_get_contents($apisjson_url);
 
 		//var_dump($apis_json);
@@ -48,7 +48,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 
 				//echo $type . "<br />";
 
-				if($type=="Swagger")
+				if($type=="Swagger" || $type=="swagger" || $type=="oadf")
 					{
 
 					$oadf_url = $apis_properties->url;
@@ -64,6 +64,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 					// Traverse Each Path
 					foreach($apis_path['paths'] as $key => $value)
 						{
+						//echo $key . "<br />";
 
 						foreach($value as $key2 => $value2)
 							{
@@ -74,13 +75,12 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 							$methodArray = explode("/",$summary);
 							$path = 0;
 
+							$ThisPaths = new stdClass;
+							$ThisDefinitions = new stdClass;
+							$Break = $methodArray[0];
+
 							if($group != $methodArray[0])
 								{
-
-								$Break = $methodArray[0];
-
-								$ThisPaths = new stdClass;
-								$ThisDefinitions = new stdClass;
 
 								$Explode[$Break] = array();
 								$Explode[$Break]['definitions'] = array();
