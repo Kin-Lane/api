@@ -65,11 +65,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 					foreach($apis_path['paths'] as $key => $value)
 						{
 						//echo $key . "<br />";
-<<<<<<< HEAD
 
-=======
-						
->>>>>>> origin/master
 						foreach($value as $key2 => $value2)
 							{
 
@@ -78,10 +74,6 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 
 							$methodArray = explode("/",$summary);
 							$path = 0;
-							
-							$ThisPaths = new stdClass;
-							$ThisDefinitions = new stdClass;							
-							$Break = $methodArray[0];
 
 							$ThisPaths = new stdClass;
 							$ThisDefinitions = new stdClass;
