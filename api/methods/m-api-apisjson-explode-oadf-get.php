@@ -95,6 +95,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 								{
 
 								$summary = $value2['summary'];
+								echo $summary . "<br />";
 								$description = $value2['description'];
 
 								$methodArray = explode("/",$summary);
