@@ -111,10 +111,10 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 
 								echo $group . " != " . $resource . "<br />";
 
-								if($group != $methodArray[0])
+								if($group != $resource)
 									{
 
-									$Break = $methodArray[0];
+									$Break = $resource;
 
 									$ThisPaths = new stdClass;
 									$ThisDefinitions = new stdClass;
