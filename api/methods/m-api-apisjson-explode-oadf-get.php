@@ -90,23 +90,20 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 						// Traverse Each Path
 						foreach($apis_path['paths'] as $key => $value)
 							{
-							echo "key: " . $key . "<br />";
-
-var_dump($value);
-
+							//echo "key: " . $key . "<br />";
 							foreach($value as $key2 => $value2)
 								{
 
 								$summary = $value2['summary'];
-								echo $summary . "<br />";
+								//echo $summary . "<br />";
 								$description = $value2['description'];
 
-								$methodArray = explode("/",$summary);
-								var_dump($methodArray);
+								$methodArray = explode("/",$key);
+								//var_dump($methodArray);
 								$path = 0;
 
 								$resource = $methodArray[0];
-								echo "Resource: " > $resource . "<br />";
+								//echo "Resource: " > $resource . "<br />";
 								if($resource=='/')
 									{
 									$resource = $methodArray[1];
