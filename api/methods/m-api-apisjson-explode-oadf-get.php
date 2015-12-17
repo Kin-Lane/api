@@ -102,7 +102,13 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 								var_dump($methodArray);
 								$path = 0;
 
-								echo $group . " != " . $methodArray[0] . "<br />";
+								$resource = $methodArray[0];
+								if($resource=='/')
+									{
+									$resource = $methodArray[1];
+									}
+
+								echo $group . " != " . $resource . "<br />";
 
 								if($group != $methodArray[0])
 									{
