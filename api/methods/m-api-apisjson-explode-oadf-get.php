@@ -99,7 +99,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 
 								$methodArray = explode("/",$summary);
 								$path = 0;
-
+								echo $group . " != " . $methodArray[0] . "<br />";
 								if($group != $methodArray[0])
 									{
 
