@@ -146,6 +146,9 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 									}
 								else
 									{
+
+									$Break = array();
+
 									if(substr($key,0,1) != "/")
 										{
 										$key = "/" . $key;
