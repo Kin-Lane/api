@@ -98,8 +98,11 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 								$description = $value2['description'];
 
 								$methodArray = explode("/",$summary);
+								var_dump($methodArray);
 								$path = 0;
+
 								echo $group . " != " . $methodArray[0] . "<br />";
+
 								if($group != $methodArray[0])
 									{
 
