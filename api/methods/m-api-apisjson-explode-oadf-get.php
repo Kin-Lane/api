@@ -91,6 +91,9 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 						foreach($apis_path['paths'] as $key => $value)
 							{
 							echo "key: " . $key . "<br />";
+
+var_dump($value);
+
 							foreach($value as $key2 => $value2)
 								{
 
