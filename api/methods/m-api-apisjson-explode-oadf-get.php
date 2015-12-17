@@ -59,136 +59,137 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 			$oadf_specificationVersion = $apis_json->specificationVersion;
 			}
 
-		$oadf_apis = $apis_json->apis;
-
-		//var_dump($oadf_apis);
-
-		foreach($oadf_apis as $apis)
+		if(isset($apis_json->apis))
 			{
-			// Begin each API
-			foreach($apis->properties as $apis_properties)
+			$oadf_apis = $apis_json->apis;
+
+			foreach($oadf_apis as $apis)
 				{
-				// Begin Each Property
-				$type = $apis_properties->type;
-
-				//echo $type . "<br />";
-
-				if($type=="Swagger")
+				// Begin each API
+				foreach($apis->properties as $apis_properties)
 					{
+					// Begin Each Property
+					$type = $apis_properties->type;
 
-					$oadf_url = $apis_properties->url;
+					//echo $type . "<br />";
 
-					//$oadf_url = "http://theapistack.com/data/twitter/twitter-api-swagger.json";
-					//echo "pulling: " . $oadf_url . "<br />";
-					$oadf_json = file_get_contents($oadf_url);
-					$apis_path = json_decode($oadf_json,true);
-
-					$group = "";
-					$first = 0;
-
-					// Traverse Each Path
-					foreach($apis_path['paths'] as $key => $value)
+					if($type=="Swagger")
 						{
 
-						foreach($value as $key2 => $value2)
+						$oadf_url = $apis_properties->url;
+
+						//$oadf_url = "http://theapistack.com/data/twitter/twitter-api-swagger.json";
+						//echo "pulling: " . $oadf_url . "<br />";
+						$oadf_json = file_get_contents($oadf_url);
+						$apis_path = json_decode($oadf_json,true);
+
+						$group = "";
+						$first = 0;
+
+						// Traverse Each Path
+						foreach($apis_path['paths'] as $key => $value)
 							{
 
-							$summary = $value2['summary'];
-							$description = $value2['description'];
-
-							$methodArray = explode("/",$summary);
-							$path = 0;
-
-							if($group != $methodArray[0])
+							foreach($value as $key2 => $value2)
 								{
 
-								$Break = $methodArray[0];
+								$summary = $value2['summary'];
+								$description = $value2['description'];
 
-								$ThisPaths = new stdClass;
-								$ThisDefinitions = new stdClass;
+								$methodArray = explode("/",$summary);
+								$path = 0;
 
-								$Explode[$Break] = array();
-								$Explode[$Break]['definitions'] = array();
-
-								$LetterOADF = array();
-
-								$LetterOADF['swagger'] = $apis_path['swagger'];
-
-								$LetterOADFInfo['title'] = $apis_path['info']['title'];
-								$LetterOADFInfo['description'] = $apis_path['info']['description'];
-								$LetterOADFInfo['termsOfService'] = $apis_path['info']['termsOfService'];
-								$LetterOADFInfo['version'] = $apis_path['info']['version'];
-
-								$LetterOADF['info'] = $apis_path['info'];
-
-								$LetterOADF['host'] = $apis_path['host'];
-
-								$basePath = $apis_path['basePath'];
-								if(substr($basePath,strlen($basePath)-1,1) == "/")
+								if($group != $methodArray[0])
 									{
-									$basePath = substr($basePath,0,strlen($basePath)-1);
-									}
-								$LetterOADF['basePath'] = $basePath;
 
-								$LetterOADF['schemes'] = $apis_path['schemes'];
+									$Break = $methodArray[0];
 
-								$LetterOADF['produces'] = $apis_path['produces'];
+									$ThisPaths = new stdClass;
+									$ThisDefinitions = new stdClass;
 
-								$LetterOADF['produces'] = array();
+									$Explode[$Break] = array();
+									$Explode[$Break]['definitions'] = array();
 
-								$LetterOADF['paths'] = new stdClass;
+									$LetterOADF = array();
 
-								$Explode[$Break] = $LetterOADF;
+									$LetterOADF['swagger'] = $apis_path['swagger'];
 
-								$group = $methodArray[0];
+									$LetterOADFInfo['title'] = $apis_path['info']['title'];
+									$LetterOADFInfo['description'] = $apis_path['info']['description'];
+									$LetterOADFInfo['termsOfService'] = $apis_path['info']['termsOfService'];
+									$LetterOADFInfo['version'] = $apis_path['info']['version'];
 
-								}
-							else
-								{
-								if(substr($key,0,1) != "/")
-									{
-									$key = "/" . $key;
-									}
+									$LetterOADF['info'] = $apis_path['info'];
 
-								$ThisPaths->$key = new stdClass;
-								$ThisPaths->$key = $value;
+									$LetterOADF['host'] = $apis_path['host'];
 
-								if(isset($value2['responses']))
-									{
-									foreach($value2['responses'] as $response)
+									$basePath = $apis_path['basePath'];
+									if(substr($basePath,strlen($basePath)-1,1) == "/")
 										{
-										if(isset($response['schema']))
+										$basePath = substr($basePath,0,strlen($basePath)-1);
+										}
+									$LetterOADF['basePath'] = $basePath;
+
+									$LetterOADF['schemes'] = $apis_path['schemes'];
+
+									$LetterOADF['produces'] = $apis_path['produces'];
+
+									$LetterOADF['produces'] = array();
+
+									$LetterOADF['paths'] = new stdClass;
+
+									$Explode[$Break] = $LetterOADF;
+
+									$group = $methodArray[0];
+
+									}
+								else
+									{
+									if(substr($key,0,1) != "/")
+										{
+										$key = "/" . $key;
+										}
+
+									$ThisPaths->$key = new stdClass;
+									$ThisPaths->$key = $value;
+
+									if(isset($value2['responses']))
+										{
+										foreach($value2['responses'] as $response)
 											{
-											foreach($response['schema'] as $schema)
+											if(isset($response['schema']))
 												{
-												if(is_array($schema))
+												foreach($response['schema'] as $schema)
 													{
-													$refDefinitions = $schema[chr(36) . "ref"];
-													$refDefinitions = str_replace("#/definitions/","",$refDefinitions);
-													if($apis_path['definitions'][$refDefinitions])
+													if(is_array($schema))
 														{
-														$ThisDefinitions->$refDefinitions = new stdClass;
-														$ThisDefinitions->$refDefinitions = $apis_path['definitions'][$refDefinitions];
+														$refDefinitions = $schema[chr(36) . "ref"];
+														$refDefinitions = str_replace("#/definitions/","",$refDefinitions);
+														if($apis_path['definitions'][$refDefinitions])
+															{
+															$ThisDefinitions->$refDefinitions = new stdClass;
+															$ThisDefinitions->$refDefinitions = $apis_path['definitions'][$refDefinitions];
+															}
 														}
 													}
 												}
 											}
 										}
 									}
+
+								$Explode[$Break]['paths'] = new stdClass;
+								$Explode[$Break]['paths'] = $ThisPaths;
+								$Explode[$Break]['definitions'] = new stdClass;
+								$Explode[$Break]['definitions'] = $ThisDefinitions;
+
 								}
-
-							$Explode[$Break]['paths'] = new stdClass;
-							$Explode[$Break]['paths'] = $ThisPaths;
-							$Explode[$Break]['definitions'] = new stdClass;
-							$Explode[$Break]['definitions'] = $ThisDefinitions;
-
 							}
-						}
 
+						}
+					// End Each Property
 					}
-				// End Each Property
+				// End Each API
 				}
-			// End Each API
 			}
 
 		$app->response()->header("Content-Type", "application/json");
