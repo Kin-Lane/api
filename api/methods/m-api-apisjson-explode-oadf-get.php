@@ -1,8 +1,10 @@
 <?php
+
 $route = '/api/apisjson/explode/oadf/';
 $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 
 	$Explode = array();
+	$Explode2 = array();
 
 	$ReturnObject = array();
 	//$ReturnObject['contentType'] = $contentType;
@@ -40,7 +42,9 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 
 		foreach($oadf_apis as $apis)
 			{
+				
 			// Begin each API
+			
 			foreach($apis->properties as $apis_properties)
 				{
 				// Begin Each Property
@@ -53,38 +57,59 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 
 					$oadf_url = $apis_properties->url;
 
-					//$oadf_url = "http://theapistack.com/data/twitter/twitter-api-swagger.json";
-					//echo "pulling: " . $oadf_url . "<br />";
 					$oadf_json = file_get_contents($oadf_url);
 					$apis_path = json_decode($oadf_json,true);
 
 					$group = "";
 					$first = 0;
-
+					
+					
+					// Traverse Each Path
+					foreach($apis_path['paths'] as $key => $value)
+						{
+						$methodArray = explode("/",$key);
+						if($methodArray[0]=='')
+							{
+							$Break = $methodArray[1];		
+							}
+						else 
+							{
+							$Break = $methodArray[0];	
+							}					
+							
+						$Explode[$Break] = array();
+						}
+							
 					// Traverse Each Path
 					foreach($apis_path['paths'] as $key => $value)
 						{
 						//echo $key . "<br />";
-
+						$methodArray = explode("/",$key);
+						if($methodArray[0]=='')
+							{
+							$Break = $methodArray[1];		
+							}
+						else 
+							{
+							$Break = $methodArray[0];	
+							}
+			
 						foreach($value as $key2 => $value2)
 							{
 
 							$summary = $value2['summary'];
 							$description = $value2['description'];
-
-							$methodArray = explode("/",$summary);
+							
 							$path = 0;
 
 							$ThisPaths = new stdClass;
 							$ThisDefinitions = new stdClass;
-							$Break = $methodArray[0];
 
-							if($group != $methodArray[0])
-								{
-
-								$Explode[$Break] = array();
-								$Explode[$Break]['definitions'] = array();
-
+							//echo $group . " != " . $Break . "<br />";
+							
+							if($group != $Break)
+								{														
+								
 								$LetterOADF = array();
 
 								$LetterOADF['swagger'] = $apis_path['swagger'];
@@ -111,22 +136,18 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 
 								$LetterOADF['produces'] = array();
 
-								$LetterOADF['paths'] = new stdClass;
+								$LetterOADF['x-common'] = array();
 
+								$LetterOADF['paths'] = new stdClass;								
+								$LetterOADF['definitions'] = new stdClass;
+												
 								$Explode[$Break] = $LetterOADF;
 
-								$group = $methodArray[0];
-
+								$group = $Break;														
+																							
 								}
 							else
-								{
-								if(substr($key,0,1) != "/")
-									{
-									$key = "/" . $key;
-									}
-
-								$ThisPaths->$key = new stdClass;
-								$ThisPaths->$key = $value;
+								{									
 
 								if(isset($value2['responses']))
 									{
@@ -142,6 +163,7 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 													$refDefinitions = str_replace("#/definitions/","",$refDefinitions);
 													if($apis_path['definitions'][$refDefinitions])
 														{
+														//echo "HERE1: " . count($apis_path['definitions'][$refDefinitions]) . "<br />"; 
 														$ThisDefinitions->$refDefinitions = new stdClass;
 														$ThisDefinitions->$refDefinitions = $apis_path['definitions'][$refDefinitions];
 														}
@@ -152,11 +174,13 @@ $app->get($route, function ()  use ($app,$contentType,$githuborg,$githubrepo){
 									}
 								}
 
-							$Explode[$Break]['paths'] = new stdClass;
-							$Explode[$Break]['paths'] = $ThisPaths;
-							$Explode[$Break]['definitions'] = new stdClass;
-							$Explode[$Break]['definitions'] = $ThisDefinitions;
-
+							$Explode[$Break]['paths']->$key = $value;
+			
+							if(count($ThisDefinitions) > 1)
+								{
+								array_push($Explode[$Break]['definitions'],$ThisDefinitions);
+								}
+								
 							}
 						}
 

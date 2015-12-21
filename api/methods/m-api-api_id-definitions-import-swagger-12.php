@@ -195,6 +195,8 @@ $app->post($route, function ($api_id)  use ($app){
 		}
 
 	// Data Model
+	if(is_array($SwaggerModels))
+	{
 	foreach($SwaggerModels as $model)
 		{
 
@@ -248,6 +250,7 @@ $app->post($route, function ($api_id)  use ($app){
 
 			}
 		}
+	}
 
 	$ReturnObject['version'] = "Import of Swagger 1.2 (" . $api_definition_url . ") successful.";
 
