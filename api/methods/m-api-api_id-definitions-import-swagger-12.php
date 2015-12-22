@@ -158,7 +158,7 @@ $app->post($route, function ($api_id)  use ($app){
 					}
 
 				$parameter_required = $parameter['required'];
-				if($parameter_required=='')
+				if(isset($parameter['required']) && $parameter['required']=='')
 					{
 					$parameter_required = 0;
 					}
