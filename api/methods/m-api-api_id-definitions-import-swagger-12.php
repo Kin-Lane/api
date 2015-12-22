@@ -19,7 +19,14 @@ $app->post($route, function ($api_id)  use ($app){
 
 	$SwaggerVersion = $ObjectResult['swaggerVersion'];
 	$SwaggerBasePath = $ObjectResult['basePath'];
-	$SwaggerResourcePath = $ObjectResult['resourcePath'];
+	if(isset($ObjectResult['resourcePath']))
+		{
+		$SwaggerResourcePath = $ObjectResult['resourcePath'];
+		}
+	else
+		{
+		$SwaggerResourcePath = array();
+		}
 
 	$SwaggerProduces = "";
 	if(isset($ObjectResult['produces']))
