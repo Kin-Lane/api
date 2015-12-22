@@ -62,7 +62,15 @@ $app->post($route, function ($api_id)  use ($app){
 		foreach($operations as $operation)
 			{
 
-			$method = $operation['method'];
+			if(isset($operation['httpMethod']))
+				{
+				$method = $operation['httpMethod'];
+				}
+			else
+				{
+				$method = $operation['method'];
+				}
+
 			$type = $method;
 			$operation_summary = $operation['summary'];
 			if(isset($operation['notes']))
@@ -73,7 +81,12 @@ $app->post($route, function ($api_id)  use ($app){
 				{
 				$operation_description = "";
 				}
-			if(isset($operation['nickname']))
+
+			if(isset($operation['group']))
+				{
+				$operation_operationId = $operation['group'];
+				}
+			elseif(isset($operation['nickname']))
 				{
 				$operation_operationId = $operation['nickname'];
 				}
