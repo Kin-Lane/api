@@ -157,10 +157,10 @@ $app->post($route, function ($api_id)  use ($app){
 					$parameter_description = $parameter['description'];
 					}
 
-				$parameter_required = $parameter['required'];
-				if(isset($parameter['required']) && $parameter['required']=='')
+				$parameter_required = 0
+				if(isset($parameter['required']))
 					{
-					$parameter_required = 0;
+					$parameter_required = 1;
 					}
 
 				$parameter_allowMultiple = 0;
