@@ -1,49 +1,117 @@
 <!DOCTYPE html>
-<html>
-  <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="Expires" content="-1" />
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
-  <title>
-    {% if page.title %}{{ page.title }} &middot; {% endif %}
-    {{ site.tagline }}
-  </title>
+  {% include head.html %}
 
-  <link rel="stylesheet" href="https://s3.amazonaws.com/kinlane-productions/css/swagger-typography.css">
-  <link rel="stylesheet" href="https://s3.amazonaws.com/kinlane-productions/css/swagger-reset.css">
-  <link rel="stylesheet" href="https://s3.amazonaws.com/kinlane-productions/css/swagger.css">
+  <body>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="https://s3.amazonaws.com/kinlane-productions/css/hyde-with-swagger.css">
-  <link rel="stylesheet" href="https://s3.amazonaws.com/kinlane-productions/css/syntax.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700|Abril+Fatface">
+    <header class="masthead">
+      <div class="masthead-inner" align="center">
 
-  <!-- Icons -->
-  <link rel="shortcut icon" type="image/x-icon" href="https://kin-lane.github.io/api/favicon.ico">
-  <link rel="icon" type="image/x-icon" href="https://kin-lane.github.io/api/favicon.ico">
+        <!-- Masthead Title -->
+        <h2><a href="{{ site.masthead_link }}" style="font-size: {{ site.masthead_font_size }}%;">{{ site.masthead_title }}</a></h2>
 
-  <script type="text/javascript" src="/{{ site.repo }}/js/tiny_mce/tiny_mce.js"></script>
+        <!-- Feature -->
+        <a href="{{ site.feature_link }}" target="_blank">
+          <img src="{{ site.feature_image_source }}" width="{{ site.feature_image_width }}%" style="border: 1px solid #FFF;" title="{{ site.feature_title }}" />
+        </a>
 
-  <script src="https://s3.amazonaws.com/kinlane-productions/js/github.js" type="text/javascript"></script>
-  <script src="https://s3.amazonaws.com/kinlane-productions/js/shred.bundle.js" type="text/javascript"></script>
-  <script src='https://s3.amazonaws.com/kinlane-productions/js/jquery-1.8.0.min.js' type='text/javascript'></script>
-  <script src='https://s3.amazonaws.com/kinlane-productions/js/handlebars-2.0.0.js' type='text/javascript'></script>
-  <script src='https://s3.amazonaws.com/kinlane-productions/js/underscore-min.js' type='text/javascript'></script>
-  <script src='https://s3.amazonaws.com/kinlane-productions/js/backbone-min.js' type='text/javascript'></script>
-  <script src='https://s3.amazonaws.com/kinlane-productions/js/swagger-client.js' type='text/javascript'></script>
-  <script src='https://s3.amazonaws.com/kinlane-productions/js/swagger-ui.js' type='text/javascript'></script>
-  <script src='https://s3.amazonaws.com/kinlane-productions/js/highlight.7.3.pack.js' type='text/javascript'></script>
-  <script src='https://s3.amazonaws.com/kinlane-productions/js/marked.js' type='text/javascript'></script>
+        <div class="colophon">
+          <ul class="colophon-links">
+            {% for nav in site.navigation %}
+            <li style="padding-top:{{ nav.padding }}px">
+              <a href="{{ nav.link1 }}" style="font-size: {{ nav.size1 }}%;">
+                {% if nav.decorate == 1 %} <span style="font-size: {{ nav.size1 }}">&#8668;</span>{% endif %}
+                {{ nav.label1 }}
+              </a>
+              {% if nav.extend == 1 %} <span style="font-size: {{ nav.size2 }}%;">(<a href="{{ nav.link2 }}">{{ nav.label2 }}</a>)</span>{% endif %}
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
 
-  <script src="https://s3.amazonaws.com/kinlane-productions/js/oauth.js" type="text/javascript"></script>
+        <!-- Sponsorship -->
+        <script id="parterListingTemplate" type="text/template">
+            {% raw  %}
+            <a href="{{url}}" target="_blank" title="{{title}}">
+           		<img src="{{logo}}" width="{{width}}" style="padding: 2px;" />
+            </a>
+            {% endraw %}
+        </script>
+        <script type="text/javascript">
+        function listSponsors(){
+            $.getJSON('{{ site.sponsors_json_url }}', function(data) {
+                $.each(data['sponsors'], function(key, val) {
+                var template = $('#parterListingTemplate').html();
+                var html = Mustache.to_html(template, val);
+                $('#partnerListingContainer').append(html);
+                });
+            });
+          }
+        </script>
+        <div id="partnerListingContainer" align="center" style="background-color:#FFF; margin-top: {{ site.sponsors_margin_top }}px; padding-top: {{ site.sponsors_padding_top }}px; width: 60%; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border: 3px solid #FFFFFF; margin-bottom: 2px;"></div>
+        <script type="text/javascript">listSponsors();</script>
+        <!-- Sponsorship -->
 
-  <script src="https://s3.amazonaws.com/kinlane-productions/js/mustache.js" type="text/javascript"></script>
-  <script src="https://s3.amazonaws.com/kinlane-productions/js/utilities.js" type="text/javascript"></script>
+      </div>
+    </header>
 
-  <!-- RSS -->
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="/blog.xml">
+    <div class="content uicontainer">
 
-</head>
+      <p align="center"><a href="{{ site.url }}"><img src="{{ site.logo }}" align="center" width="{{ site.logo_width }}%" style="padding-bottom: {{ site.logo_bottom_padding }}px;" /></a></p>
+
+      {{ content }}
+
+      <center><hr style="padding: 5px 5px 5px 5px; margin: 20px 5px 5px 5px; width: 85%;" /></center>
+  		<!-- 3scale -->
+  		<p align="center">
+    		<a href="http://apis.how/ake3nxbapm" target="_blank" title="API Infrastructure From 3Scale">
+    		    <img src="https://s3.amazonaws.com/kinlane-productions/api-service-providers/3Scale/empowered-by-3scale.png" width="300" style="" />
+    		</a>
+  		</p>
+  		<!-- 3scale -->
+
+      <div class="footer">
+        <ul>
+          {% for nav in site.footernavigation %}
+            <li><a href="{{ nav.link }}">{{ nav.label }}</a></li>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+  </div>
+
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-1119465-51']);
+	  _gaq.push(['_setDomainName', 'apievangelist.com']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!-- Google Code for API Evangelist visitors -->
+	<script type="text/javascript">
+	/* <![CDATA[ */
+	var google_conversion_id = 964245031;
+	var google_conversion_label = "U2foCJGT0wkQp-zkywM";
+	var google_custom_params = window.google_tag_params;
+	var google_remarketing_only = true;
+	/* ]]> */
+	</script>
+	<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+	</script>
+	<noscript>
+	<div style="display:inline;">
+	   <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/964245031/?value=1.000000&amp;label=U2foCJGT0wkQp-zkywM&amp;guid=ON&amp;script=0"/>
+	</div>
+	</noscript>
+
+  </body>
+
+</html>
