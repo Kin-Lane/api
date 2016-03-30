@@ -2,9 +2,9 @@
 layout: page
 ---
 
-<p><a href="index.html?login=1" id="login-github-icon-link" title="Login w/ Github to Access"><img id="login-github-icon" src="https://s3.amazonaws.com/kinlane-productions/building-blocks/bw-github.png" width="28" align="right" style="margin: 3px;" /></a></p>
+<script src="https://{{ site.org }}.github.io/master/js/navigator-apis-json.js" type="text/javascript"></script>
 
-<div id="jsonNavigator""><table cellpadding="3" cellspacing="2" border="0" width="95%" id="jsonNavigatorTable" style="margin-left: 15px;"></table></div>
+<div id="jsonNavigator"><table cellpadding="3" cellspacing="2" border="0" width="95%" id="jsonNavigatorTable" style="margin-left: 15px;"></table></div>
 
 <div id="questionsViewer" style="display: none;">
 	<p>This is an editor for the APIs.jon file contained as part of this repository, making them editable through a web interface, and able to save using the Github API (if you have access to repo)--enable full client-side management of Swagger files.</p>
@@ -14,3 +14,7 @@ layout: page
 	<p>If you are listed as collaborator on this Github organization you should be able to login using Github icon above, and get access to manage all other aspects of this micro-service.</p>
 </div>
 <p><br /></p>
+
+<script type="text/javascript">
+	loadAPIsJSONNavigator('apis.json');
+</script>

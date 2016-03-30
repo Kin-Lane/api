@@ -3,12 +3,11 @@
   "description": "This is my default API API (inception man!), using it to manage APIs. It is a Stack Network API resource, with supporting docker container for the API.",
   "image": "https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-a.png",
   "tags": [
-    "application programming interface",
     "API",
-    "API"
+    "Application Programming Interface"
   ],
   "created": "2014-04-07",
-  "modified": "2014-07-09",
+  "modified": "2016-03-29",
   "url": "https://kin-lane.github.io/api/apis.json",
   "SpecificationVersion": "0.14",
   "apis": [
@@ -24,25 +23,21 @@
       ],
       "properties": [
         {
-          "type": "swagger",
-          "url": "https://kin-lane.github.io/api/swagger.json"
+          "type": "x-openapi-spec",
+          "url": "https://kin-lane.github.io/api/api-commons/openapi-spec.json"
         },
         {
           "type": "x-postman",
-          "url": "https://kin-lane.github.io/api/postman.json"
-        },
-        {
-          "type": "x-apimatic-sdks",
-          "url": "https://kin-lane.github.io/api/code/"
+          "url": "https://kin-lane.github.io/api/api-commons/postman.json"
         },
         {
           "type": "x-api-science",
           "url": "https://kin-lane.github.io/api/status/"
-        }                
+        }
       ],
       "contact": [
         {
-          "FN": "API Evangliest",
+          "FN": "API Evangelist",
           "email": "info@apievangelist.com",
           "X-twitter": "apievangelist"
         }
@@ -50,10 +45,6 @@
     }
   ],
   "include": [
-    {
-      "name": "API API (Inception)",
-      "url": "https://kin-lane.github.io/api/apis.json"
-    },
     {
       "name": "Audio API",
       "url": "https://kin-lane.github.io/audio/apis.json"
@@ -69,7 +60,7 @@
     {
       "name": "Certification API",
       "url": "https://kin-lane.github.io/certification/apis.json"
-    },    
+    },
     {
       "name": "Curated API",
       "url": "https://kin-lane.github.io/curated/apis.json"
@@ -89,7 +80,7 @@
     {
       "name": "Keyword API",
       "url": "https://kin-lane.github.io/keyword/apis.json"
-    },    
+    },
     {
       "name": "Link API",
       "url": "https://kin-lane.github.io/link/apis.json"
@@ -97,11 +88,11 @@
     {
       "name": "Linkrot API",
       "url": "https://kin-lane.github.io/linkrot/apis.json"
-    },   
+    },
     {
       "name": "News API",
       "url": "https://kin-lane.github.io/news/apis.json"
-    },     
+    },
     {
       "name": "Note API",
       "url": "https://kin-lane.github.io/note/apis.json"
@@ -137,7 +128,7 @@
     {
       "name": "Slide API",
       "url": "https://kin-lane.github.io/slide/apis.json"
-    },    
+    },
     {
       "name": "Tag API",
       "url": "https://kin-lane.github.io/tag/apis.json"
@@ -145,7 +136,7 @@
     {
       "name": "Task API",
       "url": "https://kin-lane.github.io/task/apis.json"
-    },    
+    },
     {
       "name": "Tip API",
       "url": "https://kin-lane.github.io/tip/apis.json"
@@ -157,11 +148,11 @@
     {
       "name": "Video API",
       "url": "https://kin-lane.github.io/video/apis.json"
-    } 
+    }
   ],
   "maintainers": [
     {
-      "FN": "API Evangliest",
+      "FN": "API Evangelist",
       "X-twitter": "apievangelist",
       "email": "info@apievangelist.com"
     }

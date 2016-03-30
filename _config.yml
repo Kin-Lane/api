@@ -8,15 +8,11 @@ markdown:     rdiscount
 permalink:    pretty
 pygments:     true
 
-permalink: /:categories/:year/:month/:day/:title 
+permalink: /:categories/:year/:month/:day/:title
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 
 paginate: 50
 paginate_path: "/news/page:num"
-
-production_url : http://kin-lane.github.io/api/
-
-BASE_PATH : http://kin-lane.github.io/api/
 
 categories_path : /categories.html
 tags_path : /tags.html
