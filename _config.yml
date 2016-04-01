@@ -21,9 +21,9 @@ paginate_path: "/blog/page:num/"
 categories_path : /categories.html
 tags_path : /tags.html
 
-org: Kin-Lane
+org: kin-lane
 repo: api
-resource: API
+resource: api
 oauthio: qUDL4eZqKPFb41SwuWIYIwLR6jI
 
 # Masthead title
