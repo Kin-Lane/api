@@ -9,7 +9,7 @@
   "created": "2014-04-07",
   "modified": "2016-03-29",
   "url": "https://kin-lane.github.io/api/apis.json",
-  "SpecificationVersion": "0.14",
+  "specificationVersion": "0.14",
   "apis": [
     {
       "name": "API",
