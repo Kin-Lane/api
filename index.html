@@ -30,23 +30,15 @@ layout: page
 
 {% for common in apijson.x-common %}
 
-  {% if common.type == 'x-blog' %}
-    {% assign blog_url = common.url %}
-  {% endif %}
-  {% if common.type == 'x-blog-rss-feed' %}
-    {% assign blogrss_url = common.url %}
-  {% endif %}
   {% if common.type == 'x-portal' %}
     {% assign portal_url = common.url %}
   {% endif %}
-  {% if common.type == 'x-authentication-overview' %}
-    {% assign authentication_url = common.url %}
-  {% endif %}
-  {% if common.type == 'x-github' %}
-    {% assign gitub_url = common.url %}
-  {% endif %}
+
   {% if common.type == 'x-twitter' %}
     {% assign twitter_url = common.url %}
+  {% endif %}  
+  {% if common.type == 'x-github' %}
+    {% assign gitub_url = common.url %}
   {% endif %}
   {% if common.type == 'x-blog' %}
     {% assign blog_url = common.url %}
@@ -54,20 +46,15 @@ layout: page
   {% if common.type == 'x-blog-rss-feed' %}
     {% assign blog_rss_url = common.url %}
   {% endif %}
-  {% if common.type == 'x-change-log' %}
-    {% assign change_log_url = common.url %}
+
+  {% if common.type == 'x-getting-started' %}
+    {% assign getting_started_url = common.url %}
   {% endif %}
-  {% if common.type == 'x-code-page' %}
-    {% assign code_page_url = common.url %}
-  {% endif %}
-  {% if common.type == 'x-documentation' %}
-    {% assign documentation_url = common.url %}
+  {% if common.type == 'x-authentication-overview' %}
+    {% assign authentication_url = common.url %}
   {% endif %}
   {% if common.type == 'x-faq' %}
     {% assign faq_url = common.url %}
-  {% endif %}
-  {% if common.type == 'x-getting-started' %}
-    {% assign getting_started_url = common.url %}
   {% endif %}
   {% if common.type == 'x-login' %}
     {% assign login_url = common.url %}
@@ -75,12 +62,27 @@ layout: page
   {% if common.type == 'x-signup' %}
     {% assign signup_url = common.url %}
   {% endif %}
+
+  {% if common.type == 'x-documentation' %}
+    {% assign documentation_url = common.url %}
+  {% endif %}
+  {% if common.type == 'x-code-page' %}
+    {% assign code_page_url = common.url %}
+  {% endif %}
+
   {% if common.type == 'x-road-map' %}
     {% assign road_map_url = common.url %}
   {% endif %}
-  {% if common.type == 'x-status-dashboard' %}
+  {% if common.type == 'x-issue' %}
+    {% assign issue_url = common.url %}
+  {% endif %}
+  {% if common.type == 'x-change-log' %}
+    {% assign change_log_url = common.url %}
+  {% endif %}
+  {% if common.type == 'x-status' %}
     {% assign status_dashboard_url = common.url %}
   {% endif %}
+
   {% if common.type == 'x-api-plan' %}
     {% assign api_plan_url = common.url %}
   {% endif %}
@@ -229,49 +231,49 @@ layout: page
 				<tr id="updates">
 					<td colspan="3" style="font-size: 22px; padding: 15px;"><strong>Updates</strong></td>
 				</tr>
-        {% if gitub_url != '' %}
+        {% if road_map_url != '' %}
 				<tr id="x-roadmap-row">
 					<td width="25" style="height: 55px;"></td>
-					<td width="75" align="center" valign="middle"><a href="" id="x-roadmap-img-url"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-highway.png" width="35" /></a></td>
-					<td><a href="" id="x-roadmap-url">Roadmap</a><div id="d-roadmap"></div></td>
+					<td width="75" align="center" valign="middle"><a href="{{ road_map_url }}" id="x-roadmap-img-url"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-highway.png" width="35" /></a></td>
+					<td><a href="{{ road_map_url }}" id="x-roadmap-url">Roadmap</a><div id="d-roadmap"></div></td>
 				</tr>
         {% endif %}
-        {% if gitub_url != '' %}
-				<tr id="x-issues-row">
+        {% if issue_url != '' %}
+				<tr id="x-issue">
 					<td width="25" style="height: 55px;"></td>
-					<td width="75" align="center" valign="middle"><a href="" id="x-issues-img-url"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-bug.png" width="35" /></a></td>
-					<td><a href="" id="x-issues-url">Issues</a><div id="d-issues"></div></td>
+					<td width="75" align="center" valign="middle"><a href="{{ issue_url }}" id="x-issue-img-url"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-bug.png" width="35" /></a></td>
+					<td><a href="{{ issue_url }}" id="x-issue-url">Issues</a><div id="d-issue"></div></td>
 				</tr>
         {% endif %}
-        {% if gitub_url != '' %}
+        {% if change_log_url != '' %}
 				<tr id="x-change-log-row">
 					<td width="25" style="height: 55px;"></td>
-					<td width="75" align="center" valign="middle"><a href="" id="x-change-log-img-url"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-recycling.jpg" width="35" /></a></td>
-					<td><a href="" id="x-change-log-url">Change Log</a><div id="d-change-log"></div></td>
+					<td width="75" align="center" valign="middle"><a href="{{ change_log_url }}" id="x-change-log-img-url"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-recycling.jpg" width="35" /></a></td>
+					<td><a href="{{ change_log_url }}" id="x-change-log-url">Change Log</a><div id="d-change-log"></div></td>
 				</tr>
         {% endif %}
-        {% if gitub_url != '' %}
-				<tr id="x-status-dashboard-row">
+        {% if status_url != '' %}
+				<tr id="x-status-row">
 					<td width="25" style="height: 55px;"></td>
-					<td width="75" align="center" valign="middle"><a href="" id="x-status-dashboard-img-url"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-status-dashboard.png" width="35" /></a></td>
-					<td><a href="" id="x-status-dashboard-url">Status</a><div id="d-status-dashboard"></div></td>
+					<td width="75" align="center" valign="middle"><a href="{{ status_url }}" id="x-status-img-url"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-status-dashboard.png" width="35" /></a></td>
+					<td><a href="{{ status_url }}" id="x-status-url">Status</a><div id="d-status"></div></td>
 				</tr>
         {% endif %}
 				<tr id="legal">
 					<td colspan="3" style="font-size: 22px; padding: 15px;"><strong>Legal</strong></td>
 				</tr>
-        {% if gitub_url != '' %}
+        {% if terms_of_service_url != '' %}
 				<tr id="x-terms-of-service-row">
 					<td width="25" style="height: 55px;"></td>
-					<td width="75" align="center" valign="middle"><a href="" id="x-terms-of-service-img-url"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-terms-conditions.png" width="35" /></a></td>
-					<td><a href="" id="x-terms-of-service-url">Terms of Service</a><div id="d-terms-of-service"></div></td>
+					<td width="75" align="center" valign="middle"><a href="{{ terms_of_service_url }}" id="x-terms-of-service-img-url"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-terms-conditions.png" width="35" /></a></td>
+					<td><a href="{{ terms_of_service_url }}" id="x-terms-of-service-url">Terms of Service</a><div id="d-terms-of-service"></div></td>
 				</tr>
         {% endif %}
-        {% if gitub_url != '' %}
+        {% if privacy_policy_url != '' %}
 				<tr id="x-privacy-policy-row">
 					<td width="25" style="height: 55px;"></td>
-					<td width="75" align="center" valign="middle"><a href="" id="x-privacy-policy-img-url"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-privacy.png" width="35" /></a></td>
-					<td><a href="" id="x-privacy-policy-url">Privacy Policy</a><div id="d-privacy-policy"></div></td>
+					<td width="75" align="center" valign="middle"><a href="{{ privacy_policy_url }}" id="x-privacy-policy-img-url"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-privacy.png" width="35" /></a></td>
+					<td><a href="{{ privacy_policy_url }}" id="x-privacy-policy-url">Privacy Policy</a><div id="d-privacy-policy"></div></td>
 				</tr>
         {% endif %}
 			</table>
