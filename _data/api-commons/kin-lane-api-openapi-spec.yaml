@@ -40,7 +40,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - API
         security: []
       post:
         summary: Add API
@@ -81,7 +81,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - API
         security: []
     /api/{api_id}/:
       delete:
@@ -108,7 +108,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - API
         security: []
       get:
         summary: Get API
@@ -134,7 +134,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - API
         security: []
       put:
         summary: Update API
@@ -180,7 +180,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - API
         security: []
     /api/{api_id}/buildingblocks/:
       get:
@@ -207,7 +207,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - Building Blocks
         security: []
       post:
         summary: Add Building Block for API
@@ -256,7 +256,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - Building Blocks
         security: []
     /api/{api_id}/buildingblocks/{buildingblock_id}:
       delete:
@@ -288,7 +288,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - Building Blocks
         security: []
     /api/{api_id}/definitions/code/php/generate/definition/parameters/:
       get:
@@ -312,7 +312,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - Code
         security: []
     /api/{api_id}/definitions/code/php/generate/path/parameters/:
       get:
@@ -339,7 +339,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - Code
         security: []
     /api/{api_id}/definitions/export/apisjson/.14/:
       get:
@@ -360,7 +360,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - Definitions
         security: []
     /api/{api_id}/definitions/export/apisjson/.14/master/:
       get:
@@ -381,7 +381,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - Definitions
         security: []
     /api/{api_id}/definitions/export/swagger/1.2/:
       get:
@@ -408,7 +408,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - Definitions
         security: []
     /api/{api_id}/definitions/export/swagger/2.0/:
       get:
@@ -435,7 +435,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - Definitions
         security: []
     /api/{api_id}/definitions/import/swagger/1.2/:
       post:
@@ -467,7 +467,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - Definitions
         security: []
     /api/{api_id}/definitions/import/swagger/2.0/:
       post:
@@ -499,7 +499,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - Definitions
         security: []
     /api/{api_id}/images/:
       get:
@@ -526,7 +526,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - Images
         security: []
       post:
         summary: Add Image for API
@@ -567,7 +567,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - Images
         security: []
     /api/{api_id}/images/{image_id}:
       delete:
@@ -599,7 +599,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - Images
         security: []
     /api/{api_id}/logs/:
       get:
@@ -626,7 +626,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - Logs
         security: []
       post:
         summary: Add Log for API
@@ -667,7 +667,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - Logs
         security: []
     /api/{api_id}/logs/{log_id}/:
       delete:
@@ -691,7 +691,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - Logs
         security: []
     /api/{api_id}/notes/:
       get:
@@ -718,7 +718,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - Notes
         security: []
       post:
         summary: Add Note for API
@@ -754,7 +754,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - Notes
         security: []
     /api/{api_id}/notes/{note_id}/:
       delete:
@@ -778,7 +778,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - Notes
         security: []
     /api/{api_id}/screenshots/:
       get:
@@ -805,7 +805,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - Screenshots
         security: []
       post:
         summary: Add Screenshot for API
@@ -846,7 +846,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - Screenshots
         security: []
     /api/{api_id}/screenshots/{screenshot_id}:
       delete:
@@ -878,7 +878,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - Screenshots
         security: []
     /api/{api_id}/tags/:
       get:
@@ -905,7 +905,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - Tags
         security: []
       post:
         summary: Add Tag for API
@@ -936,7 +936,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - Tags
         security: []
     /api/{api_id}/tags/{tag}:
       delete:
@@ -968,7 +968,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - Tags
         security: []
     /api/{api_id}/urls/:
       get:
@@ -995,7 +995,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - URLS
         security: []
       post:
         summary: Add URL for API
@@ -1036,7 +1036,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - URLs
         security: []
     /api/{api_id}/urls/{url_id}/:
       delete:
@@ -1060,7 +1060,7 @@
           200:
             description: OK
         tags:
-        - ""
+        - URLs
         security: []
   definitions:
     api:
