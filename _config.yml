@@ -43,14 +43,23 @@ project_summary: This is the master portal where I access all of the APIs I depe
 
 # Navigation
 navigation:
-  - label1: All APIs
-    link1: /index.html
+  - label1: Home
+    link1: index.html
     size1: 100
     extend: 0
     label2:
     link2:
     size2: 0
     padding: 25
+    decorate: 0
+  - label1: Blog
+    link1: /Blog/
+    size1: 80
+    extend: 1
+    label2: RSS
+    link2: /blog.xml
+    size2: 60
+    padding: 2
     decorate: 0
   - label1: Return to API Evangelist
     link1: http://apievangelist.com

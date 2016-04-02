@@ -1,0 +1,17 @@
+- title: API Portal Support
+  image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-support.png
+  header: Provide details about how to get support. Make sure and have several options, including direct support as well as indirect, 24/7, self-service support that users can take advantage of.
+  footer: Make sure and provide any additional information about what sort of time frame they can expect, and a general tone of how support is handled. Try to make things as friendly as possible, and developers will be more likey to connect. Hopefully you don't have any problems, but if you do, don't hestiate to ping us.
+  resources:
+    - title: https://github.com/Kin-Lane/master/issues
+      description:
+      image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-github.png
+      url: Github Issues
+    - title: Twitter
+      description:
+      image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-twitter-icon.png
+      url: https://twitter.com/kinlane/
+    - title: Email
+      description:
+      image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-email-at.png
+      url: mailto:info@kinlane.com
