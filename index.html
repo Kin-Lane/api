@@ -14,6 +14,7 @@ layout: page
       }
     }
 </script>
+working - 1
 <table cellpadding="3" cellspacing="2" width="100%" border="1" style="margin-top: 10px;">
   <tr>
     <td align="center" colspan="2"><hr /></td>
@@ -23,7 +24,7 @@ layout: page
 {% assign apijson = index[0] %}
 {% assign contents = site.data.api-commons %}
 {% assign apicommons = contents[0] %}
-
+{{ apicommons }}
 {% assign blog_url = '' %}
 {% assign blogrss_url = '' %}
 {% assign portal_url = '' %}
@@ -148,7 +149,6 @@ layout: page
                         {% assign pathname = openapi_spec_url | replace: '_data/','' %}
                         {% assign pathname = pathname | replace: '.yaml','' %}
                         {% assign pathname = pathname | replace: '/','.' %}
-                        --{{ pathname }}--
                         {% assign openapi_spec_json = apicommons | map: pathname %}
 
                       {% endif %}
