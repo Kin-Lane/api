@@ -177,7 +177,7 @@ working - 7
 
                     <tr>
                       <td align="left">
-                        {{ api.name }} - {{ openapi_spec_json }}
+                        {{ api.name }}
                       </td>
                       <td align="right">
                         {% if openapi_spec_url != null and openapi_spec_url != empty %}
@@ -202,7 +202,7 @@ working - 7
                     </tr>
                     <tr style="display: none;" id="methods-for-{{ pathname }}">
                       <td colspan="2" align="left" style="margin-left: 25px; margin-right: 25px;">
-                        {{ openapi_spec_json }}
+                      ---  {{ openapi_spec_json }}999
                         <ul>
                           {% for spec in openapi_spec_json %}
                             {{ spec }}
