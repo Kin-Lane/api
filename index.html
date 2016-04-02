@@ -148,7 +148,7 @@ layout: page
                         {% assign pathname = openapi_spec_url | replace: '_data/','' %}
                         {% assign pathname = pathname | replace: '.yaml','' %}
                         {% assign pathname = pathname | replace: '/','.' %}
-                        --{{ pathname }}-- 
+                        --{{ pathname }}--
                         {% assign openapi_spec_json = apicommons | map: pathname %}
 
                       {% endif %}
@@ -194,7 +194,7 @@ layout: page
                     </tr>
                     <tr style="display: none;" id="methods-for-{{ pathname }}">
                       <td colspan="2" align="left" style="margin-left: 25px; margin-right: 25px;">
-                        --{{ openapi_spec_json }}--
+                        --{{ openapi_spec_json }}--<br />{{ apicommons }}<br />
                         <ul>
                           {% for spec in openapi_spec_json %}
 
