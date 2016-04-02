@@ -14,7 +14,7 @@ layout: page
       }
     }
 </script>
-Doing - 13
+Doing - 14
 <table cellpadding="3" cellspacing="2" width="100%" border="1" style="margin-top: 10px;">
   <tr>
     <td align="center" colspan="2"><hr /></td>
@@ -22,15 +22,10 @@ Doing - 13
 
 {% for folder in site.data %}
 
-  {{ folder[1] }}
-  NEXT!!
-
-  {% for item in folder %}
-
-    <hr />
-    {% assign this = item %}
-    {{ this }}
-    {% if this.apis != null %}
+    {% assign apisjson = folder[1] %}
+    {% assign apiscommons = folder[2] %}
+    {{ apiscommons }}
+    {% if apisjson.apis != null %}
 
         {% assign apijson = this.apis %}
     		{% assign common_api_action_url = '' %}
@@ -245,6 +240,6 @@ Doing - 13
         </tr>
         {% endif %}
       {% endif %}
-    {% endfor %}
+
   {% endfor %}
 </table>
