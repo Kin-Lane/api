@@ -101,11 +101,11 @@ layout: page
   <tr>
     <td colspan="2" style="padding-bottom: 10px;">
       {% if apijson.image != null %}
-        <a href="{{ website_url }}">
+        <a href="{{ site.url }}/apis.json">
           <img src="{{ apijson.image }}" align="left" style="padding: 5px;" width="125" />
         </a>
       {% endif %}
-      <a href="{{ website_url }}" style="font-size: 22px;"><strong>{{ apijson.name }}</strong></a><br />
+      <a href="{{ site.url }}" style="font-size: 22px;"><strong>{{ apijson.name }}</strong></a><br />
       {{ apijson.description }}
     </td>
   </tr>
