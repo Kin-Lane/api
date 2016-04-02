@@ -152,10 +152,10 @@ working - 4
 
                         {% for entry in apicommons %}
                           {% assign thisname = entry[0] %}
-                          --{{ thisname }}--
+                          {% if thisname == pathname %}
+                            {% assign openapi_spec_json = entry[1] %}
+                          {% endif %}
                         {% endfor %}
-
-                        {% assign openapi_spec_json = apicommons | map: pathname %}
 
                       {% endif %}
 
