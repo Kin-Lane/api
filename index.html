@@ -148,7 +148,7 @@ layout: page
                         {% assign pathname = openapi_spec_url | replace: '_data/','' %}
                         {% assign pathname = pathname | replace: '.yaml','' %}
                         {% assign pathname = pathname | replace: '/','.' %}
-
+                        --{{ pathname }}-- 
                         {% assign openapi_spec_json = apicommons | map: pathname %}
 
                       {% endif %}
