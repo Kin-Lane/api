@@ -14,7 +14,7 @@ layout: page
       }
     }
 </script>
-working - 5
+working - 6
 <table cellpadding="3" cellspacing="2" width="100%" border="1" style="margin-top: 10px;">
   <tr>
     <td align="center" colspan="2"><hr /></td>
@@ -201,6 +201,7 @@ working - 5
                     </tr>
                     <tr style="display: none;" id="methods-for-{{ pathname }}">
                       <td colspan="2" align="left" style="margin-left: 25px; margin-right: 25px;">
+                        {{ openapi_spec_json }}
                         <ul>
                           {% for spec in openapi_spec_json %}
                             {{ spec }}
