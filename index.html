@@ -14,16 +14,15 @@ layout: page
       }
     }
 </script>
-Doing - 18
+Doing - 19
 <table cellpadding="3" cellspacing="2" width="100%" border="1" style="margin-top: 10px;">
   <tr>
     <td align="center" colspan="2"><hr /></td>
   </tr>
 
-{% assign folder = site.data %}
+{% assign apisjson = site.data.apis %}
+{% assign apicommons = site.data.api-commons %}
 
-    {% assign apisjson = folder[1] %}
-    {% assign apicommons = folder[2] %}
     {{ apisjson }}
     <hr />
     {% assign apisjson = content | map: 'apis' %}
