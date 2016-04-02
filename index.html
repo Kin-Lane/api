@@ -14,7 +14,7 @@ layout: page
       }
     }
 </script>
-Doing - 17
+Doing - 18
 <table cellpadding="3" cellspacing="2" width="100%" border="1" style="margin-top: 10px;">
   <tr>
     <td align="center" colspan="2"><hr /></td>
@@ -23,8 +23,7 @@ Doing - 17
 {% for folder in site.data %}
 
     {% assign content = folder[1] %}
-    {{ content }}
-    <hr />
+
     {% assign apisjson = content | map: 'apis' %}
 
     {% if apisjson.apis != null %}
