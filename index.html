@@ -151,7 +151,7 @@ working - 4
                         {% assign pathname = pathname | replace: '/','.' %}
 
                         {% for entry in apicommons %}
-                          {% assign thisname = entry[1] %}
+                          {% assign thisname = entry[0] %}
                           --{{ thisname }}--
                         {% endfor %}
 
