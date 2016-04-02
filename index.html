@@ -212,6 +212,10 @@ working - 12
                               {% for method in method_json %}
                                 {% assign tags = method[1].tags %}
 
+                                {% if taglist contains tags %}
+                                   string includes 'hello'
+                                {% endif %}
+
                                 {% assign taglist = taglist | append:'|' %}
                                 {% assign taglist = taglist | append:tags %}
 
