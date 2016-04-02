@@ -1,7 +1,7 @@
 - title: API Portal Support
   image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-support.png
-  header: Provide details about how to get support. Make sure and have several options, including direct support as well as indirect, 24/7, self-service support that users can take advantage of.
-  footer: Make sure and provide any additional information about what sort of time frame they can expect, and a general tone of how support is handled. Try to make things as friendly as possible, and developers will be more likey to connect. Hopefully you don't have any problems, but if you do, don't hestiate to ping us.
+  header: I support a handful of ways you can get support across my network of APIs, and research projects. I prefer to keep all information associated with each projects Github repository, but also try and make myself as available as possible via other channels.
+  footer: Please remember I am a one person show, and while I work to achieve the highest levels of available, there are times I go heads down on work, and tune out general email & social chatter. Usually if you submit via Github, with the right title, it will grab my attention, if its critical.
   resources:
     - title: via Github
       description:
