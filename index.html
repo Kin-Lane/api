@@ -211,15 +211,7 @@ working - 10
                               {% assign method_json = path[1] %}
                               {% for method in method_json %}
                                 {% assign tags = method[1].tags %}
-                                {% if taglist contains tags %}
-                                {% else %}
-                                  {% if first == 1 %}
-                                    {% assign taglist = taglist | append:tags %}
-                                  {% else %}
-                                    {% assign taglist = taglist | append:'|' %}
-                                    {% assign taglist = taglist | append:tags %}
-                                  {% endif %}
-                                {% endif %}
+                                
 
                               {% endfor %}
                             {% endfor %}
