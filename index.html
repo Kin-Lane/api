@@ -159,7 +159,6 @@ working - 6
                             {% assign openapi_spec_json = thisentry %}
                           {% endif %}
                         {% endfor %}
-{{ openapi_spec_json }}
                       {% endif %}
 
                       {% if property.type == 'x-postman %}
@@ -178,7 +177,7 @@ working - 6
 
                     <tr>
                       <td align="left">
-                        {{ api.name }}
+                        {{ api.name }} - {{ openapi_spec_json }}
                       </td>
                       <td align="right">
                         {% if openapi_spec_url != null and openapi_spec_url != empty %}
