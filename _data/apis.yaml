@@ -18,7 +18,9 @@
     baseURL: https://kin-lane.github.io/api/
     tags:
     - Kin Lane API API
-    properties: []
+    properties:
+    - type: x-openapi-spec
+      url: _data/api-commons/kin-lane-api-openapi-spec.yaml
   x-common:
   - type: x-blog-rss-feed
     url: http://www.talkwalker.com/alerts/rss/NG2GCZBIIN4ULOCFJRSUK6EIY2AZLCE2YTABNE6EHW4OAA2B53FA%3D%3D%3D%3D
