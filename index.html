@@ -150,9 +150,11 @@ working - 4
                         {% assign pathname = pathname | replace: '.yaml','' %}
                         {% assign pathname = pathname | replace: '/','.' %}
 
-                        {{ pathname }}<br />
-                        {{ apicommons }}<br />
-                        {% assign openapi_spec_json = apicommons | map: pathname %}
+                        {% for entry in apicommons %}
+                          {% assign thisname = entry[1] %}
+                          --{{ thisname }}--
+                          {% assign openapi_spec_json = apicommons | map: pathname %}
+                        {% endfor %}
 
                       {% endif %}
 
