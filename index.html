@@ -205,27 +205,21 @@ working - 12
                         <ul>
 
                           {% assign first = 1 %}
-                          {% assign tag.list = '' %}
+                          {% assign taglist = '' %}
                           {% for spec in openapi_spec_json %}
                             {% for path in spec.paths %}
                               {% assign method_json = path[1] %}
                               {% for method in method_json %}
                                 {% assign tags = method[1].tags %}
-                                {% if tag.list contains tags %}
-                                {% else %}
-                                  {% if first == 1 %}
-                                    {% assign tag.list = tag.list | append:tags %}
-                                  {% else %}
-                                    {% assign tag.list = tag.list | append:'|' %}
-                                    {% assign tag.list = tag.list | append:tags %}
-                                  {% endif %}
-                                {% endif %}
+
+                                {% assign taglist = taglist | append:'|' %}
+                                {% assign taglist = taglist | append:tags %}
 
                               {% endfor %}
                             {% endfor %}
                           {% endfor %}
 
-                          {{ tag.list }}
+                          {{ taglist }}
                         </ul>
                       </td>
                     </tr>
