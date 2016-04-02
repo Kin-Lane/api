@@ -15,8 +15,6 @@ title: Kin Lane API API
       }
     }
 </script>
-
-doing - 3
 <table cellpadding="3" cellspacing="2" width="100%" border="1" style="margin-top: 10px;">
   <tr>
     <td align="center" colspan="2"><hr /></td>
@@ -152,12 +150,12 @@ doing - 3
                             {% if property.type == 'x-openapi-spec' %}
 
                               {% assign openapi_spec_url = property.url %}
-                              {% assign pathname = openapi_spec_url | replace: site.url,'' %}
-                              {% assign pathname = pathname | replace: '/data/','' %}
-                              {% assign pathname = pathname | replace: thisname,'' %}
-                              {% assign pathname = pathname | replace: '/','' %}
-                              {% assign pathname = pathname | replace: '.json','' %}
-                              {% assign openapi_spec_json = file | map: pathname %}
+                              {% assign pathname = openapi_spec_url | replace: '_data/','' %}
+                              {% assign pathname = pathname | replace: '.yaml','' %}
+                              {% assign pathname = pathname | replace: '/','.' %}
+                              {% assign pathname = 'site.data.' | append:pathname %}
+
+                              {% assign openapi_spec_json =  %}
 
                             {% endif %}
 
@@ -181,7 +179,7 @@ doing - 3
                             </td>
                             <td align="right">
                               {% if openapi_spec_url != null and openapi_spec_url != empty %}
-                                {{ openapi_spec_url }} - <a href="{{ openapi_spec_url }}" target="_blank" title="OpenAPI Spec">
+                                {{ pathname }} - <a href="{{ openapi_spec_url }}" target="_blank" title="OpenAPI Spec">
                                   <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/openapi-spec/open-api-spec-icon.png" width="25" align="right" />
                                 </a>
                               {% endif %}
