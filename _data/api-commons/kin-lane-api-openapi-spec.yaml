@@ -1227,4 +1227,3 @@
         body:
           description: This is a default description.
           type: get
-  .
