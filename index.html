@@ -22,8 +22,10 @@ Doing - 12
 
 {% for folder in site.data %}
   {% for item in folder %}
+
+    <hr />
     {% assign this = item %}
-    {{ this.apis }}
+    {{ this }}
     {% if this.apis != null %}
 
         {% assign apijson = this.apis %}
