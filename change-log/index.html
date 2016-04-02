@@ -13,7 +13,7 @@ layout: page
 	{% for history in apichangelog.history %}
     <tr>
   		<td align="left" valign="top">
-  			({{ history.date | date_to_string }} <strong>{{ history.title }}</strong> - {{ history.description }}
+  			({{ history.date | date: "%D" }}) <strong>{{ history.title }}</strong> - {{ history.description }}
   		</td>
     </tr>
 	{% endfor %}
