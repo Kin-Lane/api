@@ -995,7 +995,7 @@
           200:
             description: OK
         tags:
-        - URLS
+        - URLs
         security: []
       post:
         summary: Add URL for API
