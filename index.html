@@ -17,7 +17,7 @@ title: {{ site.title }}
     }
 </script>
 
-doing - 10
+doing - 1
 <table cellpadding="3" cellspacing="2" width="100%" border="0" style="margin-top: 10px;">
   <tr>
     <td colspan="3" align="center"><hr /></td>
@@ -25,8 +25,14 @@ doing - 10
 
 {% for apijson in site.data.apis %}
 
+		<tr>
+	    <td colspan="3" align="center">{{ apijson }}</td>
+	  </tr>
+
+		-{{ apijson.name }}-
+
 		{% assign common_api_action_url = '' %}
-    name: {{ apijson.name }}--
+
     {% if apijson.specificationVersion != null %}
 
       {% assign blog_url = '' %}
