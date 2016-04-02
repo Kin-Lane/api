@@ -20,10 +20,11 @@ Doing - 2
     <td align="center" colspan="2"><hr /></td>
   </tr>
 
-{% assign apisjson = site.data.apis %}
-{% assign apicommons = site.data.api-commons %}
+{% assign index = site.data.apis %}
+{% assign contents = site.data.api-commons %}
 
-{{ apisjson }}
+{% assign apijson = index %}
+{% assign apicommons = contents %}
 
     {% assign blog_url = '' %}
     {% assign blogrss_url = '' %}
