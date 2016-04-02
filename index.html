@@ -155,7 +155,6 @@ working - 4
                           {% assign thisentry = entry[1] %}
                           {% if thisname == pathname %}
                             {% assign openapi_spec_json = thisentry %}
-                            {{ openapi_spec_json }}
                           {% endif %}
                         {% endfor %}
 
@@ -204,7 +203,7 @@ working - 4
                       <td colspan="2" align="left" style="margin-left: 25px; margin-right: 25px;">
                         <ul>
                           {% for spec in openapi_spec_json %}
-
+                            {{ spec }}
                             {% for path in spec.paths %}
 
                               {% assign method_json = path[1] %}
