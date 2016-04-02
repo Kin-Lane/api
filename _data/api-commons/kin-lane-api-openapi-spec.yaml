@@ -1,0 +1,526 @@
+- "\r\n  {\n\t\"swagger\": \"2.0\",\n\t\"info\": {\n\t\t\"title\": \"API\",\n\t\t\"description\":
+    \"This is my API for tracking on APIs across the API space. I try to track on all
+    details about the APIs I'm monitoring including their profile, Twitter, Github,
+    blogs, etc.\",\n\t\t\"termsOfService\": \"http://kinlane.com/terms-of-service.html\",\n\t\t\"version\":
+    \"v1\"\n\t},\n\t\"host\": \"api.api.kinlane.com\",\n\t\"basePath\": \"/\",\n\t\"schemes\":
+    [\"http\"],\n\t\"produces\": [\"application/json\"],\n\t\"consumes\": [\"application/json\"],\n\t\"paths\":
+    {\n\t\t\"/api/\": {\n\t\t\t\"get\": {\n\t\t\t\t\"summary\": \"Get APIs\",\n\t\t\t\t\"description\":
+    \"retrieves all apis\",\n\t\t\t\t\"operationId\": \"getAPIs\",\n\t\t\t\t\"parameters\":
+    [{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\": \"appid\",\n\t\t\t\t\t\"description\":
+    \"your appid for accessing the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"appkey\",\n\t\t\t\t\t\"description\": \"your appkey for accessing the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"query\",\n\t\t\t\t\t\"description\": \"a text
+    query to search across APIs\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t}],\n\t\t\t\t\"responses\": {\n\t\t\t\t\t\"200\": {\n\t\t\t\t\t\t\"description\":
+    \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\": [\"\"],\n\t\t\t\t\"security\":
+    []\n\t\t\t},\n\t\t\t\"post\": {\n\t\t\t\t\"summary\": \"Add API\",\n\t\t\t\t\"description\":
+    \"add api\",\n\t\t\t\t\"operationId\": \"addAPI\",\n\t\t\t\t\"parameters\": [{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"about\",\n\t\t\t\t\t\"description\": \"details
+    about the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"appid\",\n\t\t\t\t\t\"description\": \"your appid
+    for accessing the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"appkey\",\n\t\t\t\t\t\"description\": \"your appkey for accessing the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"name\",\n\t\t\t\t\t\"description\": \"name of
+    the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"organization_id\",\n\t\t\t\t\t\"description\":
+    \"organization ID for the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"rank\",\n\t\t\t\t\t\"description\": \"ranking of API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t}],\n\t\t\t\t\"responses\": {\n\t\t\t\t\t\"200\": {\n\t\t\t\t\t\t\"description\":
+    \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\": [\"\"],\n\t\t\t\t\"security\":
+    []\n\t\t\t}\n\t\t},\n\t\t\"/api/{api_id}/\": {\n\t\t\t\"delete\": {\n\t\t\t\t\"summary\":
+    \"Delete API\",\n\t\t\t\t\"description\": \"delete an API\",\n\t\t\t\t\"operationId\":
+    \"deleteAPI\",\n\t\t\t\t\"parameters\": [{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\":
+    \"api_id\",\n\t\t\t\t\t\"description\": \"id for the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"appid\",\n\t\t\t\t\t\"description\": \"your appid
+    for accessing the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"appkey\",\n\t\t\t\t\t\"description\": \"your appkey for accessing the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t}],\n\t\t\t\t\"responses\":
+    {\n\t\t\t\t\t\"200\": {\n\t\t\t\t\t\t\"description\": \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\":
+    [\"\"],\n\t\t\t\t\"security\": []\n\t\t\t},\n\t\t\t\"get\": {\n\t\t\t\t\"summary\":
+    \"Get API\",\n\t\t\t\t\"description\": \"retrieve an API\",\n\t\t\t\t\"operationId\":
+    \"getAPI\",\n\t\t\t\t\"parameters\": [{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\":
+    \"api_id\",\n\t\t\t\t\t\"description\": \"id for the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"appid\",\n\t\t\t\t\t\"description\": \"your appid
+    for accessing the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"appkey\",\n\t\t\t\t\t\"description\": \"your appkey for accessing the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t}],\n\t\t\t\t\"responses\":
+    {\n\t\t\t\t\t\"200\": {\n\t\t\t\t\t\t\"description\": \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\":
+    [\"\"],\n\t\t\t\t\"security\": []\n\t\t\t},\n\t\t\t\"put\": {\n\t\t\t\t\"summary\":
+    \"Update API\",\n\t\t\t\t\"description\": \"update an API\",\n\t\t\t\t\"operationId\":
+    \"updateAPI\",\n\t\t\t\t\"parameters\": [{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"about\",\n\t\t\t\t\t\"description\": \"details about the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"path\",\n\t\t\t\t\t\"name\": \"api_id\",\n\t\t\t\t\t\"description\": \"id for
+    the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"appid\",\n\t\t\t\t\t\"description\": \"your appid
+    for accessing the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"appkey\",\n\t\t\t\t\t\"description\": \"your appkey for accessing the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"name\",\n\t\t\t\t\t\"description\": \"name of
+    the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"organization_id\",\n\t\t\t\t\t\"description\":
+    \"organization ID for the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"rank\",\n\t\t\t\t\t\"description\": \"ranking of API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t}],\n\t\t\t\t\"responses\": {\n\t\t\t\t\t\"200\": {\n\t\t\t\t\t\t\"description\":
+    \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\": [\"\"],\n\t\t\t\t\"security\":
+    []\n\t\t\t}\n\t\t},\n\t\t\"/api/{api_id}/buildingblocks/\": {\n\t\t\t\"get\": {\n\t\t\t\t\"summary\":
+    \"Get Building Blocks for API\",\n\t\t\t\t\"description\": \"retrieve an APIs building
+    blocks\",\n\t\t\t\t\"operationId\": \"getAPIBuildingBlocks\",\n\t\t\t\t\"parameters\":
+    [{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\": \"api_id\",\n\t\t\t\t\t\"description\":
+    \"id for the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"appid\",\n\t\t\t\t\t\"description\": \"your appid
+    for accessing the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"appkey\",\n\t\t\t\t\t\"description\": \"your appkey for accessing the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t}],\n\t\t\t\t\"responses\":
+    {\n\t\t\t\t\t\"200\": {\n\t\t\t\t\t\t\"description\": \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\":
+    [\"\"],\n\t\t\t\t\"security\": []\n\t\t\t},\n\t\t\t\"post\": {\n\t\t\t\t\"summary\":
+    \"Add Building Block for API\",\n\t\t\t\t\"description\": \"add an API building
+    block\",\n\t\t\t\t\"operationId\": \"addAPIBuildingBlock\",\n\t\t\t\t\"parameters\":
+    [{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\": \"api_id\",\n\t\t\t\t\t\"description\":
+    \"id for the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"appid\",\n\t\t\t\t\t\"description\": \"your appid
+    for accessing the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"appkey\",\n\t\t\t\t\t\"description\": \"your appkey for accessing the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"building_block_api\",\n\t\t\t\t\t\"description\":
+    \"id for the building block\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"building_block_id\",\n\t\t\t\t\t\"description\": \"id for the building block\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"organization_id\",\n\t\t\t\t\t\"description\":
+    \"id for the organization\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"tool_id\",\n\t\t\t\t\t\"description\": \"id for the tool\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"url\",\n\t\t\t\t\t\"description\": \"the url for
+    the building block\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t}],\n\t\t\t\t\"responses\":
+    {\n\t\t\t\t\t\"200\": {\n\t\t\t\t\t\t\"description\": \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\":
+    [\"\"],\n\t\t\t\t\"security\": []\n\t\t\t}\n\t\t},\n\t\t\"/api/{api_id}/buildingblocks/{buildingblock_id}\":
+    {\n\t\t\t\"delete\": {\n\t\t\t\t\"summary\": \"Delete Building Block for API\",\n\t\t\t\t\"description\":
+    \"delete an API building block\",\n\t\t\t\t\"operationId\": \"deleteAPIBuildingBlocks\",\n\t\t\t\t\"parameters\":
+    [{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\": \"api_id\",\n\t\t\t\t\t\"description\":
+    \"id for the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"appid\",\n\t\t\t\t\t\"description\": \"your appid
+    for accessing the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"appkey\",\n\t\t\t\t\t\"description\": \"your appkey for accessing the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"path\",\n\t\t\t\t\t\"name\": \"buildingblock_id\",\n\t\t\t\t\t\"description\":
+    \"id for the building block\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t}],\n\t\t\t\t\"responses\": {\n\t\t\t\t\t\"200\": {\n\t\t\t\t\t\t\"description\":
+    \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\": [\"\"],\n\t\t\t\t\"security\":
+    []\n\t\t\t}\n\t\t},\n\t\t\"/api/{api_id}/definitions/code/php/generate/definition/parameters/\":
+    {\n\t\t\t\"get\": {\n\t\t\t\t\"summary\": \"Generate Definition Parameters for API\",\n\t\t\t\t\"description\":
+    \"generate php array parameters\",\n\t\t\t\t\"operationId\": \"generatePHPArrayParameters\",\n\t\t\t\t\"parameters\":
+    [{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\": \"api_id\",\n\t\t\t\t\t\"description\":
+    \"id for the api\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"appid\",\n\t\t\t\t\t\"description\": \"your appid for accessing the API\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"appkey\",\n\t\t\t\t\t\"description\": \"your appkey
+    for accessing the API\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"filterobject\",\n\t\t\t\t\t\"description\": \"the api definition object to filter
+    by\"\n\t\t\t\t}],\n\t\t\t\t\"responses\": {\n\t\t\t\t\t\"200\": {\n\t\t\t\t\t\t\"description\":
+    \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\": [\"\"],\n\t\t\t\t\"security\":
+    []\n\t\t\t}\n\t\t},\n\t\t\"/api/{api_id}/definitions/code/php/generate/path/parameters/\":
+    {\n\t\t\t\"get\": {\n\t\t\t\t\"summary\": \"Generate Path Parameters for API\",\n\t\t\t\t\"description\":
+    \"generate php array parameters\",\n\t\t\t\t\"operationId\": \"generatePHPArrayParameters\",\n\t\t\t\t\"parameters\":
+    [{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\": \"api_id\",\n\t\t\t\t\t\"description\":
+    \"id for the api\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"appid\",\n\t\t\t\t\t\"description\": \"your appid for accessing the API\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"appkey\",\n\t\t\t\t\t\"description\": \"your appkey
+    for accessing the API\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"filterpath\",\n\t\t\t\t\t\"description\": \"the api path to filter by\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"filterverb\",\n\t\t\t\t\t\"description\": \"the
+    api verb to filter by\"\n\t\t\t\t}],\n\t\t\t\t\"responses\": {\n\t\t\t\t\t\"200\":
+    {\n\t\t\t\t\t\t\"description\": \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\":
+    [\"\"],\n\t\t\t\t\"security\": []\n\t\t\t}\n\t\t},\n\t\t\"/api/{api_id}/definitions/export/apisjson/.14/\":
+    {\n\t\t\t\"get\": {\n\t\t\t\t\"summary\": \"Export APIs.json 1.4 Definition\",\n\t\t\t\t\"description\":
+    \"export an apis.json definition\",\n\t\t\t\t\"operationId\": \"exportAPIsJSON\",\n\t\t\t\t\"parameters\":
+    [{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\": \"api_id\",\n\t\t\t\t\t\"description\":
+    \"id for the api\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"appid\",\n\t\t\t\t\t\"description\": \"your appid for accessing the API\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"appkey\",\n\t\t\t\t\t\"description\": \"your appkey
+    for accessing the API\"\n\t\t\t\t}],\n\t\t\t\t\"responses\": {\n\t\t\t\t\t\"200\":
+    {\n\t\t\t\t\t\t\"description\": \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\":
+    [\"\"],\n\t\t\t\t\"security\": []\n\t\t\t}\n\t\t},\n\t\t\"/api/{api_id}/definitions/export/apisjson/.14/master/\":
+    {\n\t\t\t\"get\": {\n\t\t\t\t\"summary\": \"Export APIs.json Master Definition\",\n\t\t\t\t\"description\":
+    \"export an apis.json master definition\",\n\t\t\t\t\"operationId\": \"exportAPIsJSONMaster\",\n\t\t\t\t\"parameters\":
+    [{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\": \"api_id\",\n\t\t\t\t\t\"description\":
+    \"id for the api\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"appid\",\n\t\t\t\t\t\"description\": \"your appid for accessing the API\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"appkey\",\n\t\t\t\t\t\"description\": \"your appkey
+    for accessing the API\"\n\t\t\t\t}],\n\t\t\t\t\"responses\": {\n\t\t\t\t\t\"200\":
+    {\n\t\t\t\t\t\t\"description\": \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\":
+    [\"\"],\n\t\t\t\t\"security\": []\n\t\t\t}\n\t\t},\n\t\t\"/api/{api_id}/definitions/export/swagger/1.2/\":
+    {\n\t\t\t\"get\": {\n\t\t\t\t\"summary\": \"Export OpenAPI Spec 1.2 Definition\",\n\t\t\t\t\"description\":
+    \"export a Swagger 1.2 definition\",\n\t\t\t\t\"operationId\": \"exportSwagger12Definition\",\n\t\t\t\t\"parameters\":
+    [{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\": \"api_id\",\n\t\t\t\t\t\"description\":
+    \"id for the api item\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"appid\",\n\t\t\t\t\t\"description\": \"your appid for accessing the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"appkey\",\n\t\t\t\t\t\"description\": \"your appkey
+    for accessing the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t}],\n\t\t\t\t\"responses\": {\n\t\t\t\t\t\"200\": {\n\t\t\t\t\t\t\"description\":
+    \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\": [\"\"],\n\t\t\t\t\"security\":
+    []\n\t\t\t}\n\t\t},\n\t\t\"/api/{api_id}/definitions/export/swagger/2.0/\": {\n\t\t\t\"get\":
+    {\n\t\t\t\t\"summary\": \"Export OpenAPI Spec 2.0 Definition\",\n\t\t\t\t\"description\":
+    \"exports a Swagger 2.0 definition\",\n\t\t\t\t\"operationId\": \"exportSwagger20Definition\",\n\t\t\t\t\"parameters\":
+    [{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\": \"api_id\",\n\t\t\t\t\t\"description\":
+    \"id for the api item\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"appid\",\n\t\t\t\t\t\"description\": \"your appid for accessing the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"appkey\",\n\t\t\t\t\t\"description\": \"your appkey
+    for accessing the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t}],\n\t\t\t\t\"responses\": {\n\t\t\t\t\t\"200\": {\n\t\t\t\t\t\t\"description\":
+    \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\": [\"\"],\n\t\t\t\t\"security\":
+    []\n\t\t\t}\n\t\t},\n\t\t\"/api/{api_id}/definitions/import/swagger/1.2/\": {\n\t\t\t\"post\":
+    {\n\t\t\t\t\"summary\": \"Import OpenAPI Spec 1.2 Definition\",\n\t\t\t\t\"description\":
+    \"imports a Swagger 1.2 definition\",\n\t\t\t\t\"operationId\": \"importSwagger12Definition\",\n\t\t\t\t\"parameters\":
+    [{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\": \"api_id\",\n\t\t\t\t\t\"description\":
+    \"id for the api item\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"formData\",\n\t\t\t\t\t\"name\":
+    \"appid\",\n\t\t\t\t\t\"description\": \"your appid for accessing the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"formData\",\n\t\t\t\t\t\"name\": \"appkey\",\n\t\t\t\t\t\"description\": \"your
+    appkey for accessing the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"formData\",\n\t\t\t\t\t\"name\":
+    \"url\",\n\t\t\t\t\t\"description\": \"url of the Swagger definition\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t}],\n\t\t\t\t\"responses\":
+    {\n\t\t\t\t\t\"200\": {\n\t\t\t\t\t\t\"description\": \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\":
+    [\"\"],\n\t\t\t\t\"security\": []\n\t\t\t}\n\t\t},\n\t\t\"/api/{api_id}/definitions/import/swagger/2.0/\":
+    {\n\t\t\t\"post\": {\n\t\t\t\t\"summary\": \"Import OpenAPI Spec 2.0 Definition\",\n\t\t\t\t\"description\":
+    \"import a Swagger 2.0 definition\",\n\t\t\t\t\"operationId\": \"importSwagger20Definition\",\n\t\t\t\t\"parameters\":
+    [{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\": \"api_id\",\n\t\t\t\t\t\"description\":
+    \"id for the api item\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"formData\",\n\t\t\t\t\t\"name\":
+    \"appid\",\n\t\t\t\t\t\"description\": \"your appid for accessing the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"formData\",\n\t\t\t\t\t\"name\": \"appkey\",\n\t\t\t\t\t\"description\": \"your
+    appkey for accessing the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"formData\",\n\t\t\t\t\t\"name\":
+    \"url\",\n\t\t\t\t\t\"description\": \"url of the Swagger definition\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t}],\n\t\t\t\t\"responses\":
+    {\n\t\t\t\t\t\"200\": {\n\t\t\t\t\t\t\"description\": \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\":
+    [\"\"],\n\t\t\t\t\"security\": []\n\t\t\t}\n\t\t},\n\t\t\"/api/{api_id}/images/\":
+    {\n\t\t\t\"get\": {\n\t\t\t\t\"summary\": \"Get Images for API\",\n\t\t\t\t\"description\":
+    \"retrieve an APIs images\",\n\t\t\t\t\"operationId\": \"getAPIImages\",\n\t\t\t\t\"parameters\":
+    [{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\": \"api_id\",\n\t\t\t\t\t\"description\":
+    \"id for the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"appid\",\n\t\t\t\t\t\"description\": \"your appid
+    for accessing the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"appkey\",\n\t\t\t\t\t\"description\": \"your appkey for accessing the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t}],\n\t\t\t\t\"responses\":
+    {\n\t\t\t\t\t\"200\": {\n\t\t\t\t\t\t\"description\": \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\":
+    [\"\"],\n\t\t\t\t\"security\": []\n\t\t\t},\n\t\t\t\"post\": {\n\t\t\t\t\"summary\":
+    \"Add Image for API\",\n\t\t\t\t\"description\": \"add an API image\",\n\t\t\t\t\"operationId\":
+    \"addAPIImage\",\n\t\t\t\t\"parameters\": [{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\":
+    \"api_id\",\n\t\t\t\t\t\"description\": \"id for the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"appid\",\n\t\t\t\t\t\"description\": \"your appid
+    for accessing the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"appkey\",\n\t\t\t\t\t\"description\": \"your appkey for accessing the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"name\",\n\t\t\t\t\t\"description\": \"name of
+    the image\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"path\",\n\t\t\t\t\t\"description\": \"path of
+    the image\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"type\",\n\t\t\t\t\t\"description\": \"type of
+    image\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t}],\n\t\t\t\t\"responses\":
+    {\n\t\t\t\t\t\"200\": {\n\t\t\t\t\t\t\"description\": \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\":
+    [\"\"],\n\t\t\t\t\"security\": []\n\t\t\t}\n\t\t},\n\t\t\"/api/{api_id}/images/{image_id}\":
+    {\n\t\t\t\"delete\": {\n\t\t\t\t\"summary\": \"Delete Image for API\",\n\t\t\t\t\"description\":
+    \"delete an API image\",\n\t\t\t\t\"operationId\": \"deleteAPIImage\",\n\t\t\t\t\"parameters\":
+    [{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\": \"api_id\",\n\t\t\t\t\t\"description\":
+    \"id for the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"appid\",\n\t\t\t\t\t\"description\": \"your appid
+    for accessing the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"appkey\",\n\t\t\t\t\t\"description\": \"your appkey for accessing the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"path\",\n\t\t\t\t\t\"name\": \"image_id\",\n\t\t\t\t\t\"description\": \"id for
+    the image\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t}],\n\t\t\t\t\"responses\":
+    {\n\t\t\t\t\t\"200\": {\n\t\t\t\t\t\t\"description\": \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\":
+    [\"\"],\n\t\t\t\t\"security\": []\n\t\t\t}\n\t\t},\n\t\t\"/api/{api_id}/logs/\":
+    {\n\t\t\t\"get\": {\n\t\t\t\t\"summary\": \"Get Logs for API\",\n\t\t\t\t\"description\":
+    \"retrieve an APIs logs\",\n\t\t\t\t\"operationId\": \"getAPILogs\",\n\t\t\t\t\"parameters\":
+    [{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\": \"api_id\",\n\t\t\t\t\t\"description\":
+    \"id for the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"appid\",\n\t\t\t\t\t\"description\": \"your appid
+    for accessing the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"appkey\",\n\t\t\t\t\t\"description\": \"your appkey for accessing the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t}],\n\t\t\t\t\"responses\":
+    {\n\t\t\t\t\t\"200\": {\n\t\t\t\t\t\t\"description\": \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\":
+    [\"\"],\n\t\t\t\t\"security\": []\n\t\t\t},\n\t\t\t\"post\": {\n\t\t\t\t\"summary\":
+    \"Add Log for API\",\n\t\t\t\t\"description\": \"add an API log\",\n\t\t\t\t\"operationId\":
+    \"addAPILog\",\n\t\t\t\t\"parameters\": [{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\":
+    \"api_id\",\n\t\t\t\t\t\"description\": \"id for the api item\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"appid\",\n\t\t\t\t\t\"description\": \"your appid
+    for accessing the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"appkey\",\n\t\t\t\t\t\"description\": \"your appkey for accessing the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"details\",\n\t\t\t\t\t\"description\": \"log details\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"log_date\",\n\t\t\t\t\t\"description\": \"date
+    of the log entry\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"type\",\n\t\t\t\t\t\"description\": \"type of
+    log entry\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t}],\n\t\t\t\t\"responses\":
+    {\n\t\t\t\t\t\"200\": {\n\t\t\t\t\t\t\"description\": \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\":
+    [\"\"],\n\t\t\t\t\"security\": []\n\t\t\t}\n\t\t},\n\t\t\"/api/{api_id}/logs/{log_id}/\":
+    {\n\t\t\t\"delete\": {\n\t\t\t\t\"summary\": \"Delete Log for API\",\n\t\t\t\t\"description\":
+    \"delete an API log\",\n\t\t\t\t\"operationId\": \"deleteAPILog\",\n\t\t\t\t\"parameters\":
+    [{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\": \"api_id\",\n\t\t\t\t\t\"description\":
+    \"id for the api\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"appid\",\n\t\t\t\t\t\"description\": \"your appid for accessing the API\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"appkey\",\n\t\t\t\t\t\"description\": \"your appkey
+    for accessing the API\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\":
+    \"log_id\",\n\t\t\t\t\t\"description\": \"id for the log\"\n\t\t\t\t}],\n\t\t\t\t\"responses\":
+    {\n\t\t\t\t\t\"200\": {\n\t\t\t\t\t\t\"description\": \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\":
+    [\"\"],\n\t\t\t\t\"security\": []\n\t\t\t}\n\t\t},\n\t\t\"/api/{api_id}/notes/\":
+    {\n\t\t\t\"get\": {\n\t\t\t\t\"summary\": \"Get Notes for API\",\n\t\t\t\t\"description\":
+    \"retrieve an APIs notes\",\n\t\t\t\t\"operationId\": \"getAPINotes\",\n\t\t\t\t\"parameters\":
+    [{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\": \"api_id\",\n\t\t\t\t\t\"description\":
+    \"id for the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"appid\",\n\t\t\t\t\t\"description\": \"your appid
+    for accessing the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"appkey\",\n\t\t\t\t\t\"description\": \"your appkey for accessing the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t}],\n\t\t\t\t\"responses\":
+    {\n\t\t\t\t\t\"200\": {\n\t\t\t\t\t\t\"description\": \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\":
+    [\"\"],\n\t\t\t\t\"security\": []\n\t\t\t},\n\t\t\t\"post\": {\n\t\t\t\t\"summary\":
+    \"Add Note for API\",\n\t\t\t\t\"description\": \"add an API note\",\n\t\t\t\t\"operationId\":
+    \"addAPINote\",\n\t\t\t\t\"parameters\": [{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\":
+    \"api_id\",\n\t\t\t\t\t\"description\": \"id for the api item\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"appid\",\n\t\t\t\t\t\"description\": \"your appid
+    for accessing the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"appkey\",\n\t\t\t\t\t\"description\": \"your appkey for accessing the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"note\",\n\t\t\t\t\t\"description\": \"the full
+    text of note\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"type\",\n\t\t\t\t\t\"description\": \"type of
+    the note\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t}],\n\t\t\t\t\"responses\":
+    {\n\t\t\t\t\t\"200\": {\n\t\t\t\t\t\t\"description\": \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\":
+    [\"\"],\n\t\t\t\t\"security\": []\n\t\t\t}\n\t\t},\n\t\t\"/api/{api_id}/notes/{note_id}/\":
+    {\n\t\t\t\"delete\": {\n\t\t\t\t\"summary\": \"Delete Note for API\",\n\t\t\t\t\"description\":
+    \"delete an API note\",\n\t\t\t\t\"operationId\": \"deleteAPINote\",\n\t\t\t\t\"parameters\":
+    [{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\": \"api_id\",\n\t\t\t\t\t\"description\":
+    \"id for the API\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"appid\",\n\t\t\t\t\t\"description\": \"your appid for accessing the API\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"appkey\",\n\t\t\t\t\t\"description\": \"your appkey
+    for accessing the API\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\":
+    \"note_id\",\n\t\t\t\t\t\"description\": \"id for the note\"\n\t\t\t\t}],\n\t\t\t\t\"responses\":
+    {\n\t\t\t\t\t\"200\": {\n\t\t\t\t\t\t\"description\": \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\":
+    [\"\"],\n\t\t\t\t\"security\": []\n\t\t\t}\n\t\t},\n\t\t\"/api/{api_id}/screenshots/\":
+    {\n\t\t\t\"get\": {\n\t\t\t\t\"summary\": \"Get Screenshots for API\",\n\t\t\t\t\"description\":
+    \"retrieve API screenshots\",\n\t\t\t\t\"operationId\": \"getAPIScreenshots\",\n\t\t\t\t\"parameters\":
+    [{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\": \"api_id\",\n\t\t\t\t\t\"description\":
+    \"id for the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"appid\",\n\t\t\t\t\t\"description\": \"your appid
+    for accessing the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"appkey\",\n\t\t\t\t\t\"description\": \"your appkey for accessing the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t}],\n\t\t\t\t\"responses\":
+    {\n\t\t\t\t\t\"200\": {\n\t\t\t\t\t\t\"description\": \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\":
+    [\"\"],\n\t\t\t\t\"security\": []\n\t\t\t},\n\t\t\t\"post\": {\n\t\t\t\t\"summary\":
+    \"Add Screenshot for API\",\n\t\t\t\t\"description\": \"add an API screenshot\",\n\t\t\t\t\"operationId\":
+    \"addAPIScreenshot\",\n\t\t\t\t\"parameters\": [{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\":
+    \"api_id\",\n\t\t\t\t\t\"description\": \"id for the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"appid\",\n\t\t\t\t\t\"description\": \"your appid
+    for accessing the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"appkey\",\n\t\t\t\t\t\"description\": \"your appkey for accessing the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"name\",\n\t\t\t\t\t\"description\": \"name of
+    the screenshot\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"path\",\n\t\t\t\t\t\"description\": \"path of
+    the screenshot\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"type\",\n\t\t\t\t\t\"description\": \"type of
+    screenshot\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t}],\n\t\t\t\t\"responses\":
+    {\n\t\t\t\t\t\"200\": {\n\t\t\t\t\t\t\"description\": \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\":
+    [\"\"],\n\t\t\t\t\"security\": []\n\t\t\t}\n\t\t},\n\t\t\"/api/{api_id}/screenshots/{screenshot_id}\":
+    {\n\t\t\t\"delete\": {\n\t\t\t\t\"summary\": \"Delete Screenshot for API\",\n\t\t\t\t\"description\":
+    \"delete an API screenshot\",\n\t\t\t\t\"operationId\": \"deleteAPIScreenshot\",\n\t\t\t\t\"parameters\":
+    [{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\": \"api_id\",\n\t\t\t\t\t\"description\":
+    \"id for the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"appid\",\n\t\t\t\t\t\"description\": \"your appid
+    for accessing the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"appkey\",\n\t\t\t\t\t\"description\": \"your appkey for accessing the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"path\",\n\t\t\t\t\t\"name\": \"screenshot_id\",\n\t\t\t\t\t\"description\": \"id
+    for the screenshot\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t}],\n\t\t\t\t\"responses\":
+    {\n\t\t\t\t\t\"200\": {\n\t\t\t\t\t\t\"description\": \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\":
+    [\"\"],\n\t\t\t\t\"security\": []\n\t\t\t}\n\t\t},\n\t\t\"/api/{api_id}/tags/\":
+    {\n\t\t\t\"get\": {\n\t\t\t\t\"summary\": \"Get Tags for API\",\n\t\t\t\t\"description\":
+    \"retrieve API tags\",\n\t\t\t\t\"operationId\": \"getAPITags\",\n\t\t\t\t\"parameters\":
+    [{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\": \"api_id\",\n\t\t\t\t\t\"description\":
+    \"id for API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"appid\",\n\t\t\t\t\t\"description\": \"your appid
+    for accessing the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"appkey\",\n\t\t\t\t\t\"description\": \"your appkey for accessing the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t}],\n\t\t\t\t\"responses\":
+    {\n\t\t\t\t\t\"200\": {\n\t\t\t\t\t\t\"description\": \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\":
+    [\"\"],\n\t\t\t\t\"security\": []\n\t\t\t},\n\t\t\t\"post\": {\n\t\t\t\t\"summary\":
+    \"Add Tag for API\",\n\t\t\t\t\"description\": \"add tag to API\",\n\t\t\t\t\"operationId\":
+    \"addAPITag\",\n\t\t\t\t\"parameters\": [{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\":
+    \"api_id\",\n\t\t\t\t\t\"description\": \"id for the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"appid\",\n\t\t\t\t\t\"description\": \"your appid
+    for accessing the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"appkey\",\n\t\t\t\t\t\"description\": \"your appkey for accessing the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"tag\",\n\t\t\t\t\t\"description\": \"tag name\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t}],\n\t\t\t\t\"responses\":
+    {\n\t\t\t\t\t\"200\": {\n\t\t\t\t\t\t\"description\": \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\":
+    [\"\"],\n\t\t\t\t\"security\": []\n\t\t\t}\n\t\t},\n\t\t\"/api/{api_id}/tags/{tag}\":
+    {\n\t\t\t\"delete\": {\n\t\t\t\t\"summary\": \"Delete Tag for API\",\n\t\t\t\t\"description\":
+    \"delete an API tag\",\n\t\t\t\t\"operationId\": \"deleteAPITag\",\n\t\t\t\t\"parameters\":
+    [{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\": \"api_id\",\n\t\t\t\t\t\"description\":
+    \"id for the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"appid\",\n\t\t\t\t\t\"description\": \"your appid
+    for accessing the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"appkey\",\n\t\t\t\t\t\"description\": \"your appkey for accessing the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"path\",\n\t\t\t\t\t\"name\": \"tag\",\n\t\t\t\t\t\"description\": \"tag to remove
+    from API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t}],\n\t\t\t\t\"responses\":
+    {\n\t\t\t\t\t\"200\": {\n\t\t\t\t\t\t\"description\": \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\":
+    [\"\"],\n\t\t\t\t\"security\": []\n\t\t\t}\n\t\t},\n\t\t\"/api/{api_id}/urls/\":
+    {\n\t\t\t\"get\": {\n\t\t\t\t\"summary\": \"Get URLs for API\",\n\t\t\t\t\"description\":
+    \"retrieve an APIs URLs\",\n\t\t\t\t\"operationId\": \"getAPIURLs\",\n\t\t\t\t\"parameters\":
+    [{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\": \"api_id\",\n\t\t\t\t\t\"description\":
+    \"id for the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"appid\",\n\t\t\t\t\t\"description\": \"your appid
+    for accessing the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"appkey\",\n\t\t\t\t\t\"description\": \"your appkey for accessing the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t}],\n\t\t\t\t\"responses\":
+    {\n\t\t\t\t\t\"200\": {\n\t\t\t\t\t\t\"description\": \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\":
+    [\"\"],\n\t\t\t\t\"security\": []\n\t\t\t},\n\t\t\t\"post\": {\n\t\t\t\t\"summary\":
+    \"Add URL for API\",\n\t\t\t\t\"description\": \"add an API URL\",\n\t\t\t\t\"operationId\":
+    \"addAPIURL\",\n\t\t\t\t\"parameters\": [{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\":
+    \"api_id\",\n\t\t\t\t\t\"description\": \"id for the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"appid\",\n\t\t\t\t\t\"description\": \"your appid
+    for accessing the API\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\":
+    \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"appkey\",\n\t\t\t\t\t\"description\": \"your appkey for accessing the API\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"name\",\n\t\t\t\t\t\"description\": \"a name for
+    the url\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"type\",\n\t\t\t\t\t\"description\": \"type of
+    url\",\n\t\t\t\t\t\"type\": \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"url\",\n\t\t\t\t\t\"description\": \"the url\",\n\t\t\t\t\t\"type\":
+    \"string\",\n\t\t\t\t\t\"format\": \"string\"\n\t\t\t\t}],\n\t\t\t\t\"responses\":
+    {\n\t\t\t\t\t\"200\": {\n\t\t\t\t\t\t\"description\": \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\":
+    [\"\"],\n\t\t\t\t\"security\": []\n\t\t\t}\n\t\t},\n\t\t\"/api/{api_id}/urls/{url_id}/\":
+    {\n\t\t\t\"delete\": {\n\t\t\t\t\"summary\": \"Delete URL for API\",\n\t\t\t\t\"description\":
+    \"delete an API URL\",\n\t\t\t\t\"operationId\": \"deleteAPIURL\",\n\t\t\t\t\"parameters\":
+    [{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\": \"api_id\",\n\t\t\t\t\t\"description\":
+    \"id for the api\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"query\",\n\t\t\t\t\t\"name\":
+    \"appid\",\n\t\t\t\t\t\"description\": \"your appid for accessing the API\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\":
+    \"query\",\n\t\t\t\t\t\"name\": \"appkey\",\n\t\t\t\t\t\"description\": \"your appkey
+    for accessing the API\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"in\": \"path\",\n\t\t\t\t\t\"name\":
+    \"url_id\",\n\t\t\t\t\t\"description\": \"id for the url\"\n\t\t\t\t}],\n\t\t\t\t\"responses\":
+    {\n\t\t\t\t\t\"200\": {\n\t\t\t\t\t\t\"description\": \"OK\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"tags\":
+    [\"\"],\n\t\t\t\t\"security\": []\n\t\t\t}\n\t\t}\n\t},\n\t\"definitions\": {\n\t\t\"api\":
+    {\n\t\t\t\"properties\": {\n\t\t\t\t\"api_id\": {\n\t\t\t\t\t\"description\": \"This
+    is a default description.\",\n\t\t\t\t\t\"type\": \"get\"\n\t\t\t\t},\n\t\t\t\t\"title\":
+    {\n\t\t\t\t\t\"description\": \"This is a default description.\",\n\t\t\t\t\t\"type\":
+    \"get\"\n\t\t\t\t},\n\t\t\t\t\"link\": {\n\t\t\t\t\t\"description\": \"This is a
+    default description.\",\n\t\t\t\t\t\"type\": \"get\"\n\t\t\t\t},\n\t\t\t\t\"item_date\":
+    {\n\t\t\t\t\t\"description\": \"This is a default description.\",\n\t\t\t\t\t\"type\":
+    \"get\"\n\t\t\t\t},\n\t\t\t\t\"details\": {\n\t\t\t\t\t\"description\": \"This is
+    a default description.\",\n\t\t\t\t\t\"type\": \"get\"\n\t\t\t\t},\n\t\t\t\t\"status\":
+    {\n\t\t\t\t\t\"description\": \"This is a default description.\",\n\t\t\t\t\t\"type\":
+    \"get\"\n\t\t\t\t},\n\t\t\t\t\"public_comment\": {\n\t\t\t\t\t\"description\": \"This
+    is a default description.\",\n\t\t\t\t\t\"type\": \"get\"\n\t\t\t\t},\n\t\t\t\t\"original_date\":
+    {\n\t\t\t\t\t\"description\": \"This is a default description.\",\n\t\t\t\t\t\"type\":
+    \"get\"\n\t\t\t\t},\n\t\t\t\t\"author\": {\n\t\t\t\t\t\"description\": \"This is
+    a default description.\",\n\t\t\t\t\t\"type\": \"get\"\n\t\t\t\t},\n\t\t\t\t\"processed\":
+    {\n\t\t\t\t\t\"description\": \"This is a default description.\",\n\t\t\t\t\t\"type\":
+    \"get\"\n\t\t\t\t},\n\t\t\t\t\"domain\": {\n\t\t\t\t\t\"description\": \"This is
+    a default description.\",\n\t\t\t\t\t\"type\": \"get\"\n\t\t\t\t},\n\t\t\t\t\"screenshot_url\":
+    {\n\t\t\t\t\t\"description\": \"This is a default description.\",\n\t\t\t\t\t\"type\":
+    \"get\"\n\t\t\t\t},\n\t\t\t\t\"resolved_url\": {\n\t\t\t\t\t\"description\": \"This
+    is a default description.\",\n\t\t\t\t\t\"type\": \"get\"\n\t\t\t\t},\n\t\t\t\t\"weekly_summary\":
+    {\n\t\t\t\t\t\"description\": \"This is a default description.\",\n\t\t\t\t\t\"type\":
+    \"get\"\n\t\t\t\t},\n\t\t\t\t\"weekly_roundup\": {\n\t\t\t\t\t\"description\": \"This
+    is a default description.\",\n\t\t\t\t\t\"type\": \"get\"\n\t\t\t\t}\n\t\t\t}\n\t\t},\n\t\t\"tag\":
+    {\n\t\t\t\"properties\": {\n\t\t\t\t\"tag_id\": {\n\t\t\t\t\t\"description\": \"This
+    is a default description.\",\n\t\t\t\t\t\"type\": \"get\"\n\t\t\t\t},\n\t\t\t\t\"tag\":
+    {\n\t\t\t\t\t\"description\": \"This is a default description.\",\n\t\t\t\t\t\"type\":
+    \"get\"\n\t\t\t\t},\n\t\t\t\t\"api_count\": {\n\t\t\t\t\t\"description\": \"This
+    is a default description.\",\n\t\t\t\t\t\"type\": \"get\"\n\t\t\t\t}\n\t\t\t}\n\t\t},\n\t\t\"note\":
+    {\n\t\t\t\"properties\": {\n\t\t\t\t\"note_id\": {\n\t\t\t\t\t\"description\": \"This
+    is a default description.\",\n\t\t\t\t\t\"type\": \"get\"\n\t\t\t\t},\n\t\t\t\t\"type\":
+    {\n\t\t\t\t\t\"description\": \"This is a default description.\",\n\t\t\t\t\t\"type\":
+    \"get\"\n\t\t\t\t},\n\t\t\t\t\"note\": {\n\t\t\t\t\t\"description\": \"This is a
+    default description.\",\n\t\t\t\t\t\"type\": \"get\"\n\t\t\t\t}\n\t\t\t}\n\t\t},\n\t\t\"snippet\":
+    {\n\t\t\t\"properties\": {\n\t\t\t\t\"content\": {\n\t\t\t\t\t\"description\": \"This
+    is a default description.\",\n\t\t\t\t\t\"type\": \"get\"\n\t\t\t\t}\n\t\t\t}\n\t\t},\n\t\t\"url\":
+    {\n\t\t\t\"properties\": {\n\t\t\t\t\"note_id\": {\n\t\t\t\t\t\"description\": \"This
+    is a default description.\",\n\t\t\t\t\t\"type\": \"get\"\n\t\t\t\t},\n\t\t\t\t\"type\":
+    {\n\t\t\t\t\t\"description\": \"This is a default description.\",\n\t\t\t\t\t\"type\":
+    \"get\"\n\t\t\t\t},\n\t\t\t\t\"url\": {\n\t\t\t\t\t\"description\": \"This is a
+    default description.\",\n\t\t\t\t\t\"type\": \"get\"\n\t\t\t\t},\n\t\t\t\t\"name\":
+    {\n\t\t\t\t\t\"description\": \"This is a default description.\",\n\t\t\t\t\t\"type\":
+    \"get\"\n\t\t\t\t}\n\t\t\t}\n\t\t},\n\t\t\"image\": {\n\t\t\t\"properties\": {\n\t\t\t\t\"api_id\":
+    {\n\t\t\t\t\t\"description\": \"This is a default description.\",\n\t\t\t\t\t\"type\":
+    \"get\"\n\t\t\t\t},\n\t\t\t\t\"image_id\": {\n\t\t\t\t\t\"description\": \"This
+    is a default description.\",\n\t\t\t\t\t\"type\": \"get\"\n\t\t\t\t},\n\t\t\t\t\"name\":
+    {\n\t\t\t\t\t\"description\": \"This is a default description.\",\n\t\t\t\t\t\"type\":
+    \"get\"\n\t\t\t\t},\n\t\t\t\t\"path\": {\n\t\t\t\t\t\"description\": \"This is a
+    default description.\",\n\t\t\t\t\t\"type\": \"get\"\n\t\t\t\t},\n\t\t\t\t\"type\":
+    {\n\t\t\t\t\t\"description\": \"This is a default description.\",\n\t\t\t\t\t\"type\":
+    \"get\"\n\t\t\t\t}\n\t\t\t}\n\t\t},\n\t\t\"screenshot\": {\n\t\t\t\"properties\":
+    {\n\t\t\t\t\"api_id\": {\n\t\t\t\t\t\"description\": \"This is a default description.\",\n\t\t\t\t\t\"type\":
+    \"get\"\n\t\t\t\t},\n\t\t\t\t\"screenshot_id\": {\n\t\t\t\t\t\"description\": \"This
+    is a default description.\",\n\t\t\t\t\t\"type\": \"get\"\n\t\t\t\t},\n\t\t\t\t\"name\":
+    {\n\t\t\t\t\t\"description\": \"This is a default description.\",\n\t\t\t\t\t\"type\":
+    \"get\"\n\t\t\t\t},\n\t\t\t\t\"path\": {\n\t\t\t\t\t\"description\": \"This is a
+    default description.\",\n\t\t\t\t\t\"type\": \"get\"\n\t\t\t\t},\n\t\t\t\t\"type\":
+    {\n\t\t\t\t\t\"description\": \"This is a default description.\",\n\t\t\t\t\t\"type\":
+    \"get\"\n\t\t\t\t}\n\t\t\t}\n\t\t},\n\t\t\"buildingblock\": {\n\t\t\t\"properties\":
+    {\n\t\t\t\t\"api_id\": {\n\t\t\t\t\t\"description\": \"This is a default description.\",\n\t\t\t\t\t\"type\":
+    \"get\"\n\t\t\t\t},\n\t\t\t\t\"building_block_id\": {\n\t\t\t\t\t\"description\":
+    \"This is a default description.\",\n\t\t\t\t\t\"type\": \"get\"\n\t\t\t\t},\n\t\t\t\t\"organization_id\":
+    {\n\t\t\t\t\t\"description\": \"This is a default description.\",\n\t\t\t\t\t\"type\":
+    \"get\"\n\t\t\t\t},\n\t\t\t\t\"tool_id\": {\n\t\t\t\t\t\"description\": \"This is
+    a default description.\",\n\t\t\t\t\t\"type\": \"get\"\n\t\t\t\t},\n\t\t\t\t\"url\":
+    {\n\t\t\t\t\t\"description\": \"This is a default description.\",\n\t\t\t\t\t\"type\":
+    \"get\"\n\t\t\t\t}\n\t\t\t}\n\t\t},\n\t\t\"log\": {\n\t\t\t\"properties\": {\n\t\t\t\t\"api_id\":
+    {\n\t\t\t\t\t\"description\": \"This is a default description.\",\n\t\t\t\t\t\"type\":
+    \"get\"\n\t\t\t\t},\n\t\t\t\t\"type\": {\n\t\t\t\t\t\"description\": \"This is a
+    default description.\",\n\t\t\t\t\t\"type\": \"get\"\n\t\t\t\t},\n\t\t\t\t\"note\":
+    {\n\t\t\t\t\t\"description\": \"This is a default description.\",\n\t\t\t\t\t\"type\":
+    \"get\"\n\t\t\t\t},\n\t\t\t\t\"details\": {\n\t\t\t\t\t\"description\": \"This is
+    a default description.\",\n\t\t\t\t\t\"type\": \"get\"\n\t\t\t\t},\n\t\t\t\t\"log_date\":
+    {\n\t\t\t\t\t\"description\": \"This is a default description.\",\n\t\t\t\t\t\"type\":
+    \"get\"\n\t\t\t\t}\n\t\t\t}\n\t\t},\n\t\t\"definition\": {\n\t\t\t\"properties\":
+    {\n\t\t\t\t\"url\": {\n\t\t\t\t\t\"description\": \"This is a default description.\",\n\t\t\t\t\t\"type\":
+    \"get\"\n\t\t\t\t}\n\t\t\t}\n\t\t},\n\t\t\"parameters\": {\n\t\t\t\"properties\":
+    {\n\t\t\t\t\"body\": {\n\t\t\t\t\t\"description\": \"This is a default description.\",\n\t\t\t\t\t\"type\":
+    \"get\"\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
