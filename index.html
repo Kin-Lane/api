@@ -152,9 +152,9 @@ working - 4
 
                         {% for entry in apicommons %}
                           {% assign thisname = entry[0] %}
+                          {% assign thisentry = entry[1] %}
                           {% if thisname == pathname %}
-                          DOING!
-                            {% assign openapi_spec_json = entry[1] %}
+                            {% assign openapi_spec_json = thisentry %}
                             {{ openapi_spec_json }}
                           {% endif %}
                         {% endfor %}
