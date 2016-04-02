@@ -20,10 +20,12 @@ Doing - 18
     <td align="center" colspan="2"><hr /></td>
   </tr>
 
-{% for folder in site.data %}
+{% assign folder = site.data %}
 
-    {% assign content = folder[1] %}
-
+    {% assign apisjson = folder[1] %}
+    {% assign apicommons = folder[2] %}
+    {{ apisjson }}
+    <hr />
     {% assign apisjson = content | map: 'apis' %}
 
     {% if apisjson.apis != null %}
@@ -238,6 +240,4 @@ Doing - 18
         </tr>
         {% endif %}
       {% endif %}
-
-  {% endfor %}
 </table>
