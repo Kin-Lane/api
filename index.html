@@ -203,25 +203,21 @@ working - 9
                     <tr id="methods-for-{{ pathname }}">
                       <td colspan="2" align="left" style="margin-left: 25px; margin-right: 25px;">
                         <ul>
+
+                          {% assign tagList = '' %}
                           {% for spec in openapi_spec_json %}
-
                             {% for path in spec.paths %}
-
                               {% assign method_json = path[1] %}
-
                               {% for method in method_json %}
-
-                                {% assign verb = method[0] | upcase %}
-                                {% assign summary = method[1].summary %}
                                 {% assign tags = method[1].tags %}
-
-                                <li style="font-size: 12px;">{{ tags }}</li>
-
+                                {% if tagList contains tags %}{% else %}
+                                  {% assign tagList = tagList | append:tags %}
+                                {% endif %}
                               {% endfor %}
-
                             {% endfor %}
-
                           {% endfor %}
+
+                          {{ tagList }}
                         </ul>
                       </td>
                     </tr>
