@@ -17,7 +17,7 @@ title: {{ site.title }}
     }
 </script>
 
-doing - 3
+doing - 4
 <table cellpadding="3" cellspacing="2" width="100%" border="0" style="margin-top: 10px;">
   <tr>
     <td colspan="3" align="center"><hr /></td>
@@ -25,11 +25,15 @@ doing - 3
 
 {% for item in site.data %}
 
-	<tr>
-    <td colspan="3" align="center">{{ file }}</td>
-  </tr>
+		<tr>
+	    <td colspan="3" align="center">{{ item }}</td>
+	  </tr>
 
 		{% assign apijson = item %}
+
+		<tr>
+	    <td colspan="3" align="center">{{ apijson }}</td>
+	  </tr>
 
 		{% assign apis_json_name = apijson.name %}
 		{% assign apis_json_description = apijson.description %}
