@@ -9,13 +9,13 @@ layout: page
 <p><img src="{{ apisupport.image }}" align="right" width="100" style="padding: 15px;" /></p>
 <p>{{ apisupport.header }}</p>
 <table cellpadding="10" cellspacing="10" width="100%">
-	{% for resource in apisupport.resources %}
 	<tr>
+	{% for resource in apisupport.resources %}
 		<td align="center" valign="top">
 			<a href="{{ resource.url }}"><img src="{{ resource.image }}" width="75" align="center"></a>
 			<a href="{{ resource.url }}">{{ resource.title }}</a>
 		</td>
-	</tr>
 	{% endfor %}
+	</tr>
 </table>
 <p>{{ apisupport.footer }}</p>
