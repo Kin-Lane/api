@@ -14,7 +14,7 @@ layout: page
       }
     }
 </script>
-Doing - 15
+Doing - 16
 <table cellpadding="3" cellspacing="2" width="100%" border="1" style="margin-top: 10px;">
   <tr>
     <td align="center" colspan="2"><hr /></td>
@@ -24,13 +24,9 @@ Doing - 15
 
     {% assign apisjson = folder[1] %}
 
-    {{ apisjson }}
     {% if apisjson.apis != null %}
 
-        {% assign apijson = this.apis %}
     		{% assign common_api_action_url = '' %}
-
-        {{ apijson }}
 
         {% if apijson.specificationVersion != null %}
 
