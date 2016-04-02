@@ -20,13 +20,13 @@ title: {{ site.title }}
 doing - 1
 <table cellpadding="3" cellspacing="2" width="100%" border="0" style="margin-top: 10px;">
   <tr>
-    <td colspan="3" align="center"><hr /></td>
+    <td align="center"><hr /></td>
   </tr>
 
 {% for apijson in site.data.apis %}
 
 		<tr>
-	    <td colspan="3" align="center">{{ apijson }}</td>
+	    <td align="center">{{ apijson }}</td>
 	  </tr>
 
 		-{{ apijson.name }}-
@@ -70,12 +70,7 @@ doing - 1
       {% endif %}
 
         <tr>
-          <td width="110" align="center" style="margin-top 25px;">
-            {% if apijson.x-open-ranking != 0 %}
-              <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/api-rating-{{ apijson.x-open-ranking }}.png" align="left" style="padding: 15px;" width="100" />
-            {% endif %}
-          </td>
-          <td colspan="2">
+          <td>
             {% if apijson.image != null %}
               <a href="{{ website_url }}">
                 <img src="{{ apijson.image }}" align="left" style="padding: 5px;" width="150" />
@@ -86,7 +81,7 @@ doing - 1
           </td>
         </tr>
         <tr>
-          <td align="center" colspan="3" style="margin-left: 25px; margin-right: 25px;">
+          <td align="center" style="margin-left: 25px; margin-right: 25px;">
             <ul style="list-style: none; display: inline;">
               {% if portal_url != '' %}
                 <li style="display: inline; padding-left: 15px; padding-right: 15px;">
@@ -138,7 +133,7 @@ doing - 1
           </td>
         </tr>
         <tr>
-          <td align="center" colspan="3" style="margin-left: 90px; margin-right: 90px;">
+          <td align="center" style="margin-left: 90px; margin-right: 90px;">
               {% assign api_action_url = '' %}
               {% assign numberofapis = apijson.apis | size %}
               {% if numberofapis == 0 %}
@@ -278,7 +273,7 @@ doing - 1
               {% assign pathname = pathname | replace: '.json','' %}
               {% assign api_action_spec = file | map: pathname %}
               <tr>
-                <td colspan="3" align="left" style="margin-left: 75px; margin-right: 75px; margin-top 15px;">
+                <td align="left" style="margin-left: 75px; margin-right: 75px; margin-top 15px;">
                   <p style="font-size: 18px; margin-left: 117px; padding-top: 5px;"><strong>Actions:</strong></p>
                   <ul style="margin-left: 125px;">
                     {% for actions in api_action_spec %}
@@ -298,7 +293,7 @@ doing - 1
               </tr>
           {% endif %}
         <tr>
-          <td colspan="3" align="center"><hr /></td>
+          <td align="center"><hr /></td>
         </tr>
     {% endif %}
 
