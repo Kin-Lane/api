@@ -14,7 +14,7 @@ layout: page
       }
     }
 </script>
-working - 1
+working - 11
 <table cellpadding="3" cellspacing="2" width="100%" border="1" style="margin-top: 10px;">
   <tr>
     <td align="center" colspan="2"><hr /></td>
@@ -212,7 +212,13 @@ working - 1
                               {% for method in method_json %}
                                 {% assign tags = method[1].tags %}
                                 {% if tag.list contains tags %}
-
+                                {% else %}
+                                  {% if first == 1 %}
+                                    {% assign tag.list = tag.list | append:tags %}
+                                  {% else %}
+                                    {% assign tag.list = tag.list | append:'|' %}
+                                    {% assign tag.list = tag.list | append:tags %}
+                                  {% endif %}
                                 {% endif %}
 
                               {% endfor %}
