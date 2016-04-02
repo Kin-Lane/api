@@ -204,15 +204,15 @@ working - 9
                       <td colspan="2" align="left" style="margin-left: 25px; margin-right: 25px;">
                         <ul>
 
-                          {% assign tagList = '' %}
+                          {% assign taglist = '' %}
                           {% for spec in openapi_spec_json %}
                             {% for path in spec.paths %}
                               {% assign method_json = path[1] %}
                               {% for method in method_json %}
                                 {% assign tags = method[1].tags %}
-                                {% if tagList contains tags %}
+                                {% if taglist contains tags %}
                                 {% else %}
-                                  {% assign tagList = tagList | append: tags %}
+                                  
                                 {% endif %}
 
                               {% endfor %}
