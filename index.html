@@ -25,10 +25,10 @@ doing - 6
 
 {% for item in site.data %}
 
-		{% assign apijson = item.apis %}
+		{% assign apijson = item %}
 
 		<tr>
-	    <td colspan="3" align="center">{{ apijson }}</td>
+	    <td colspan="3" align="center">{{ apijson.apis }}</td>
 	  </tr>
 
 		-{{ apijson.name }}-
