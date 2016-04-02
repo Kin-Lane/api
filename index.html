@@ -17,21 +17,13 @@ title: {{ site.title }}
     }
 </script>
 
-doing - 8
+doing - 9
 <table cellpadding="3" cellspacing="2" width="100%" border="0" style="margin-top: 10px;">
   <tr>
     <td colspan="3" align="center"><hr /></td>
   </tr>
 
-{% for item in site.data.apis %}
-
-		{% assign apijson = item %}
-
-		<tr>
-	    <td colspan="3" align="center">{{ apijson }}</td>
-	  </tr>
-
-		-{{ apijson.name }}-
+{% for apijson in site.data.apis %}
 
 		{% assign common_api_action_url = '' %}
 
