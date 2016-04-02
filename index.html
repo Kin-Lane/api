@@ -210,10 +210,7 @@ working - 9
                               {% assign method_json = path[1] %}
                               {% for method in method_json %}
                                 {% assign tags = method[1].tags %}
-                                {% if taglist contains tags %}
-                                {% else %}
-                                  
-                                {% endif %}
+                                
 
                               {% endfor %}
                             {% endfor %}
