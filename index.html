@@ -14,7 +14,7 @@ layout: page
       }
     }
 </script>
-Doing - 2
+Doing - 3
 <table cellpadding="3" cellspacing="2" width="100%" border="1" style="margin-top: 10px;">
   <tr>
     <td align="center" colspan="2"><hr /></td>
@@ -23,9 +23,9 @@ Doing - 2
 {% assign index = site.data.apis %}
 {% assign contents = site.data.api-commons %}
 
-{% assign apijson = index %}
-{% assign apicommons = contents %}
-
+{% assign apijson = index[1] %}
+{% assign apicommons = contents[1] %}
+{{ apijson }}
     {% assign blog_url = '' %}
     {% assign blogrss_url = '' %}
     {% assign portal_url = '' %}
