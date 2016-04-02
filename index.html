@@ -155,7 +155,7 @@ title: Kin Lane API API
                               {% assign pathname = pathname | replace: '/','.' %}
                               {% assign pathname = 'site.data.' | append:pathname %}
 
-                              {% assign openapi_spec_json =  %}
+                              {% assign openapi_spec_json = site.data | map: pathname %}
 
                             {% endif %}
 
