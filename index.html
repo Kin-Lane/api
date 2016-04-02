@@ -85,7 +85,7 @@ layout: page
 {% endif %}
 
   <tr>
-    <td colspan="2">
+    <td colspan="2" style="padding-bottom: 10px;">
       {% if apijson.image != null %}
         <a href="{{ website_url }}">
           <img src="{{ apijson.image }}" align="left" style="padding: 5px;" width="125" />
@@ -129,13 +129,6 @@ layout: page
           </li>
         {% endif %}
 
-        {% if apijson.url != null %}
-          <li style="display: inline; padding-left: 15px; padding-right: 15px;">
-            <a href="{{ apijson.url }}" target="_blank" title="APIs.json">
-              <img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-a.png" width="61" align="center" />
-            </a>
-          </li>
-        {% endif %}
       </ul>
     </td>
   </tr>
@@ -145,49 +138,66 @@ layout: page
 				<tr id="onboarding">
 					<td colspan="3" style="font-size: 22px; padding: 15px;"><strong>On-boarding</strong></td>
 				</tr>
+        {% if getting_started_url != '' %}
 				<tr id="X-getting-started-row">
 					<td width="25" style="height: 55px;"></td>
-					<td width="75" align="center" valign="middle"><a href="" id="X-getting-started-img-url"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-running.png" width="35" /></a></td>
-					<td><a href="" id="X-getting-started-url">Getting Started</a><div id="d-getting-started"></div></td>
+					<td width="75" align="center" valign="middle"><a href="{{ getting_started_url }}" id="X-getting-started-img-url"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-running.png" width="35" /></a></td>
+					<td><a href="{{ getting_started_url }}" id="X-getting-started-url">Getting Started</a><div id="d-getting-started"></div></td>
 				</tr>
+        {% endif %}
+        {% if authentication_url != '' %}
 				<tr id="X-authentication-row">
 					<td width="25" style="height: 55px;"></td>
 					<td width="75" align="center" valign="middle"><a href="" id="X-authentication-img-url"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-authentication.png" width="35" /></a></td>
 					<td><a href="" id="X-authentication-url">Authentication</a><div id="d-authentication"></div></td>
 				</tr>
+        {% endif %}
+        {% if faq_url != '' %}
 				<tr id="X-faq-row">
 					<td width="25" style="height: 55px;"></td>
-					<td width="75" align="center" valign="middle"><a href="" id="X-faq-img-url"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-question-mark.png" width="35" /></a></td>
-					<td><a href="" id="X-faq-url">FAQ</a><div id="d-faq"></div></td>
+					<td width="75" align="center" valign="middle"><a href="{{ faq_url }}" id="X-faq-img-url"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-question-mark.png" width="35" /></a></td>
+					<td><a href="{{ faq_url }}" id="X-faq-url">FAQ</a><div id="d-faq"></div></td>
 				</tr>
+        {% endif %}
+        {% if gitub_url != '' %}
 				<tr id="X-self-service-registration-row">
 					<td width="25" style="height: 55px;"></td>
 					<td width="75" align="center" valign="middle"><a href="" id="X-self-service-registration-img-url"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-hand-wrench.jpg" width="35" /></a></td>
 					<td><a href="" id="X-self-service-registration-url">Registration</a><div id="d-self-service-registration"></div></td>
 				</tr>
+        {% endif %}
 				<tr id="integration">
 					<td colspan="3" style="font-size: 22px; padding: 15px;"><strong>Integration</strong></td>
 				</tr>
+        {% if gitub_url != '' %}
 				<tr id="X-documentation-row">
 					<td width="25" style="height: 55px;"></td>
 					<td width="75" align="center" valign="middle"><a href="" id="X-documentation-img-url"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-documentation-interactive.png" width="35" /></a></td>
 					<td><a href="" id="X-documentation-url">Documentation</a><div id="d-documentation"></div></td>
 				</tr>
+        {% endif %}
+        {% if gitub_url != '' %}
 				<tr id="X-code-row">
 					<td width="25" style="height: 55px;"></td>
 					<td width="75" align="center" valign="middle"><a href="" id="X-code-img-url"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-code.png" width="35" /></a></td>
 					<td><a href="" id="X-code-url">Code</a><div id="d-code"></div></td>
 				</tr>
+        {% endif %}
+        {% if gitub_url != '' %}
 				<tr id="X-pricing-row">
 					<td width="25" style="height: 55px;"></td>
 					<td width="75" align="center" valign="middle"><a href="" id="X-pricing-img-url"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-dollar-sign.jpg" width="35" /></a></td>
-					<td><a href="" id="X-pricing-url">Pricing</a><div id="d-pricing"></div></td>
+					<td><a href="" id="X-pricing-url">Plans</a><div id="d-pricing"></div></td>
 				</tr>
+        {% endif %}
+        {% if gitub_url != '' %}
 				<tr id="X-rate-limits-page-row">
 					<td width="25" style="height: 55px;"></td>
 					<td width="75" align="center" valign="middle"><a href="" id="X-rate-limits-page-img-url"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-speed-limit.jpeg" width="35" /></a></td>
 					<td><a href="" id="X-rate-limits-page-url">Rate Limits</a><div id="d-rate-limits"></div></td>
 				</tr>
+        {% endif %}
+        {% if gitub_url != '' %}
 				<tr id="support">
 					<td colspan="3" style="font-size: 22px; padding: 15px;"><strong>Support</strong></td>
 				</tr>
@@ -196,42 +206,55 @@ layout: page
 					<td width="75" align="center" valign="middle"><a href="" id="X-support-img-url"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-support.png" width="35" /></a></td>
 					<td><a href="" id="X-support-url">Support</a><div id="d-support"></div></td>
 				</tr>
+        {% endif %}
 				<tr id="updates">
 					<td colspan="3" style="font-size: 22px; padding: 15px;"><strong>Updates</strong></td>
 				</tr>
+        {% if gitub_url != '' %}
 				<tr id="X-roadmap-row">
 					<td width="25" style="height: 55px;"></td>
 					<td width="75" align="center" valign="middle"><a href="" id="X-roadmap-img-url"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-highway.png" width="35" /></a></td>
 					<td><a href="" id="X-roadmap-url">Roadmap</a><div id="d-roadmap"></div></td>
 				</tr>
+        {% endif %}
+        {% if gitub_url != '' %}
 				<tr id="X-issues-row">
 					<td width="25" style="height: 55px;"></td>
 					<td width="75" align="center" valign="middle"><a href="" id="X-issues-img-url"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-bug.png" width="35" /></a></td>
 					<td><a href="" id="X-issues-url">Issues</a><div id="d-issues"></div></td>
 				</tr>
+        {% endif %}
+        {% if gitub_url != '' %}
 				<tr id="X-change-log-row">
 					<td width="25" style="height: 55px;"></td>
 					<td width="75" align="center" valign="middle"><a href="" id="X-change-log-img-url"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-recycling.jpg" width="35" /></a></td>
 					<td><a href="" id="X-change-log-url">Change Log</a><div id="d-change-log"></div></td>
 				</tr>
+        {% endif %}
+        {% if gitub_url != '' %}
 				<tr id="X-status-dashboard-row">
 					<td width="25" style="height: 55px;"></td>
 					<td width="75" align="center" valign="middle"><a href="" id="X-status-dashboard-img-url"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-status-dashboard.png" width="35" /></a></td>
 					<td><a href="" id="X-status-dashboard-url">Status</a><div id="d-status-dashboard"></div></td>
 				</tr>
+        {% endif %}
 				<tr id="legal">
 					<td colspan="3" style="font-size: 22px; padding: 15px;"><strong>Legal</strong></td>
 				</tr>
+        {% if gitub_url != '' %}
 				<tr id="X-terms-of-service-row">
 					<td width="25" style="height: 55px;"></td>
 					<td width="75" align="center" valign="middle"><a href="" id="X-terms-of-service-img-url"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-terms-conditions.png" width="35" /></a></td>
 					<td><a href="" id="X-terms-of-service-url">Terms of Service</a><div id="d-terms-of-service"></div></td>
 				</tr>
+        {% endif %}
+        {% if gitub_url != '' %}
 				<tr id="X-privacy-policy-row">
 					<td width="25" style="height: 55px;"></td>
 					<td width="75" align="center" valign="middle"><a href="" id="X-privacy-policy-img-url"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-privacy.png" width="35" /></a></td>
 					<td><a href="" id="X-privacy-policy-url">Privacy Policy</a><div id="d-privacy-policy"></div></td>
 				</tr>
+        {% endif %}
 			</table>
     </td>
     <td width="50%">
