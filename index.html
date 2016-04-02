@@ -22,9 +22,8 @@ Doing - 7
 
 {% for folder in site.data %}
   {% for item in folder %}
-    {% assign file = item %}
-    {{ file }}
-    here:
+    {% for this in item %}
+    {% assign file = this %}
     {% if file.apis != null %}
 
         {% assign apijson = this.apis %}
@@ -240,6 +239,7 @@ Doing - 7
         </tr>
         {% endif %}
       {% endif %}
+    {% endfor %}
     {% endfor %}
   {% endfor %}
 </table>
