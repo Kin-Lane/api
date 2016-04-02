@@ -17,7 +17,7 @@ title: {{ site.title }}
     }
 </script>
 
-doing - 5
+doing - 6
 <table cellpadding="3" cellspacing="2" width="100%" border="0" style="margin-top: 10px;">
   <tr>
     <td colspan="3" align="center"><hr /></td>
@@ -25,7 +25,7 @@ doing - 5
 
 {% for item in site.data %}
 
-		{% assign apijson = item %}
+		{% assign apijson = item.apis %}
 
 		<tr>
 	    <td colspan="3" align="center">{{ apijson }}</td>
