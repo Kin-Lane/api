@@ -239,12 +239,12 @@ working - 13
                                   {% if tag == grouptag %}
                                     <li style="font-size: 12px;">
                                       {{ summary }}
-                                      {% if verb == 'GET' %}<span style="color:#009900">{% endif %}
-                                      {% if verb == 'POST' %}<span style="color:#0000ff">{% endif %}
-                                      {% if verb == 'GET' %}<span style="color:#ff0080">{% endif %}
-                                      {% if verb == 'DELETE' %}<span style="color:#ff9900">{% endif %}
+                                      ({% if verb == 'GET' %}<span style="font-color:#009900">{% endif %}
+                                      {% if verb == 'POST' %}<span style="font-color:#0000ff">{% endif %}
+                                      {% if verb == 'GET' %}<span style="font-color:#ff0080">{% endif %}
+                                      {% if verb == 'DELETE' %}<span style="font-color:#ff9900">{% endif %}
                                       <strong>{{ verb }}</strong>
-                                      </span>
+                                    </span>)
                                     </li>
                                   {% endif %}
 
