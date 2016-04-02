@@ -213,7 +213,9 @@ working - 9
 
                                 {% assign verb = method[0] | upcase %}
                                 {% assign summary = method[1].summary %}
-                                <li style="font-size: 12px;">{{ path[0] }} <strong>[{{ verb }}]</strong> {{ summary }}</li>
+                                {% assign tags = method[1].tags %}
+
+                                <li style="font-size: 12px;">{{ summary }} <strong>[{{ verb }}]</strong></li>
 
                               {% endfor %}
 
