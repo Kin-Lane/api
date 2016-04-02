@@ -1,4 +1,4 @@
----
+
 name: Kin Lane
 description: This is my master org.
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/kin.png
@@ -58,4 +58,3 @@ maintainers:
 - FN: Kin Lane
   x-twitter: apievangelist
   email: info@apievangelist.com
-...
