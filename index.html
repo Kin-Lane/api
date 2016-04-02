@@ -209,9 +209,9 @@ working - 13
                             {% for path in spec.paths %}
                               {% assign method_json = path[1] %}
                               {% for method in method_json %}
-                                {% assign tags = method[1].tags %}
-
-                                {% if taglist == tags %}
+                                {% assign tagarray = method[1].tags %}
+                                {% assign tag = tagarray[0] %}
+                                {% if taglist == tag %}
                                    string includes 'hello'
                                 {% endif %}
 
