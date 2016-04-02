@@ -14,7 +14,7 @@ layout: page
       }
     }
 </script>
-Doing - 9
+Doing - 10
 <table cellpadding="3" cellspacing="2" width="100%" border="1" style="margin-top: 10px;">
   <tr>
     <td align="center" colspan="2"><hr /></td>
@@ -22,7 +22,7 @@ Doing - 9
 
 {% for folder in site.data %}
   {% for item in folder %}
-    {% assign this = item %}
+    {% assign this = item[1] %}
     {{ this }}
     {% if this.apis != null %}
 
