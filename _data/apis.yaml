@@ -43,6 +43,8 @@
     url: https://kin-lane.github.io/master/faq/
   - type: x-getting-started
     url: https://kin-lane.github.io/master/getting-started/
+  - type: x-github
+    url: https://github.com/kinlane
   - type: x-road-map
     url: https://kin-lane.github.io/master/roadmap/
   - type: x-status-dashboard
