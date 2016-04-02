@@ -23,7 +23,7 @@ Doing - 6
 {% for folder in site.data %}
   {% for item in folder %}
     {% assign file = item %}
-    {% assign this = file | map: 'apis' %}
+    {% assign this = file | map:  %}
     {{ this }}
 
     {% if this.apis != null %}
