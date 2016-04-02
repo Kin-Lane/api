@@ -153,7 +153,7 @@ title: Kin Lane API API
                               {% assign pathname = openapi_spec_url | replace: '_data/','' %}
                               {% assign pathname = pathname | replace: '.yaml','' %}
                               {% assign pathname = pathname | replace: '/','.' %}
-              
+
                               {% assign openapi_spec_json = site.data | map: pathname %}
 
                             {% endif %}
@@ -178,7 +178,7 @@ title: Kin Lane API API
                             </td>
                             <td align="right">
                               {% if openapi_spec_url != null and openapi_spec_url != empty %}
-                                {{ pathname }} - <a href="{{ openapi_spec_url }}" target="_blank" title="OpenAPI Spec">
+                                <a href="{{ openapi_spec_url }}" target="_blank" title="OpenAPI Spec">
                                   <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/openapi-spec/open-api-spec-icon.png" width="25" align="right" />
                                 </a>
                               {% endif %}
@@ -199,7 +199,7 @@ title: Kin Lane API API
                           </tr>
                           <tr style="display: none;" id="methods-for-{{ pathname }}">
                             <td colspan="2" align="left" style="margin-left: 25px; margin-right: 25px;">
-
+                              {{ openapi_spec_json }}
                               <ul>
                                 {% for spec in openapi_spec_json %}
 
