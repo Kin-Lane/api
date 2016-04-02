@@ -17,7 +17,7 @@ title: {{ site.title }}
     }
 </script>
 
-doing - 4
+doing - 5
 <table cellpadding="3" cellspacing="2" width="100%" border="0" style="margin-top: 10px;">
   <tr>
     <td colspan="3" align="center"><hr /></td>
@@ -35,11 +35,7 @@ doing - 4
 	    <td colspan="3" align="center">{{ apijson }}</td>
 	  </tr>
 
-		{% assign apis_json_name = apijson.name %}
-		{% assign apis_json_description = apijson.description %}
-		{% assign apis_json_image = apijson.image %}
-
-		-{{ apis_json_name }}-
+		-{{ apijson.name }}-
 
 		{% assign common_api_action_url = '' %}
 
