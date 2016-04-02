@@ -150,8 +150,6 @@ working - 4
                         {% assign pathname = pathname | replace: '.yaml','' %}
                         {% assign pathname = pathname | replace: '/','.' %}
 
-kin-lane-api-openapi-spec = {{ pathname }}<br />
-
                         {% assign openapi_spec_json = apicommons | map: pathname %}
 
                       {% endif %}
@@ -197,7 +195,6 @@ kin-lane-api-openapi-spec = {{ pathname }}<br />
                     </tr>
                     <tr style="display: none;" id="methods-for-{{ pathname }}">
                       <td colspan="2" align="left" style="margin-left: 25px; margin-right: 25px;">
-                        --{{ openapi_spec_json }}--<br />{{ apicommons }}<br />
                         <ul>
                           {% for spec in openapi_spec_json %}
 
