@@ -6,12 +6,12 @@
     - title: via Github
       description:
       image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-github.png
-      url: https://github.com/Kin-Lane/master/issues
+      url: https://github.com/Kin-Lane/api/issues
     - title: via Twitter
       description:
       image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-twitter-icon.png
       url: https://twitter.com/kinlane/
-    - title: vaia Email
+    - title: via Email
       description:
       image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-email-at.png
       url: mailto:info@kinlane.com

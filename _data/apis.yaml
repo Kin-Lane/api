@@ -13,9 +13,9 @@
   specificationVersion: "0.14"
   apis:
   - name: Kin Lane API
-    description: <p><span>This is my default API API (inception man!), using it to manage
+    description: This is my default API API (inception man!), using it to manage
       APIs. It is a Stack Network API resource, with supporting docker container for
-      the API.</span></p>
+      the API.
     image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/kin.png
     humanURL: https://kin-lane.github.io/api/
     baseURL: https://kin-lane.github.io/api/
@@ -25,30 +25,28 @@
     - type: x-openapi-spec
       url: _data/api-commons/kin-lane-api-openapi-spec.yaml
   x-common:
-  - type: x-blog-rss-feed
-    url: http://www.talkwalker.com/alerts/rss/NG2GCZBIIN4ULOCFJRSUK6EIY2AZLCE2YTABNE6EHW4OAA2B53FA%3D%3D%3D%3D
   - type: x-blog
     url: http://kinlane.com/blog/
   - type: x-blog-rss-feed
     url: http://kinlane.com/blog.xml
   - type: x-change-log
-    url: https://kin-lane.github.io/master/change-log/
+    url: https://kin-lane.github.io/api/change-log/
   - type: x-code-page
-    url: https://kin-lane.github.io/master/code/
+    url: https://kin-lane.github.io/api/code/
   - type: x-portal
     url: https://kin-lane.github.io
   - type: x-documentation
-    url: https://kin-lane.github.io/master/documentation/
+    url: https://kin-lane.github.io/api/documentation/
   - type: x-faq
-    url: https://kin-lane.github.io/master/faq/
+    url: https://kin-lane.github.io/api/faq/
   - type: x-getting-started
-    url: https://kin-lane.github.io/master/getting-started/
+    url: https://kin-lane.github.io/api/getting-started/
   - type: x-github
     url: https://github.com/kinlane
   - type: x-road-map
-    url: https://kin-lane.github.io/master/roadmap/
+    url: https://kin-lane.github.io/api/roadmap/
   - type: x-status-dashboard
-    url: https://kin-lane.github.io/master/status/
+    url: https://kin-lane.github.io/api/status/
   - type: x-twitter
     url: https://twitter.com/kinlane
   - type: x-api-plan

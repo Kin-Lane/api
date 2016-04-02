@@ -61,6 +61,15 @@ navigation:
     size2: 60
     padding: 2
     decorate: 0
+  - label1: Getting Started
+    link1: /
+    size1: 100
+    extend: 0
+    label2:
+    link2:
+    size2: 0
+    padding: 25
+    decorate: 0
   - label1: Return to API Evangelist
     link1: http://apievangelist.com
     size1: 80
