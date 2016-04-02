@@ -83,6 +83,10 @@ layout: page
     {% assign status_dashboard_url = common.url %}
   {% endif %}
 
+  {% if common.type == 'x-support' %}
+    {% assign support_url = common.url %}
+  {% endif %}
+
   {% if common.type == 'x-api-plan' %}
     {% assign api_plan_url = common.url %}
   {% endif %}
