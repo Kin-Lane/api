@@ -153,8 +153,7 @@ title: Kin Lane API API
                               {% assign pathname = openapi_spec_url | replace: '_data/','' %}
                               {% assign pathname = pathname | replace: '.yaml','' %}
                               {% assign pathname = pathname | replace: '/','.' %}
-                              {% assign pathname = 'site.data.' | append:pathname %}
-
+              
                               {% assign openapi_spec_json = site.data | map: pathname %}
 
                             {% endif %}
