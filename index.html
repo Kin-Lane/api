@@ -137,6 +137,8 @@ working - 6
 
                     {% assign api_action_spec = '' %}
                     {% assign api_action_url = '' %}
+                    {% assign openapi_spec_json = '' %}
+
                     {% for property in api.properties %}
 
                       {% assign thisname = apijson.name | downcase %}
@@ -157,7 +159,7 @@ working - 6
                             {% assign openapi_spec_json = thisentry %}
                           {% endif %}
                         {% endfor %}
-
+{{ openapi_spec_json }}
                       {% endif %}
 
                       {% if property.type == 'x-postman %}
