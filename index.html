@@ -146,7 +146,7 @@ working - 4
                       {% if property.type == 'x-openapi-spec' %}
 
                         {% assign openapi_spec_url = property.url %}
-                        {% assign pathname = openapi_spec_url | replace: '_data/','' %}
+                        {% assign pathname = openapi_spec_url | replace: '_data/api-commons/','' %}
                         {% assign pathname = pathname | replace: '.yaml','' %}
                         {% assign pathname = pathname | replace: '/','.' %}
 
