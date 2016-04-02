@@ -205,13 +205,13 @@ working - 1
                         <ul>
 
                           {% assign first = 1 %}
-                          {% assign taglist = '' %}
+                          {% assign tag.list = '' %}
                           {% for spec in openapi_spec_json %}
                             {% for path in spec.paths %}
                               {% assign method_json = path[1] %}
                               {% for method in method_json %}
                                 {% assign tags = method[1].tags %}
-                                {% if taglist contains tags %}
+                                {% if tag.list contains tags %}
 
                                 {% endif %}
 
