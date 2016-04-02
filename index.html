@@ -212,6 +212,7 @@ working - 13
                                 {% assign tagarray = method[1].tags %}
                                 {% assign tag = tagarray[0] %}
                                 {% if taglist contains tag %}
+                                {% else %}
                                   {% assign taglist = taglist | append:'|' %}
                                   {% assign taglist = taglist | append:tag %}
                                 {% endif %}
