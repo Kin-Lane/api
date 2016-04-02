@@ -24,7 +24,7 @@ working - 4
 {% assign apijson = index[0] %}
 {% assign contents = site.data.api-commons %}
 {% assign apicommons = contents %}
-{{ apicommons }}
+
 {% assign blog_url = '' %}
 {% assign blogrss_url = '' %}
 {% assign portal_url = '' %}
@@ -149,6 +149,9 @@ working - 4
                         {% assign pathname = openapi_spec_url | replace: '_data/','' %}
                         {% assign pathname = pathname | replace: '.yaml','' %}
                         {% assign pathname = pathname | replace: '/','.' %}
+
+kin-lane-api-openapi-spec = {{ pathname }}<br />
+
                         {% assign openapi_spec_json = apicommons | map: pathname %}
 
                       {% endif %}
