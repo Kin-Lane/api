@@ -10,7 +10,7 @@ layout: page
 <p>{{ apiauthentication.header }}</p>
   <ul>
     {% for keys in apiauthentication.keys %}
-			<li><strong>{{ steps.name }}</strong> - {{ steps.description}}</li>
+			<li><strong>{{ keys.name }}</strong> - {{ keys.description}}</li>
     {% endfor %}
   </ul>
 <p>{{ apiauthentication.footer }}</p>
