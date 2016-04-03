@@ -55,7 +55,7 @@ navigation:
     label2:
     link2:
     size2: 0
-    padding: 25
+    padding: 10
     decorate: 0
   - label1: Blog
     link1: /Blog/
@@ -109,7 +109,7 @@ navigation:
     label2:
     link2:
     size2: 10
-    padding: 25
+    padding: 10
     decorate: 1
 
 # Footer Navigation
