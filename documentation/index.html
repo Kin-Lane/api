@@ -190,13 +190,13 @@ layout: page
 
                                   {% if tag == grouptag %}
                                     <tr>
-                                      <td style="padding-left: 20px; font-size: 11px;">{{ path[0] }}</td>
-                                      <td style="font-size: 11px;">{{ summary }}</td>
-                                      <td>
-                                        {% if verb == 'GET' %}(<span style="color:#009900; font-weight:bold; font-size: 11px;">GET</span>){% endif %}
-                                        {% if verb == 'POST' %}(<span style="color:#0000ff; font-weight:bold; font-size: 11px;">POST</span>){% endif %}
-                                        {% if verb == 'PUT' %}(<span style="color:#FF0080; font-weight:bold; font-size: 11px;">PUT</span>){% endif %}
-                                        {% if verb == 'DELETE' %}(<span style="color:#FF9900; font-weight:bold; font-size: 11px;">DELETE</span>){% endif %}
+                                      <td style="padding-left: 20px; font-size: 12px;">{{ path[0] }}</td>
+                                      <td style="font-size: 12px;">{{ summary }}</td>
+                                      <td align="center">
+                                        {% if verb == 'GET' %}<span style="color:#009900; font-weight:bold; font-size: 12px;">GET</span>{% endif %}
+                                        {% if verb == 'POST' %}<span style="color:#0000ff; font-weight:bold; font-size: 12px;">POST</span>{% endif %}
+                                        {% if verb == 'PUT' %}<span style="color:#FF0080; font-weight:bold; font-size: 12px;">PUT</span>{% endif %}
+                                        {% if verb == 'DELETE' %}<span style="color:#FF9900; font-weight:bold; font-size: 12px;">DELETE</span>{% endif %}
                                       </td>
                                     </tr>
                                   {% endif %}
