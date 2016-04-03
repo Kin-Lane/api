@@ -150,7 +150,7 @@ layout: page
                     </tr>
                     <tr id="methods-for-{{ pathname }}">
                       <td colspan="2">
-                        <table width="90%" border="1" style="margin-left: 50px; margin-right: 50px;">
+                        <table width="80%" border="1" style="margin-left: 50px; margin-right: 50px;">
 
                           {% assign taglist = '' %}
                           {% for spec in openapi_spec_json %}
@@ -190,7 +190,7 @@ layout: page
                                     <tr>
                                       <td style="padding-left: 20px; font-size: 12px;">{{ path[0] }}</td>
                                       <td style="font-size: 12px;">{{ summary }}</td>
-                                      <td align="center" style="width: 50px; background-color:{% if verb == 'GET' %}#009900{% elsif verb == 'GET' %}#009900{% elsif verb == 'POST' %}#0000ff{% elsif verb == 'PUT' %}#FF0080{% elsif verb == 'DELETE' %}#FF9900{% endif %}; font-weight: bold; font-size: 14px; color: #FFF;">
+                                      <td align="center" style="width: 75px; background-color:{% if verb == 'GET' %}#009900{% elsif verb == 'GET' %}#009900{% elsif verb == 'POST' %}#0000ff{% elsif verb == 'PUT' %}#FF0080{% elsif verb == 'DELETE' %}#FF9900{% endif %}; font-weight: bold; font-size: 12px; color: #FFF;">
                                         {{ verb }}
                                       </td>
                                     </tr>
