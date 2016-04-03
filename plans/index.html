@@ -48,7 +48,7 @@ title: Plans
           {% assign thisname = apijson.name | downcase %}
           {% assign thisname = thisname | append:'/' %}
           {% assign thisname = thisname | replace: ' ','-' %}
-
+{{ api.type }}
           {% if api.type == 'x-api-plan' %}
 
             {% assign api_plan_url = api.url %}
