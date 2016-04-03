@@ -15,7 +15,10 @@
 		"humanURL": "/",
 		"baseURL": "/",
 		"tags": ["Kin Lane API API"],
-		"properties": []
+		"properties": [{
+			"type": "x-openapi-spec",
+			"url": "api-commons/openapi-spec.json"
+		}]
 	}],
 	"x-common": [{
 		"type": "x-blog-rss-feed",
