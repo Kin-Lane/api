@@ -1,4 +1,4 @@
-- - name: APIs
+- name: APIs
     description: This is my API for working with the APIs I track on. I use this API
       to add, update, and delete the APIs, their details, an I am working to create
       as many API focused endpoints, which let me manage even more APIs, whether they
@@ -74,4 +74,3 @@
     - FN: Kin Lane
       x-twitter: apievangelist
       email: info@apievangelist.com
-  .
