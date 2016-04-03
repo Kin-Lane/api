@@ -8,9 +8,9 @@ layout: page
 <h1>{{ apigettingstarted.title }}</h1>
 <p><img src="{{ apigettingstarted.image }}" align="right" width="75" style="padding: 5px;" /></p>
 <p>{{ apigettingstarted.header }}</p>
-{% for steps in apigettingstarted.steps %}
   <ol>
+    {% for steps in apigettingstarted.steps %}
 			<li><strong>{{ steps.title }}</strong></li>
-	</ol>
-{% endfor %}
+    {% endfor %}
+  </ol>
 <p>{{ apigettingstarted.footer }}</p>
