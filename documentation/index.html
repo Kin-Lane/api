@@ -195,6 +195,12 @@ layout: page
                                   {% if verb == 'POST' %}
                                     {% assign back_color = site.post_color %}
                                   {% endif %}
+                                  {% if verb == 'PUT' %}
+                                    {% assign back_color = site.put_color %}
+                                  {% endif %}
+                                  {% if verb == 'DELETE' %}
+                                    {% assign back_color = site.delete_color %}
+                                  {% endif %}
 
                                   {% assign summary = method[1].summary %}
 
