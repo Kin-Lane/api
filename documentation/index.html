@@ -188,13 +188,26 @@ layout: page
                                   {% assign tag = tagarray[0] %}
 
                                   {% assign verb = method[0] | upcase %}
+                                  {% if verb == 'GET' %}
+                                    {% assign back_color = site.get_color %}
+                                  {% endif %}
+                                  {{% if verb == 'POST' %}
+                                    {% assign back_color = site.post_color %}
+                                  {% endif %}
+                                  {% if verb == 'PUT' %}
+                                    {% assign back_color = site.put_color %}
+                                  {% endif %}
+                                  {% if verb == 'DELETE' %}
+                                    {% assign back_color = site.delete_color %}
+                                  {% endif %}
+
                                   {% assign summary = method[1].summary %}
 
                                   {% if tag == grouptag %}
                                     <tr>
                                       <td style="padding-left: 20px; font-size: 12px;">{{ path[0] }}</td>
                                       <td style="font-size: 12px;">{{ summary }}</td>
-                                      <td align="center">
+                                      <td align="center" style="padding: 5px; width: 75px; background-color:#{{ back_color }}; font-weight: bold; font-size: 11px; color: #FFF;">
                                         {{ verb }}
                                       </td>
                                     </tr>
