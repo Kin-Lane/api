@@ -51,8 +51,7 @@ title: Plans
           {% if api.type == 'x-api-plan' %}
 
             {% assign api_plan_url = api.url %}
-            {% assign openapi_spec_url = property.url %}
-            {% assign pathname = openapi_spec_url | replace: '_data/api-commons/','' %}
+            {% assign pathname = api_plan_url | replace: '_data/api-commons/','' %}
             {% assign pathname = pathname | replace: '.yaml','' %}
             {% assign pathname = pathname | replace: '/','.' %}
 
