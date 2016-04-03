@@ -58,7 +58,7 @@ navigation:
     padding: 10
     decorate: 0
   - label1: Blog
-    link1: /Blog/
+    link1: blog/
     size1: 80
     extend: 1
     label2: RSS
