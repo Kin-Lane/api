@@ -1,4 +1,4 @@
-- coupling: "2"
+- - coupling: "2"
   name: Kin Lane
   host: api.kinlane.com
   baseurl: /
