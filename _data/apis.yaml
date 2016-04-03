@@ -2,7 +2,7 @@
   description: This is my API for working with the APIs I track on. I use this API
     to add, update, and delete the APIs, their details, an I am working to create
     as many API focused endpoints, which let me manage even more APIs, whether they
-    are mine or other publicly available APis I am interested in.
+    are mine or other publicly available APIs I am interested in.
   image: https://s3.amazonaws.com/kinlane-productions/api-commons/api-commons-icon.png
   x-open-ranking: "0"
   tags:
@@ -13,9 +13,10 @@
   specificationVersion: "0.14"
   apis:
   - name: Kin Lane API
-    description: <p><span>This is my default API API (inception man!), using it to
-      manage APIs. It is a Stack Network API resource, with supporting docker container
-      for the API.</span></p>
+    description: <p><span>This is my API for working with the APIs I track on. I use
+      this API to add, update, and delete the APIs, their details, an I am working
+      to create as many API focused endpoints, which let me manage even more APIs,
+      whether they are mine or other publicly available APis I am interested in.</span></p>
     image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/kin.png
     humanURL: /
     baseURL: /
