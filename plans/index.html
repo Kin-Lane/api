@@ -61,7 +61,6 @@ title: Plans
             {% for entry in apicommons %}
               {% assign thisname = entry[0] %}
               {% assign thisentry = entry[1] %}
-              {{ thisname }} == {{ pathname }}
               {% if thisname == pathname %}
                 {% assign api_plan_json = thisentry %}
               {% endif %}
@@ -72,7 +71,7 @@ title: Plans
             {% for entry in api_plan_json %}
 
                 {% assign api_plan_json = entry[0] %}
-
+                {{ api_plan_json }}
                 {% for plan in api_plan_json.plans %}
 
                     {% assign entries = plan.entries %}
