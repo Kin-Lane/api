@@ -106,7 +106,7 @@
 	},
 	{
 		"type": "x-api-plan",
-		"url": "/api-commons/api-plan.json"
+		"url": "api-commons/api-plan.json"
 	}],
 	"include": [{
 		"name": "Parent",
