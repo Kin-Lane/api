@@ -119,6 +119,7 @@ layout: page
                         {% assign openapi_spec_url = property.url %}
                         {% assign pathname = openapi_spec_url | replace: '_data/api-commons/','' %}
                         {% assign pathname = pathname | replace: '.yaml','' %}
+                        {% assign pathname = pathname | replace: '.json','' %}
                         {% assign pathname = pathname | replace: '/','.' %}
                         {% assign pathname = pathname | replace: 'api-commons.','' %}
 
