@@ -49,6 +49,8 @@
     url: getting-started/
   - type: x-github
     url: https://github.com/kinlane
+  - type: x-issues
+    url: issues/
   - type: x-login
     url: https://apievangelist.3scale.net/login
   - type: x-dedicated-plans--pricing-page
@@ -56,7 +58,7 @@
   - type: x-privacy-policy-page
     url: privacy-policy/
   - type: x-road-map
-    url: roadmap/
+    url: road-map/
   - type: x-selfservice-registration
     url: https://apievangelist.3scale.net/signup
   - type: x-status-dashboard
