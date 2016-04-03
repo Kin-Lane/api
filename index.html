@@ -380,15 +380,25 @@ layout: page
                                   {% assign tag = tagarray[0] %}
 
                                   {% assign verb = method[0] | upcase %}
+                                  {% if verb == 'GET' %}
+                                    {% assign back_color = site.get_color %}
+                                  {% endif %}
+                                  {% if verb == 'POST' %}
+                                    {% assign back_color = site.post_color %}
+                                  {% endif %}
+                                  {% if verb == 'PUT' %}
+                                    {% assign back_color = site.put_color %}
+                                  {% endif %}
+                                  {% if verb == 'DELETE' %}
+                                    {% assign back_color = site.delete_color %}
+                                  {% endif %
+
                                   {% assign summary = method[1].summary %}
 
                                   {% if tag == grouptag %}
                                     <li style="font-size: 12px;">
                                       {{ summary }}
-                                      {% if verb == 'GET' %}(<span style="color:#009900; font-weight:bold;">GET</span>){% endif %}
-                                      {% if verb == 'POST' %}(<span style="color:#0000ff; font-weight:bold;">POST</span>){% endif %}
-                                      {% if verb == 'PUT' %}(<span style="color:#FF0080; font-weight:bold;">PUT</span>){% endif %}
-                                      {% if verb == 'DELETE' %}(<span style="color:#FF9900; font-weight:bold;">DELETE</span>){% endif %}
+                                      (<span style="color:#{{ back_color }}; font-weight:bold;">{{ verb }}</span>)
                                     </li>
                                   {% endif %}
 

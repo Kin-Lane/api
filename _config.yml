@@ -21,10 +21,10 @@ paginate_path: "/blog/page:num/"
 categories_path : /categories.html
 tags_path : /tags.html
 
-get_color: 808080;
-post_color: 808080;
-put_color: 808080;
-delete_color: 808080;
+get_color: 009900;
+post_color: 0000ff;
+put_color: FF0080;
+delete_color: FF9900;
 
 org: kin-lane
 repo: api
