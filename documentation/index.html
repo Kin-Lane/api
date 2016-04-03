@@ -120,6 +120,7 @@ layout: page
                         {% assign pathname = openapi_spec_url | replace: '_data/api-commons/','' %}
                         {% assign pathname = pathname | replace: '.yaml','' %}
                         {% assign pathname = pathname | replace: '/','.' %}
+                        {% assign pathname = pathname | replace: 'api-commons.','' %}
 
                         {% for entry in apicommons %}
                           {% assign thisname = entry[0] %}
@@ -156,7 +157,6 @@ layout: page
                     <tr id="methods-for-{{ pathname }}">
                       <td colspan="2">
                         <table width="95%" border="0" style="margin-left: 15px; margin-right: 15px;">
-{{ openapi_spec_json }}
                           {% assign taglist = '' %}
                           {% for spec in openapi_spec_json %}
                             {% for path in spec.paths %}
