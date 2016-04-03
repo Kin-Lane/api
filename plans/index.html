@@ -67,10 +67,6 @@ title: Plans
             {% endfor %}
 
             <table cellpadding="3" cellspacing="2" width="95%" style="margin-bottom: 20px; padding-left: 20px; padding-right: 20px;">
-            {{ api_plan_json }}
-            {% for entry in api_plan_json %}
-
-                {% assign api_plan_json = entry[0] %}
 
                 {% for plan in api_plan_json.plans %}
 
@@ -113,8 +109,6 @@ title: Plans
                     {% endfor %}
 
                 {% endfor %}
-
-            {% endfor %}
 
           </table>
 
