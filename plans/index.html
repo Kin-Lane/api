@@ -74,7 +74,7 @@ title: Plans
                     {% assign entries = plan.entries %}
 
                     <tr>
-                      <td colspan="10" style="padding-top: 5px; padding-bottom: 10px;"><strong>Plan Name: {{ plan.name }}</strong></td>
+                      <td colspan="12" style="padding-top: 5px; padding-bottom: 10px;"><strong>Plan Name: {{ plan.name }}</strong></td>
                     </tr>
 
                     <!--<tr style="font-size: 12px; font-weight: bold;">
@@ -93,7 +93,8 @@ title: Plans
                     {% for entry in entries %}
 
                       <tr style="font-size: 11px;">
-                        <td>{{ entry.label }}</td>
+                        <td style="width: 25px;"></td>
+                        <td style="padding: 5px;">{{ entry.label }}</td>
                         <td>{{ entry.description }}</td>
                         <td>{{ entry.metric }}</td>
                         <td>{{ entry.limit }}</td>
@@ -103,6 +104,7 @@ title: Plans
                         <td align="center">{{ entry.one }}</td>
                         <td align="center">{{ entry.two }}</td>
                         <td align="right">{{ entry.unit }}</td>
+                        <td style="width: 25px;"></td>
                       </tr>
 
                     {% endfor %}
