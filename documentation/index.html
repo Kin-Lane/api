@@ -92,7 +92,7 @@ layout: page
   </tr>
   <tr>
     <td>
-      working-1
+      working-2
       <table width="100%" border="1" style="padding-top: 10px;">
         <tr>
         <td align="center" style="margin-left: 90px; margin-right: 90px;">
@@ -108,7 +108,7 @@ layout: page
                     {% assign api_action_spec = '' %}
                     {% assign api_action_url = '' %}
                     {% assign openapi_spec_json = '' %}
-HERE: {{ api.properties }}
+HERE: {{ api }}
                     {% for property in api.properties %}
 
                       {% assign thisname = apijson.name | downcase %}
