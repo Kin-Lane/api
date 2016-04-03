@@ -65,10 +65,10 @@ title: Plans
                 {% assign api_plan_json = thisentry %}
               {% endif %}
             {% endfor %}
-HERE:
+HERE:1
             <table cellpadding="3" cellspacing="2" width="95%" style="margin-bottom: 20px; padding-left: 20px; padding-right: 20px;">
 
-              {% assign api_plan_json = api_plan_json[0 %}
+              {% assign api_plan_json = api_plan_json[0] %}
               {{ api_plan_json }}
               {% for plan in api_plan_json.plans %}
 
