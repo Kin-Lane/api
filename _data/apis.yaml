@@ -63,6 +63,8 @@
     url: https://apievangelist.3scale.net/signup
   - type: x-status-dashboard
     url: status/
+  - type: x-support-overview-page
+    url: support/
   - type: x-terms-of-service-page
     url: terms-of-service/
   - type: x-twitter
