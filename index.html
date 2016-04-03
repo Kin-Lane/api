@@ -385,12 +385,10 @@ layout: page
                                   {% if tag == grouptag %}
                                     <li style="font-size: 12px;">
                                       {{ summary }}
-                                      {% if verb == 'GET' %}1)<span style="color:#009900; font-weight: bold;">{% endif %}
-                                      {% if verb == 'POST' %}2)<span style="color:#0000FF font-weight: bold;">{% endif %}
-                                      {% if verb == 'PUT' %}3)<span style="color:#FF0080 font-weight: bold;">{% endif %}
-                                      {% if verb == 'DELETE' %}4)<span style="color:#FF9900 font-weight: bold;">{% endif %}
-                                      {{ verb }}
-                                    </span>
+                                      {% if verb == 'GET' %}<span style="color: #009900; font-weight: bold;"><strong>GET</strong></span>{% endif %}
+                                      {% if verb == 'POST' %}<span style="color: #0000ff; font-weight: bold;"><strong>POST</strong></span>{% endif %}
+                                      {% if verb == 'PUT' %}<span style="color: #FF0080; font-weight: bold;"><strong>PUT</strong></span>{% endif %}
+                                      {% if verb == 'DELETE' %}<span style="color :#FF9900; font-weight: bold;"><strong>DELETE</strong></span>{% endif %}
                                     </li>
                                   {% endif %}
 
