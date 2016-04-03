@@ -71,7 +71,7 @@
     url: _data/api-commons/api-plan.yaml
   include:
   - name: Parent
-    url: http://kin-lane.github.io/api//apis.yaml
+    url: http://kin-lane.github.io/api/apis.yaml
   maintainers:
   - FN: Kin Lane
     x-twitter: apievangelist
