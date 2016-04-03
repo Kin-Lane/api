@@ -192,6 +192,9 @@ layout: page
                                   {% if verb == 'GET' %}
                                     {% assign back_color = site.get_color %}
                                   {% endif %}
+                                  {% if verb == 'POST' %}
+                                    {% assign back_color = site.post_color %}
+                                  {% endif %}
 
                                   {% assign summary = method[1].summary %}
 
