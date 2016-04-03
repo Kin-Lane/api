@@ -113,9 +113,8 @@ layout: page
                       {% assign thisname = apijson.name | downcase %}
                       {% assign thisname = thisname | append:'/' %}
                       {% assign thisname = thisname | replace: ' ','-' %}
-
-                      {% if property.type == 'x-openapi-spec' %}
 {{ property.type }}
+                      {% if property.type == 'x-openapi-spec' %}
                         {% assign openapi_spec_url = property.url %}
                         {% assign pathname = openapi_spec_url | replace: '_data/api-commons/','' %}
                         {% assign pathname = pathname | replace: '.yaml','' %}
