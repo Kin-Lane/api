@@ -10,7 +10,7 @@ layout: page
 <p>{{ apigettingstarted.header }}</p>
   <ol>
     {% for steps in apigettingstarted.steps %}
-			<li><strong>{{ steps.title }}</strong></li>
+			<li><a href="{{ site.url }}{{ steps.title }}"><strong>{{ steps.title }}</strong></a></li>
     {% endfor %}
   </ol>
 <p>{{ apigettingstarted.footer }}</p>
