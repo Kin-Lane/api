@@ -58,13 +58,12 @@ title: Plans
             {% for entry in apicommons %}
               {% assign thisname = entry[0] %}
               {% assign thisentry = entry[1] %}
-              {{ thisname }} == {{ pathname }}<br />
               {% if thisname == pathname %}
                 {% assign api_plan_json = thisentry %}
               {% endif %}
             {% endfor %}
 
-            <table cellpadding="3" cellspacing="2" width="90%" style="margin-bottom: 20px;">
+            <table cellpadding="3" cellspacing="2" width="90%" style="margin-bottom: 20px; margin-left: 25px; margin-right: 25px;">
 
             {% for entry in api_plan_json %}
 
