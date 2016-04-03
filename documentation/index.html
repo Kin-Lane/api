@@ -124,6 +124,7 @@ layout: page
                         {% for entry in apicommons %}
                           {% assign thisname = entry[0] %}
                           {% assign thisentry = entry[1] %}
+                          {{ thisname }} == {{ pathname }}
                           {% if thisname == pathname %}
                             {% assign openapi_spec_json = thisentry %}
                           {% endif %}
