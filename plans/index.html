@@ -48,12 +48,15 @@ title: Plans
           {% assign thisname = apijson.name | downcase %}
           {% assign thisname = thisname | append:'/' %}
           {% assign thisname = thisname | replace: ' ','-' %}
+
           {% if api.type == 'x-api-plan' %}
 
             {% assign api_plan_url = api.url %}
             {% assign pathname = api_plan_url | replace: '_data/api-commons/','' %}
             {% assign pathname = pathname | replace: '.yaml','' %}
+            {% assign pathname = pathname | replace: '.json','' %}
             {% assign pathname = pathname | replace: '/','.' %}
+            {% assign pathname = pathname | replace: 'api-commons.','' %}
 
             {% for entry in apicommons %}
               {% assign thisname = entry[0] %}
