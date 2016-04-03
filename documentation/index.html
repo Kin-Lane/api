@@ -101,13 +101,13 @@ layout: page
 
                 {% assign api_action_url = '' %}
                 {% for api in apijson.apis %}
-HEREE@!
+
                 <table cellpadding="3" cellspacing="2" width="100%" border="1">
 
                     {% assign api_action_spec = '' %}
                     {% assign api_action_url = '' %}
                     {% assign openapi_spec_json = '' %}
-
+HERE: {{ api.properties }}
                     {% for property in api.properties %}
 
                       {% assign thisname = apijson.name | downcase %}
