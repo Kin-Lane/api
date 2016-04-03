@@ -88,7 +88,7 @@ layout: page
   {% endif %}
 
   {% if common.type == 'x-api-plan' %}
-    {% assign api_plan_url = common.url %}
+    {% assign plan_url = common.url %}
   {% endif %}
   {% if common.type == 'x-rate-limit' %}
     {% assign rate_limit_url = common.url %}
@@ -156,35 +156,35 @@ layout: page
 				<tr id="onboarding">
 					<td colspan="3" style="font-size: 22px; padding: 15px;"><strong>On-boarding</strong></td>
 				</tr>
-        {% if getting_started_url != '' %}
+        {% if getting_started_url != null %}
 				<tr id="x-getting-started-row">
 					<td width="25" style="height: 55px;"></td>
 					<td width="75" align="center" valign="middle"><a href="{{ getting_started_url }}" id="x-getting-started-img-url"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-running.png" width="35" /></a></td>
 					<td><a href="{{ getting_started_url }}" id="x-getting-started-url">Getting Started</a><div id="d-getting-started"></div></td>
 				</tr>
         {% endif %}
-        {% if authentication_url != '' %}
+        {% if authentication_url != null %}
 				<tr id="x-authentication-row">
 					<td width="25" style="height: 55px;"></td>
 					<td width="75" align="center" valign="middle"><a href="{{ authentication_url }}" id="x-authentication-img-url"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-key-circle.png" width="35" /></a></td>
 					<td><a href="{{ authentication_url }}" id="x-authentication-url">Authentication</a><div id="d-authentication"></div></td>
 				</tr>
         {% endif %}
-        {% if faq_url != '' %}
+        {% if faq_url != null %}
 				<tr id="x-faq-row">
 					<td width="25" style="height: 55px;"></td>
 					<td width="75" align="center" valign="middle"><a href="{{ faq_url }}" id="x-faq-img-url"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-question-mark.png" width="35" /></a></td>
 					<td><a href="{{ faq_url }}" id="x-faq-url">FAQ</a><div id="d-faq"></div></td>
 				</tr>
         {% endif %}
-        {% if signup_url != '' %}
+        {% if signup_url != null %}
 				<tr id="x-signup-row">
 					<td width="25" style="height: 55px;"></td>
 					<td width="75" align="center" valign="middle"><a href="{{ signup_url }}" id="x-signup-img-url"><img src="https://s3.amazonaws.com/kinlane-productions/building-blocks/x-signup.png" width="35" /></a></td>
 					<td><a href="{{ signup_url }}" id="x-signup-url">Signup</a><div id="d-signup"></div></td>
 				</tr>
         {% endif %}
-        {% if login_url != '' %}
+        {% if login_url != null %}
 				<tr id="x-login-row">
 					<td width="25" style="height: 55px;"></td>
 					<td width="75" align="center" valign="middle"><a href="{{ login_url }}" id="x-login-img-url"><img src="https://s3.amazonaws.com/kinlane-productions/building-blocks/x-login.png" width="35" /></a></td>
@@ -194,7 +194,7 @@ layout: page
 				<tr id="integration">
 					<td colspan="3" style="font-size: 22px; padding: 15px;"><strong>Integration</strong></td>
 				</tr>
-        {% if documentation_url != '' %}
+        {% if documentation_url != null %}
 				<tr id="x-documentation-row">
 					<td width="25" style="height: 55px;"></td>
 					<td width="75" align="center" valign="middle"><a href="{{ documentation_url }}" id="x-documentation-img-url"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-documentation-interactive.png" width="35" /></a></td>
@@ -208,7 +208,7 @@ layout: page
 					<td><a href="{{ code_url }}" id="x-code-url">Code</a><div id="d-code"></div></td>
 				</tr>
         {% endif %}
-        {% if plan_url != '' %}
+        {% if plan_url != null %}
 				<tr id="x-plan-row">
 					<td width="25" style="height: 55px;"></td>
 					<td width="75" align="center" valign="middle"><a href="{{ plan_url }}" id="x-plan-img-url"><img src="https://s3.amazonaws.com/kinlane-productions/building-blocks/x-plan.png" width="35" /></a></td>
@@ -222,7 +222,7 @@ layout: page
 					<td><a href="{{ rate_limit_url }}" id="x-rate-limits-page-url">Rate Limits</a><div id="d-rate-limits"></div></td>
 				</tr>
         {% endif %}
-        {% if support_url != '' %}
+        {% if support_url != null %}
 				<tr id="support">
 					<td colspan="3" style="font-size: 22px; padding: 15px;"><strong>Support</strong></td>
 				</tr>
@@ -235,28 +235,28 @@ layout: page
 				<tr id="updates">
 					<td colspan="3" style="font-size: 22px; padding: 15px;"><strong>Updates</strong></td>
 				</tr>
-        {% if road_map_url != '' %}
+        {% if road_map_url != null %}
 				<tr id="x-roadmap-row">
 					<td width="25" style="height: 55px;"></td>
 					<td width="75" align="center" valign="middle"><a href="{{ road_map_url }}" id="x-roadmap-img-url"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-highway.png" width="35" /></a></td>
 					<td><a href="{{ road_map_url }}" id="x-roadmap-url">Roadmap</a><div id="d-roadmap"></div></td>
 				</tr>
         {% endif %}
-        {% if issue_url != '' %}
+        {% if issue_url != null %}
 				<tr id="x-issue">
 					<td width="25" style="height: 55px;"></td>
 					<td width="75" align="center" valign="middle"><a href="{{ issue_url }}" id="x-issue-img-url"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-bug.png" width="35" /></a></td>
 					<td><a href="{{ issue_url }}" id="x-issue-url">Issues</a><div id="d-issue"></div></td>
 				</tr>
         {% endif %}
-        {% if change_log_url != '' %}
+        {% if change_log_url != null %}
 				<tr id="x-change-log-row">
 					<td width="25" style="height: 55px;"></td>
 					<td width="75" align="center" valign="middle"><a href="{{ change_log_url }}" id="x-change-log-img-url"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-recycling.jpg" width="35" /></a></td>
 					<td><a href="{{ change_log_url }}" id="x-change-log-url">Change Log</a><div id="d-change-log"></div></td>
 				</tr>
         {% endif %}
-        {% if status_url != '' %}
+        {% if status_url != null %}
 				<tr id="x-status-row">
 					<td width="25" style="height: 55px;"></td>
 					<td width="75" align="center" valign="middle"><a href="{{ status_url }}" id="x-status-img-url"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-status-dashboard.png" width="35" /></a></td>
@@ -266,14 +266,14 @@ layout: page
 				<tr id="legal">
 					<td colspan="3" style="font-size: 22px; padding: 15px;"><strong>Legal</strong></td>
 				</tr>
-        {% if terms_of_service_url != '' %}
+        {% if terms_of_service_url != null %}
 				<tr id="x-terms-of-service-row">
 					<td width="25" style="height: 55px;"></td>
 					<td width="75" align="center" valign="middle"><a href="{{ terms_of_service_url }}" id="x-terms-of-service-img-url"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-terms-conditions.png" width="35" /></a></td>
 					<td><a href="{{ terms_of_service_url }}" id="x-terms-of-service-url">Terms of Service</a><div id="d-terms-of-service"></div></td>
 				</tr>
         {% endif %}
-        {% if privacy_policy_url != '' %}
+        {% if privacy_policy_url != null %}
 				<tr id="x-privacy-policy-row">
 					<td width="25" style="height: 55px;"></td>
 					<td width="75" align="center" valign="middle"><a href="{{ privacy_policy_url }}" id="x-privacy-policy-img-url"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-privacy.png" width="35" /></a></td>
