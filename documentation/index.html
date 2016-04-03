@@ -92,7 +92,6 @@ layout: page
   </tr>
   <tr>
     <td>
-      working-4
       <table width="100%" border="1" style="padding-top: 10px;">
         <tr>
         <td align="center" style="margin-left: 90px; margin-right: 90px;">
@@ -126,7 +125,6 @@ layout: page
                         {% for entry in apicommons %}
                           {% assign thisname = entry[0] %}
                           {% assign thisentry = entry[1] %}
-                          {{ thisname }} == {{ pathname }}
                           {% if thisname == pathname %}
                             {% assign openapi_spec_json = thisentry %}
                           {% endif %}
