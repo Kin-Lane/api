@@ -1,9 +1,10 @@
 - swagger: "2.0"
   info:
     title: API
-    description: This is my API for tracking on APIs across the API space. I try to
-      track on all details about the APIs Im monitoring including their profile, Twitter,
-      Github, blogs, etc.
+    description: This is my API for working with the APIs I track on. I use this API
+      to add, update, and delete the APIs, their details, an I am working to create
+      as many API focused endpoints, which let me manage even more APIs, whether they
+      are mine or other publicly available APIs I am interested in.
     termsOfService: http://kinlane.com/terms-of-service.html
     version: v1
   host: api.api.kinlane.com
