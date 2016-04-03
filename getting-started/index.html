@@ -8,7 +8,7 @@ layout: page
 <h1>{{ apigettingstarted.title }}</h1>
 <p><img src="{{ apigettingstarted.image }}" align="right" width="75" style="padding: 5px;" /></p>
 <p>{{ apigettingstarted.header }}</p>
-  <ol>
+  <ol style="list-style-type: katakana;">
     {% for steps in apigettingstarted.steps %}
 			<li><a href="{{ site.url }}{{ steps.title }}"><strong>{{ steps.title }}</strong></a></li>
     {% endfor %}
