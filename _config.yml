@@ -57,15 +57,6 @@ navigation:
     size2: 0
     padding: 10
     decorate: 0
-  - label1: Blog
-    link1: blog/
-    size1: 80
-    extend: 1
-    label2: RSS
-    link2: /blog.xml
-    size2: 60
-    padding: 2
-    decorate: 0
   - label1: Getting Started
     link1: getting-started/
     size1: 80
