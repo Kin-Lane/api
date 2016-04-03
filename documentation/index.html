@@ -194,7 +194,7 @@ layout: page
                                     <tr>
                                       <td style="padding-left: 20px; font-size: 12px;">{{ path[0] }}</td>
                                       <td style="font-size: 12px;">{{ summary }}</td>
-                                      <td align="center" style="width: 75px; background-color:{% if verb == 'GET' %}#{{ site.get_color }}{{% elsif verb == 'POST' %}#{{ site.post_color }}{% elsif verb == 'PUT' %}#{{ site.put_color }}{% elsif verb == 'DELETE' %}#{{ site.get_color }}{% endif %}; font-weight: bold; font-size: 11px; color: #FFF;">
+                                      <td align="center">
                                         {{ verb }}
                                       </td>
                                     </tr>
