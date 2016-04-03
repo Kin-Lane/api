@@ -94,6 +94,13 @@ layout: page
     {% assign rate_limit_url = common.url %}
   {% endif %}
 
+  {% if common.type == 'x-terms-of-service-page' %}
+    {% assign terms_of_service_url = common.url %}
+  {% endif %}
+  {% if common.type == 'x-privacy-policy-page' %}
+    {% assign privacy_policy_url = common.url %}
+  {% endif %}
+
 {% endfor %}
 
 {% if apisjson.humanURL == null %}
