@@ -148,7 +148,7 @@ layout: page
                     {% endfor %}
 
                     <tr style="background-color: #D3D3D3;">
-                      <td align="left" style="font-size: 18px; font-weight: bold; padding: 10px;">HERE: {{ api.name }}</td>
+                      <td align="left" style="font-size: 18px; font-weight: bold; padding: 10px;">{{ api.name }}</td>
                       <td align="right" style="padding: 10px;">
                         {% if openapi_spec_url != null and openapi_spec_url != empty %}
                           <a href="{{ openapi_spec_url }}" target="_blank" title="View OpenAPI Spec" style="font-size: 16px; font-weight: normal;">OpenAPI Spec</a>
