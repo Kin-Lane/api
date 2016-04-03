@@ -69,7 +69,7 @@
   - type: x-twitter
     url: https://twitter.com/kinlane
   - type: x-api-plan
-    url: /api-commons/api-plan.json
+    url: api-commons/api-plan.json
   include:
   - name: Parent
     url: http://kin-lane.github.io/api//apis.yaml
