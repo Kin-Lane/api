@@ -45,7 +45,7 @@ project_summary: This is the master portal where I access all of the APIs I depe
 navigation:
   - label1: Home
     link1: index.html
-    size1: 100
+    size1: 80
     extend: 0
     label2:
     link2:
@@ -62,13 +62,40 @@ navigation:
     padding: 2
     decorate: 0
   - label1: Getting Started
-    link1: /
-    size1: 100
+    link1: getting-started/
+    size1: 80
     extend: 0
     label2:
     link2:
     size2: 0
-    padding: 25
+    padding: 2
+    decorate: 0
+  - label1: Documentation
+    link1: documentation/
+    size1: 80
+    extend: 0
+    label2:
+    link2:
+    size2: 0
+    padding: 2
+    decorate: 0
+  - label1: Plans
+    link1: plans/
+    size1: 80
+    extend: 0
+    label2:
+    link2:
+    size2: 0
+    padding: 2
+    decorate: 0
+  - label1: Support
+    link1: support/
+    size1: 80
+    extend: 0
+    label2:
+    link2:
+    size2: 0
+    padding: 2
     decorate: 0
   - label1: Return to API Evangelist
     link1: http://apievangelist.com
