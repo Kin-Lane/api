@@ -37,8 +37,6 @@
     url: blog.xml
   - type: x-change-log
     url: change-log/
-  - type: x-code-page
-    url: code/
   - type: x-portal
     url: https://kin-lane.github.io
   - type: x-documentation
