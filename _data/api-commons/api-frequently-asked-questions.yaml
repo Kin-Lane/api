@@ -1,7 +1,7 @@
 - title: Frequently Asked Questions
   image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-question-mark.png
   header: These are the questions I get asked the most when people are getting up and running using my APIs. I try to provide answers to most of the challenges you will face, to encourage you to do everything on your own.
-  footer: If you don't find the answer you are looking for, head over to the support page, and hit me up via one of the supported channels. I encourage you to use the Github issues for this repo, so we can keep the history for others to learn from.
+  footer: If you do not find the answer you are looking for, head over to the support page, and hit me up via one of the supported channels. I encourage you to use the Github issues for this repo, so we can keep the history for others to learn from.
   categories:
     - category: General
       questions:
