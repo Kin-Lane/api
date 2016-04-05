@@ -75,15 +75,6 @@ navigation:
     size2: 0
     padding: 2
     decorate: 0
-  - label1: Plans
-    link1: /api/plans/
-    size1: 80
-    extend: 0
-    label2:
-    link2:
-    size2: 0
-    padding: 2
-    decorate: 0
   - label1: Support
     link1: /api/support/
     size1: 80
